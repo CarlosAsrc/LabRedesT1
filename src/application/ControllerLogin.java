@@ -48,7 +48,7 @@ public class ControllerLogin {
 
 	@FXML
 	void onclickentrar(ActionEvent event) throws IOException {
-		regras.Sons.tocar("got"+regras.Sons.sorteia());
+		
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 		anchorpane.getChildren().setAll(pane);
 

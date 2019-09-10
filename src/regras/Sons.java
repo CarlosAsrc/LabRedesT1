@@ -34,7 +34,7 @@ public class Sons {
 		Random rnd = new Random();
 	int i=rnd.nextInt(3);
 	i=i+1;
-	System.out.println(i);
+	//System.out.println(i);
 		if(i==1) {
 			return "";
 		}
