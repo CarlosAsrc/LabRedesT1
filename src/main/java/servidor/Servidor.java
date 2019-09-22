@@ -12,7 +12,7 @@ import java.util.List;
 public class Servidor {
 
 	private static List<Jogador> jogadores;
-	private SalaController salas;
+	private static SalaController salas;
 
 	public static void main(String args[])  throws Exception {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
@@ -63,6 +63,7 @@ public class Servidor {
 		}
 		Jogador novoJogador = new Jogador(IPJogador);
 		jogadores.add(novoJogador);
+		salas.posicionarJogador();
 		return novoJogador;
 	}
 }
