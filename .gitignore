@@ -158,3 +158,11 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/java,code,macos,windows,eclipse
+
+#Gradle
+gradle/
+gradlew*
+settings.gradle
+.gradle/
+.idea
+
