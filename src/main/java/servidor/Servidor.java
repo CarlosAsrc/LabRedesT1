@@ -23,14 +23,17 @@ public class Servidor {
 	          String mensagem = new String(receivePacket.getData());
 	          InetAddress IPJogador = receivePacket.getAddress();
 
-	          executarComando(IPJogador, mensagem);
+			byte[] sendData = new byte[4096];
+			sendData = (mensagem.trim()+" recebido").getBytes();
+			DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, receivePacket.getAddress(), receivePacket.getPort());
+			serverSocket.send(sendPacket);
 	   }
 	}
 
 	public static String executarComando(InetAddress IPJogador, String mensagem) {
 		Jogador jogador = designarJogador(IPJogador);
 		String sentenca [] = mensagem.split(";");
-		String comando = sentenca[0];
+		String comando = sentenca[0].trim();
 
 		switch(comando) {
 			case "examinar" : {
