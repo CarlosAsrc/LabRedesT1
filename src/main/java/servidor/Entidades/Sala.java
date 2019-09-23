@@ -56,16 +56,12 @@ public class Sala implements Objeto{
     public String toString(){
         String chaves="";
         for(Chave chave: this.chaves) {
-            if(chave.getNome().equals(nome)) {
-                chaves = chaves +" "+chave.getNome();
-            }
+            chaves = chaves +" "+chave.getNome();
         }
 
         String portas="";
         for(Porta porta: this.portas) {
-            if(porta.getNome().equals(nome)) {
-                portas = portas +" "+porta.getNome();
-            }
+            portas = portas +" "+porta.getNome();
         }
         return nome+"\nPortas: "+portas+"\nChaves: "+chaves;
     }

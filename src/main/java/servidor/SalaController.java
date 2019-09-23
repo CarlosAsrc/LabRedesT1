@@ -113,4 +113,10 @@ public class SalaController {
     public void Cochinchar(Jogador jogadorOrigem, String textoFala, Jogador jogadorDestino) {
 
     }
+
+    public String toString() {
+        return  "     "+salas.get(0).toString()+"\n\n\n"+
+                "     "+salas.get(1).toString()+"\n\n\n"+"     "+salas.get(2).toString()+"     "+salas.get(3).toString()+"\n\n\n"+
+                "";
+    }
 }

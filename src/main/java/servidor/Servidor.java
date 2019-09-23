@@ -17,14 +17,14 @@ public class Servidor {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 	    byte[] receiveData = new byte[1024];
 	    while(true) {
-	          DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-	          serverSocket.receive(receivePacket);
+			DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+			serverSocket.receive(receivePacket);
 
-	          String mensagem = new String(receivePacket.getData());
-	          InetAddress IPJogador = receivePacket.getAddress();
+			String mensagem = new String(receivePacket.getData()).trim();
+			InetAddress IPJogador = receivePacket.getAddress();
 
 			byte[] sendData = new byte[4096];
-			sendData = (mensagem.trim()+" recebido").getBytes();
+			sendData = executarComando(IPJogador, mensagem).getBytes();
 			DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, receivePacket.getAddress(), receivePacket.getPort());
 			serverSocket.send(sendPacket);
 	   }
@@ -62,6 +62,11 @@ public class Servidor {
 			break;
 
 			case "ajuda" : {}
+			break;
+
+			case "mapa":{
+				return salas.toString();
+			}
 		}
 		return "Comando inválido";
 	}
