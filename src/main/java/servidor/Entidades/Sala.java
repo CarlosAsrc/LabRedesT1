@@ -1,39 +1,72 @@
 package servidor.Entidades;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Sala {
+public class Sala implements Objeto{
 
-    private int id;
-    private Objeto [][] mapa;
+    private String nome;
+    private List<Chave> chaves;
+    private List<Porta> portas;
+    private List<Jogador> jogadores;
 
-    public Sala(int id) {
-        this.id = id;
-        mapa = new Objeto [3][3];
+
+    public Sala(String nome) {
+        this.nome = nome;
+        chaves = new ArrayList<>();
+        portas = new ArrayList<>();
+        jogadores = new ArrayList<>();
     }
 
-    public void posicionarObjeto(int i, int j, Objeto objeto) {
-        mapa[i][j] = objeto;
+    public void adicionarChave(Chave chave) {
+        this.chaves.add(chave);
     }
 
-    public void posicionarObjeto(Objeto objeto) {
-        Random random = new Random();
-        while(true) {
-            int i = random.nextInt(10);
-            int j = random.nextInt(10);
-            if (mapa[i][random.nextInt(10)] == null) {
-                mapa[i][j] = objeto;
-                return;
+    public void adicionarPorta(Porta porta) {
+        this.portas.add(porta);
+    }
+
+    public void adicionarJogador(Jogador jogador) {
+        this.jogadores.add(jogador);
+    }
+
+    public Objeto buscarObjeto(String nome) {
+        if(this.nome.equals(nome)) {
+            return this;
+        }
+        for(Chave chave: chaves) {
+            if(chave.getNome().equals(nome)) {
+                return chave;
             }
         }
+        for(Porta porta: portas) {
+            if(porta.getNome().equals(nome)) {
+                return porta;
+            }
+        }
+        return null;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public String getNome() {
+        return this.nome;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
+    public String toString(){
+        String chaves="";
+        for(Chave chave: this.chaves) {
+            if(chave.getNome().equals(nome)) {
+                chaves = chaves +" "+chave.getNome();
+            }
+        }
+
+        String portas="";
+        for(Porta porta: this.portas) {
+            if(porta.getNome().equals(nome)) {
+                portas = portas +" "+porta.getNome();
+            }
+        }
+        return nome+"\nPortas: "+portas+"\nChaves: "+chaves;
+    }
 }

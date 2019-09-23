@@ -10,4 +10,12 @@ public class Porta implements Objeto {
         this.aberta = aberta;
     }
 
+    @Override
+    public String getNome() {
+        return this.destino.getNome()+"porta";
+    }
+
+    public String toString(){
+        return "Porta "+(aberta ? "aberta ": "fechada ")+"que leva para "+destino.getNome();
+    }
 }

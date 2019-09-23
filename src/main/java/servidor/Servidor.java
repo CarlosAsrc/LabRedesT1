@@ -1,18 +1,17 @@
 package servidor;
 
 import servidor.Entidades.Jogador;
-import servidor.Entidades.Objeto;
-import servidor.Entidades.Sala;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Servidor {
 
-	private static List<Jogador> jogadores;
-	private static SalaController salas;
+	private static List<Jogador> jogadores = new ArrayList<>();
+	private static SalaController salas = new SalaController();
 
 	public static void main(String args[])  throws Exception {
 		DatagramSocket serverSocket = new DatagramSocket(9876);
@@ -28,31 +27,40 @@ public class Servidor {
 	   }
 	}
 
-	public static void executarComando(InetAddress IPJogador, String mensagem) {
+	public static String executarComando(InetAddress IPJogador, String mensagem) {
 		Jogador jogador = designarJogador(IPJogador);
 		String sentenca [] = mensagem.split(";");
 		String comando = sentenca[0];
 
 		switch(comando) {
-			case "examinar" : {}
-			break;
+			case "examinar" : {
+				return salas.examinar(jogador, sentenca[1]);
+			}
+
 			case "mover" : {}
 			break;
+
 			case "pegar" : {}
 			break;
+
 			case "largar" : {}
 			break;
+
 			case "inventorio" : {}
 			break;
+
 			case "usar" : {}
 			break;
+
 			case "falar" : {}
 			break;
+
 			case "cochichar" : {}
 			break;
+
 			case "ajuda" : {}
-			break;
 		}
+		return "Comando inválido";
 	}
 
 	private static Jogador designarJogador(InetAddress IPJogador) {
@@ -61,9 +69,9 @@ public class Servidor {
 				return jogador;
 			}
 		}
-		Jogador novoJogador = new Jogador(IPJogador);
+		Jogador novoJogador = new Jogador("jogador"+(jogadores.size()+1), "sala1", IPJogador);
 		jogadores.add(novoJogador);
-		salas.posicionarJogador();
+		salas.posicionarJogador(novoJogador);
 		return novoJogador;
 	}
 }
