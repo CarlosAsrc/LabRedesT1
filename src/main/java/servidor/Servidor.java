@@ -40,8 +40,9 @@ public class Servidor {
 				return salas.examinar(jogador, sentenca[1]);
 			}
 
-			case "mover" : {}
-			break;
+			case "mover" : {
+                return salas.mover(jogador, sentenca[1].charAt(0));
+            }
 
 			case "pegar" : {}
 			break;

@@ -42,8 +42,8 @@ public class Cliente {
 		String mapa = "";
 		while(true) {
 		    mapa = requisitarServidor("mapa");
-			System.out.println(
-					"\n\n"+
+		    System.out.println(
+					"\n\n"+mapa+"\n\n"+
 					"1 - Examinar [sala/objeto]\n" +
 					"2 - Mover [N/S/L/O]\n" +
 					"3 - Pegar [objeto]\n" +
@@ -52,19 +52,25 @@ public class Cliente {
 					"6 - Usar [objeto] {alvo}\n" +
 					"7 - Falar [texto]\n" +
 					"8 - Cochichar [texto] [jogador]\n" +
-					"9 - Ajuda\n");
-			opcao = in.next();
+					"9 - Ajuda\n"+
+                    "10 - Ver mapa");
+			opcao = in.nextLine();
 
 			switch (opcao) {
 				case "1": {
 					String objeto = "";
 					System.out.println("Informe o nome da sala ou do objeto:");
-					objeto = in.next();
+					objeto = in.nextLine();
 					System.out.println(requisitarServidor("examinar;"+objeto));
 				}
 				break;
 
-				case "2": {}
+				case "2": {
+                    String direcao = "";
+                    System.out.println("Informe a direcao desejada (N|S|L|O):");
+                    direcao = in.nextLine();
+                    System.out.println(requisitarServidor("mover;"+direcao));
+                }
 				break;
 
 				case "3": {}
@@ -80,6 +86,11 @@ public class Cliente {
 				case "8": {}
 				break;
 				case "9": {}
+                break;
+                case "10": {
+                    mapa = requisitarServidor("mapa");
+                    System.out.println(mapa);
+                }
 			}
 		}
 	}

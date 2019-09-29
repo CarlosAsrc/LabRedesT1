@@ -86,4 +86,8 @@ public class Sala implements Objeto{
         }
         return resp;
     }
+
+    public void removerJogador(Jogador jogador) {
+        jogadores.remove(jogador);
+    }
 }

@@ -3,11 +3,20 @@ package servidor.Entidades;
 public class Porta implements Objeto {
 
     private Sala destino;
+
+    public void setAberta(boolean aberta) {
+        this.aberta = aberta;
+    }
+
     private boolean aberta;
 
     public Porta(Sala destino, boolean aberta) {
         this.destino = destino;
         this.aberta = aberta;
+    }
+
+    public boolean estaAberta() {
+        return aberta;
     }
 
     @Override

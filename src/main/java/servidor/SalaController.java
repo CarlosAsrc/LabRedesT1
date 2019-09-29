@@ -7,6 +7,7 @@ import java.util.List;
 
 public class SalaController {
     private static List<Sala> salas = new ArrayList<>();
+    private static Sala [][] mapa = new Sala[3][5];
 
     public SalaController() {
         criarSalas();
@@ -61,6 +62,15 @@ public class SalaController {
         salas.add(sala6);
         salas.add(sala7);
         salas.add(saida);
+        mapa[0][1] = sala4;
+        mapa[1][0] = sala1;
+        mapa[1][1] = sala3;
+        mapa[1][2] = sala6;
+        mapa[1][3] = sala7;
+        mapa[1][4] = saida;
+        mapa[2][0] = sala2;
+        mapa[2][1] = sala5;
+
     }
 
 
@@ -72,6 +82,20 @@ public class SalaController {
     private static Sala buscarSalaPeloNome(String nome) {
         for(Sala sala: salas) {
             if (sala.getNome().equals(nome)) return sala;
+        }
+        return null;
+    }
+
+    private static int[] buscarPosicaoSala(String nome) {
+        for(int i=0; i<mapa.length; i++) {
+            for(int j=0; j<mapa[0].length; j++) {
+                if(mapa[i][j] != null && mapa[i][j].getNome().equals(nome)) {
+                    int [] posicoes = new int [2];
+                    posicoes[0] = i;
+                    posicoes[1] = j;
+                    return posicoes;
+                }
+            }
         }
         return null;
     }
@@ -89,8 +113,59 @@ public class SalaController {
         }
     }
 
-    public void mover(Jogador jogador, Character direcao) {
+    public String mover(Jogador jogador, Character direcao) {
+        Sala sala = buscarSalaPeloNome(jogador.getSala());
+        int posicaoAtual[] = buscarPosicaoSala(sala.getNome());
+        if(posicaoAtual == null) {
+            return "Sala atual do jogador não foi encontrada";
+        }
+        int i = posicaoAtual[0];
+        int j = posicaoAtual[1];
+        Sala salaDestino;
+        switch (direcao) {
+            case 'N':
+                if (i > 0 && mapa[i - 1][j] != null) {
+                    salaDestino = mapa[i - 1][j];
+                } else {
+                    return "Não existe sala nesta direcao";
+                }
+                break;
 
+            case 'S':
+                if (i < mapa[0].length && mapa[i + 1][j] != null) {
+                    salaDestino = mapa[i + 1][j];
+                } else {
+                    return "Não existe sala nesta direcao";
+                }
+                break;
+
+            case 'L':
+                if (j < mapa.length && mapa[i][j + 1] != null) {
+                    salaDestino = mapa[i][j + 1];
+                } else {
+                    return "Não existe sala nesta direcao";
+                }
+                break;
+
+            case 'O':
+                if (j > 0 && mapa[i][j-1] != null) {
+                    salaDestino = mapa[i][j - 1];
+                } else {
+                    return "Não existe sala nesta direcao";
+                }
+                break;
+            default: return "Direcao inválida";
+        }
+
+        Porta portaParaSala = (Porta) sala.buscarObjeto(salaDestino.getNome()+"porta");
+        if (portaParaSala != null && portaParaSala.estaAberta()) {
+            salaDestino.adicionarJogador(jogador);
+            sala.removerJogador(jogador);
+            jogador.setSala(salaDestino.getNome());
+            return "Jogador se moveu  em direção "+direcao+" da sala "+sala.getNome()+" para a sala "+salaDestino.getNome();
+        } else {
+            return "Não existe porta aberta para a sala solicitada";
+        }
     }
 
     public void pegar(Jogador jogador, Objeto objeto) {
