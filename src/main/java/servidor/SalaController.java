@@ -78,6 +78,9 @@ public class SalaController {
 
     public String examinar(Jogador jogador, String nomeObjeto) {
         Sala sala = buscarSalaPeloNome(jogador.getSala());
+        if(sala.getNome().equals(nomeObjeto)) {
+            return sala.toStringComSalasAdjacentes();
+        }
         Objeto objeto = sala.buscarObjeto(nomeObjeto);
         if(objeto != null) {
             return objeto.toString();
@@ -115,8 +118,20 @@ public class SalaController {
     }
 
     public String toString() {
-        return  "     "+salas.get(0).toString()+"\n\n\n"+
-                "     "+salas.get(1).toString()+"\n\n\n"+"     "+salas.get(2).toString()+"     "+salas.get(3).toString()+"\n\n\n"+
-                "";
+        return  salas.get(0).toString()+
+                "\n"
+                +salas.get(1).toString()
+                +"\n"
+                +salas.get(2).toString()
+                +"\n"
+                +salas.get(3).toString()
+                +"\n"
+                +salas.get(4).toString()
+                +"\n"
+                +salas.get(5).toString()
+                +"\n"
+                +salas.get(6).toString()
+                +"\n"
+                +salas.get(7).toString();
     }
 }

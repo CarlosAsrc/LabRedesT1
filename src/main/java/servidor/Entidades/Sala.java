@@ -63,6 +63,27 @@ public class Sala implements Objeto{
         for(Porta porta: this.portas) {
             portas = portas +" "+porta.getNome();
         }
-        return nome+"\nPortas: "+portas+"\nChaves: "+chaves;
+        String jogadores="";
+        for(Jogador jogador: this.jogadores) {
+            jogadores = jogadores +" "+jogador.getNome();
+        }
+        return "__________________________________________________________\n"+
+                "| "+nome+
+                "\n| Portas: "
+                +portas
+                +"\n| Chaves: "
+                +chaves
+                +"\n| Jogadores: "
+                +jogadores
+                +"\n__________________________________________________________";
+    }
+
+
+    public String toStringComSalasAdjacentes() {
+        String resp = this.toString()+"\nSALAS ADJACENTES:";
+        for(Porta porta: portas) {
+            resp = resp+"\n"+porta.getDestino().toString();
+        }
+        return resp;
     }
 }

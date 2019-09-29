@@ -18,6 +18,7 @@ public class Cliente {
 	public static String requisitarServidor(String mensagem) {
 		try {
 			DatagramSocket clientSocket = new DatagramSocket();
+			clientSocket.setSoTimeout(5000);
 			InetAddress IPAddress = InetAddress.getByName("localhost");
 
 			byte[] sendData = new byte[4096];
@@ -38,10 +39,10 @@ public class Cliente {
 
 	public static void menu () {
 		String opcao="";
+		String mapa = "";
 		while(true) {
-
+		    mapa = requisitarServidor("mapa");
 			System.out.println(
-					requisitarServidor("mapa")+
 					"\n\n"+
 					"1 - Examinar [sala/objeto]\n" +
 					"2 - Mover [N/S/L/O]\n" +

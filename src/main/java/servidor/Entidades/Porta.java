@@ -15,6 +15,14 @@ public class Porta implements Objeto {
         return this.destino.getNome()+"porta";
     }
 
+    public Sala getDestino() {
+        return destino;
+    }
+
+    public void setDestino(Sala destino) {
+        this.destino = destino;
+    }
+
     public String toString(){
         return "Porta "+(aberta ? "aberta ": "fechada ")+"que leva para "+destino.getNome();
     }

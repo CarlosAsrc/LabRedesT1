@@ -10,6 +10,8 @@ public class Jogador implements Objeto {
 
     public Jogador(String nome, String sala, InetAddress enderecoIP) {
         this.enderecoIP = enderecoIP;
+        this.sala = sala;
+        this.nome = nome;
     }
 
     public InetAddress getEnderecoIP() {
