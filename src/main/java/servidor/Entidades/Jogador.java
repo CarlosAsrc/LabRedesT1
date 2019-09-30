@@ -34,4 +34,11 @@ public class Jogador implements Objeto {
     public void setSala(String sala) {
         this.sala = sala;
     }
+
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() +
+                "\nSala: " + getSala() +
+                "\nIP: " + getEnderecoIP() + "\n";
+    }
 }

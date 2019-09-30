@@ -67,6 +67,12 @@ public class Sala implements Objeto{
         for(Jogador jogador: this.jogadores) {
             jogadores = jogadores +" "+jogador.getNome();
         }
+
+        if(nome == "saida")
+            return "__________________________________________________________\n"+
+                    "| "+nome+
+                    "\n__________________________________________________________";
+
         return "__________________________________________________________\n"+
                 "| "+nome+
                 "\n| Portas: "

@@ -40,8 +40,9 @@ public class Cliente {
 	public static void menu () {
 		String opcao="";
 		String mapa = "";
+		mapa = requisitarServidor("start");
 		while(true) {
-		    mapa = requisitarServidor("mapa");
+
 		    System.out.println(
 					"\n\n"+mapa+"\n\n"+
 					"1 - Examinar [sala/objeto]\n" +
@@ -55,13 +56,14 @@ public class Cliente {
 					"9 - Ajuda\n"+
                     "10 - Ver mapa");
 			opcao = in.nextLine();
-
+			System.out.println("opcao: " + opcao);
 			switch (opcao) {
 				case "1": {
 					String objeto = "";
 					System.out.println("Informe o nome da sala ou do objeto:");
 					objeto = in.nextLine();
-					System.out.println(requisitarServidor("examinar;"+objeto));
+					String a = requisitarServidor("examinar;"+objeto);
+					System.out.println(a);
 				}
 				break;
 
@@ -69,7 +71,8 @@ public class Cliente {
                     String direcao = "";
                     System.out.println("Informe a direcao desejada (N|S|L|O):");
                     direcao = in.nextLine();
-                    System.out.println(requisitarServidor("mover;"+direcao));
+                    String b = requisitarServidor("mover;" + direcao);
+                    //System.out.println(b);
                 }
 				break;
 
@@ -88,8 +91,11 @@ public class Cliente {
 				case "9": {}
                 break;
                 case "10": {
+					mapa = null;
+					System.out.println("case 10 " + mapa);
+					mapa = null;
                     mapa = requisitarServidor("mapa");
-                    System.out.println(mapa);
+
                 }
 			}
 		}
