@@ -31,7 +31,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		
 		Jogo.iniciarposicoes();
-		codigo.criaimageview();
+		
 	
 		launch(args);
 	}

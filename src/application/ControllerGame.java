@@ -230,50 +230,6 @@ public class ControllerGame {
 	@FXML
 	void initialize() throws IOException {
 		
-		
-		
-		q_1x1.setOpacity(0);
-		q_1x2.setOpacity(0);
-		q_1x3.setOpacity(0);
-		q_1x4.setOpacity(0);
-		q_1x5.setOpacity(0);
-		q_1x6.setOpacity(0);
-		q_2x1.setOpacity(0);
-		q_2x2.setOpacity(0);
-		q_2x3.setOpacity(0);
-		q_2x4.setOpacity(0);
-		q_2x5.setOpacity(0);
-		q_2x6.setOpacity(0);
-		q_3x1.setOpacity(0);
-		q_3x2.setOpacity(0);
-		q_3x3.setOpacity(0);
-		q_3x4.setOpacity(0);
-		q_3x5.setOpacity(0);
-		q_3x6.setOpacity(0);
-		q_4x1.setOpacity(0);
-		q_4x2.setOpacity(0);
-		q_4x3.setOpacity(0);
-		q_4x4.setOpacity(0);
-		q_4x5.setOpacity(0);
-		q_4x6.setOpacity(0);
-		q_5x1.setOpacity(0);
-		q_5x2.setOpacity(0);
-		q_5x3.setOpacity(0);
-		q_5x4.setOpacity(0);
-		q_5x5.setOpacity(0);
-		q_5x6.setOpacity(0);
-		q_6x1.setOpacity(0);
-		q_6x2.setOpacity(0);
-		q_6x3.setOpacity(0);
-		q_6x4.setOpacity(0);
-		q_6x5.setOpacity(0);
-		q_6x6.setOpacity(0);
-		q_7x1.setOpacity(0);
-		q_7x2.setOpacity(0);
-		
-		q_7x5.setOpacity(0);
-		q_7x6.setOpacity(0);
-
 		background.setImage(Imagem.criaimagem("background/game.png"));
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();

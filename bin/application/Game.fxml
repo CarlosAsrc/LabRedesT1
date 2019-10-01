@@ -16,324 +16,196 @@
          </image>
       </ImageView>
       <ImageView fx:id="q_0x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_0x1" fitHeight="72.0" fitWidth="82.0" layoutX="288.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_0x2" fitHeight="72.0" fitWidth="82.0" layoutX="420.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_0x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_0x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_0x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_0x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_0x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x2" fitHeight="72.0" fitWidth="82.0" layoutX="420.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_1x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_1x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_1x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x2" fitHeight="72.0" fitWidth="82.0" layoutX="420.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_2x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="403.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_3x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_3x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_3x2" fitHeight="72.0" fitWidth="82.0" layoutX="420.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_3x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_3x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_3x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_3x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_3x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x2" fitHeight="72.0" fitWidth="82.0" layoutX="413.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_4x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x2" fitHeight="72.0" fitWidth="82.0" layoutX="413.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_5x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_5x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_6x0" fitHeight="72.0" fitWidth="82.0" layoutX="172.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_6x1" fitHeight="72.0" fitWidth="82.0" layoutX="299.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_6x2" fitHeight="72.0" fitWidth="82.0" layoutX="413.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_6x3" fitHeight="72.0" fitWidth="82.0" layoutX="546.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_6x4" fitHeight="72.0" fitWidth="82.0" layoutX="683.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_6x5" fitHeight="72.0" fitWidth="82.0" layoutX="815.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_6x6" fitHeight="72.0" fitWidth="82.0" layoutX="942.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_6x7" fitHeight="72.0" fitWidth="82.0" layoutX="1067.0" layoutY="765.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x0" fitHeight="72.0" fitWidth="82.0" layoutX="165.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_7x1" fitHeight="72.0" fitWidth="82.0" layoutX="292.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x2" fitHeight="72.0" fitWidth="82.0" layoutX="406.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+        
       </ImageView>
       <ImageView fx:id="q_7x3" fitHeight="72.0" fitWidth="82.0" layoutX="539.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x4" fitHeight="72.0" fitWidth="82.0" layoutX="676.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x5" fitHeight="72.0" fitWidth="82.0" layoutX="808.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x6" fitHeight="72.0" fitWidth="82.0" layoutX="935.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <ImageView fx:id="q_7x7" fitHeight="72.0" fitWidth="82.0" layoutX="1060.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <Label fx:id="p1" layoutX="14.0" layoutY="328.0" text="P1-F1" textFill="#ff0c0c">
          <font>
