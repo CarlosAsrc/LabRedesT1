@@ -62,6 +62,7 @@ public class ControllerAcoes {
 		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 		background.setImage(image);
 		movimentos.setText(Jogo.movimentos);
+		objeto.setOpacity(0);
 		
 	}
 	@FXML
