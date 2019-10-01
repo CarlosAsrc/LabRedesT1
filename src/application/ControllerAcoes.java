@@ -62,15 +62,17 @@ public class ControllerAcoes {
 		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 		background.setImage(image);
 		movimentos.setText(Jogo.movimentos);
-		objeto.setOpacity(0);
+		
 		
 	}
 	@FXML
 	void onclickexaminar(ActionEvent event) throws IOException {
+		
 		String caminho ="";
 		 caminho = regras.Arquivo.montarCaminho();
 		
 		if (Jogo.jogadordavez==1) {
+			System.out.println("OK");
 		for (int i=0;i<Jogo.portas.size();i++) {
 			if (Jogo.portas.get(i).getLocal().get(0)==Jogo.pj1.get(0)&&Jogo.portas.get(i).getLocal().get(1)==Jogo.pj1.get(1)) {
 				caminho = caminho + "icones/p"+Jogo.portas.get(i).getCor()+".png";

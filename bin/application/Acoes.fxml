@@ -29,9 +29,7 @@
          </font>
       </Label>
       <ImageView fx:id="objeto" fitHeight="384.0" fitWidth="1130.0" layoutX="722.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../rsc/icones/vetor.png" />
-         </image>
+         
       </ImageView>
       <Button fx:id="examinar" layoutX="360.0" layoutY="54.0" mnemonicParsing="false" onAction="#onclickexaminar" opacity="0.0" prefHeight="66.0" prefWidth="515.0" text="Button" />
       <Button fx:id="OK" layoutX="621.0" layoutY="675.0" mnemonicParsing="false" onAction="#onclickok" opacity="0.0" prefHeight="52.0" prefWidth="110.0" text="Button" />
