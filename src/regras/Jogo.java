@@ -3,10 +3,19 @@ package regras;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javafx.scene.image.ImageView;
+
 public class Jogo {
 	public static int inicio=0;
+	public static String movimentos;
+	public static boolean jogardado = false;
+	public static ArrayList<String> jogadores = new ArrayList<String>();
+	public static ArrayList<String> chatarray = new ArrayList<String>();
+	public static int jogadordavez = 1;
+	// Matriz
+	public static ArrayList<ArrayList<String>> slinhas = new ArrayList<ArrayList<String>>();
 	
-	public static String corporta(String a) {
+public static String corporta(String a) {
 		if (a.equals("amarela")) {
 			return "pamarela";
 		}
@@ -126,6 +135,11 @@ public class Jogo {
 	public static boolean validamovimento(int a, int b, String d) {
 		if (d.equals("n") ) {
 			if (a>0) {
+				for (int i=0;i<proibida.size();i++) {
+					if (proibida.get(i).get(0)==a-1&&proibida.get(i).get(1)==b) {
+						return false;
+					}
+				}
 				return true;
 			}else {
 				return false;
@@ -133,6 +147,11 @@ public class Jogo {
 		}
 		if (d.equals("s") ) {
 			if (a<7) {
+				for (int i=0;i<proibida.size();i++) {
+					if (proibida.get(i).get(0)==a+1&&proibida.get(i).get(1)==b) {
+						return false;
+					}
+				}
 				return true;
 			}else {
 				return false;
@@ -140,6 +159,11 @@ public class Jogo {
 		}
 		if (d.equals("l") ) {
 			if (b<7) {
+				for (int i=0;i<proibida.size();i++) {
+					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b+1) {
+						return false;
+					}
+				}
 				return true;
 			}else {
 				return false;
@@ -147,6 +171,11 @@ public class Jogo {
 		}
 		if (d.equals("o") ) {
 			if (b>0) {
+				for (int i=0;i<proibida.size();i++) {
+					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b-1) {
+						return false;
+					}
+				}
 				return true;
 			}else {
 				return false;
@@ -174,6 +203,15 @@ public static ArrayList<Integer> pj1= new ArrayList<Integer>();
 public static ArrayList<Integer> pj2= new ArrayList<Integer>();
 public static ArrayList<Integer> pd1= new ArrayList<Integer>();
 public static ArrayList<Integer> pd2= new ArrayList<Integer>();
+public static ArrayList<ArrayList<Integer>> paredes = new ArrayList<ArrayList<Integer>>();
+public static ArrayList<ArrayList<Integer>> proibida = new ArrayList<ArrayList<Integer>>();
+
+public static void atualizaproibida() {
+	proibida.set(0, pj1);
+	proibida.set(1, pj2);
+	proibida.set(2, pd1);
+	proibida.set(3, pd2);
+}
 
 public static void iniciarposicoes() {
 	pj1.add(7);
@@ -184,5 +222,55 @@ public static void iniciarposicoes() {
 	pd1.add(2);
 	pd2.add(0);
 	pd2.add(5);
-}
+	ArrayList<Integer> parede1 = new ArrayList<Integer>();
+	ArrayList<Integer> parede2 = new ArrayList<Integer>();
+	ArrayList<Integer> parede3 = new ArrayList<Integer>();
+	ArrayList<Integer> parede4 = new ArrayList<Integer>();
+	ArrayList<Integer> parede5 = new ArrayList<Integer>();
+	ArrayList<Integer> parede6 = new ArrayList<Integer>();
+	ArrayList<Integer> parede7 = new ArrayList<Integer>();
+	ArrayList<Integer> parede8 = new ArrayList<Integer>();
+	ArrayList<Integer> parede9 = new ArrayList<Integer>();
+	ArrayList<Integer> parede10 = new ArrayList<Integer>();
+	parede1.add(0);
+	parede1.add(0);
+	parede2.add(0);
+	parede2.add(1);
+	parede3.add(0);
+	parede3.add(6);
+	parede4.add(0);
+	parede4.add(7);
+	parede5.add(2);
+	parede5.add(0);
+	parede6.add(2);
+	parede6.add(7);
+	parede7.add(4);
+	parede7.add(0);
+	parede8.add(4);
+	parede8.add(7);
+	parede9.add(6);
+	parede9.add(0);
+	parede10.add(6);
+	parede10.add(7);
+	
+	paredes.add(parede1);
+	paredes.add(parede2);
+	paredes.add(parede3);
+	paredes.add(parede4);
+	paredes.add(parede5);
+	paredes.add(parede6);
+	paredes.add(parede7);
+	paredes.add(parede8);
+	paredes.add(parede9);
+	paredes.add(parede10);
+	
+	proibida.add(pj1);
+	proibida.add(pj2);
+	proibida.add(pd1);
+	proibida.add(pd2);
+	
+	for (int i=0;i<paredes.size();i++) {
+		proibida.add(paredes.get(i));
+	}
+	}
 }

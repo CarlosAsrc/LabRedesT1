@@ -18,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import regras.Jogo;
 
 public class ControllerAcoes {
 	@FXML
@@ -60,10 +61,40 @@ public class ControllerAcoes {
 		BufferedImage bufferedImage = ImageIO.read(file);
 		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 		background.setImage(image);
+		movimentos.setText(Jogo.movimentos);
+		
 	}
 	@FXML
 	void onclickexaminar(ActionEvent event) throws IOException {
+		String caminho ="";
+		 caminho = regras.Arquivo.montarCaminho();
 		
+		if (Jogo.jogadordavez==1) {
+		for (int i=0;i<Jogo.portas.size();i++) {
+			if (Jogo.portas.get(i).getLocal().get(0)==Jogo.pj1.get(0)&&Jogo.portas.get(i).getLocal().get(1)==Jogo.pj1.get(1)) {
+				caminho = caminho + "icones/p"+Jogo.portas.get(i).getCor()+".png";
+				break;
+			}
+			if (i==Jogo.portas.size()-1) {
+				caminho = caminho + "icones/parede.png";
+			}
+		}
+		}
+		if (Jogo.jogadordavez==2) {
+			for (int i=0;i<Jogo.portas.size();i++) {
+				if (Jogo.portas.get(i).getLocal().get(0)==Jogo.pj2.get(0)&&Jogo.portas.get(i).getLocal().get(1)==Jogo.pj2.get(1)) {
+					caminho = caminho + "icones/p"+Jogo.portas.get(i).getCor()+".png";
+					break;
+				}
+				if (i==Jogo.portas.size()-1) {
+					caminho = caminho + "icones/parede.png";
+				}
+			}
+			}
+		File file = new File(caminho);
+		BufferedImage bufferedImage = ImageIO.read(file);
+		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+		objeto.setImage(image);
 	}
 	@FXML
 	void onclickok(ActionEvent event) throws IOException {

@@ -39,7 +39,7 @@ public class Controllerteste {
 		
 		String a = regras.Arquivo.montarCaminho();
 		a=a+"teste.mp4";
-		System.out.println(a);
+		
 		String musicFile = a;     
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		final MediaPlayer mp = new MediaPlayer(sound);

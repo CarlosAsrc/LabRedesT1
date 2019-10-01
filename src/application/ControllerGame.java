@@ -18,6 +18,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import regras.Arquivo;
 import regras.Imagem;
 import regras.Jogo;
 
@@ -216,61 +217,135 @@ public class ControllerGame {
 	ArrayList<ImageView> coluna6 = new ArrayList<ImageView>();
 	ArrayList<ImageView> coluna7 = new ArrayList<ImageView>();
 
-	
-	
+	ArrayList<ArrayList<String>> slinhas = new ArrayList<ArrayList<String>>();
+	ArrayList<String> scoluna0 = new ArrayList<String>();
+	ArrayList<String> scoluna1 = new ArrayList<String>();
+	ArrayList<String> scoluna2 = new ArrayList<String>();
+	ArrayList<String> scoluna3 = new ArrayList<String>();
+	ArrayList<String> scoluna4 = new ArrayList<String>();
+	ArrayList<String> scoluna5 = new ArrayList<String>();
+	ArrayList<String> scoluna6 = new ArrayList<String>();
+	ArrayList<String> scoluna7 = new ArrayList<String>();
+
 	@FXML
 	void initialize() throws IOException {
-		if (Jogo.inicio==0) {
-		regras.Sons.tocar("monowar");
-
-		criamatriz();
-		Jogo.sorteiaporta();
-
 		background.setImage(Imagem.criaimagem("background/game.png"));
-
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
+		criamatriz();
+		if (Jogo.inicio == 0) {
+			regras.Sons.tocar("monowar");
 
-		q_0x2.setImage(Imagem.criaimagem("icones/dragao.png"));
-		q_0x5.setImage(Imagem.criaimagem("icones/dragao.png"));
-		q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-		q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-		q_1x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_1x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_3x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_3x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_5x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_5x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_7x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-		q_7x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			
+			criamatrizs();
+			Jogo.sorteiaporta();
 
-		q_0x0.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_0x1.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_0x6.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_0x7.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_2x0.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_2x7.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_4x0.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_4x7.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_6x0.setImage(Imagem.criaimagem("icones/parede.png"));
-		q_6x7.setImage(Imagem.criaimagem("icones/parede.png"));
+			q_0x2.setImage(Imagem.criaimagem("icones/dragao.png"));
+			slinhas.get(0).set(2, "icones/dragao.png");
+			
+			q_0x5.setImage(Imagem.criaimagem("icones/nk.png"));
+			slinhas.get(0).set(5, "icones/nk.png");
+			
+			q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+			slinhas.get(7).set(3, "icones/js.png");
+			
+			q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+			slinhas.get(7).set(4, "icones/dany.png");
+			
+			q_1x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(1).set(0, "icones/ppreta.png");
+			
+			q_1x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(1).set(7, "icones/ppreta.png");
+			
+			q_3x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(3).set(0, "icones/ppreta.png");
+			
+			q_3x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(3).set(7, "icones/ppreta.png");
+			
+			q_5x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(5).set(0, "icones/ppreta.png");
+			
+			q_5x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(5).set(7, "icones/ppreta.png");
+			
+			q_7x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(7).set(0, "icones/ppreta.png");
+			
+			q_7x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+			slinhas.get(7).set(7, "icones/ppreta.png");
 
-		q_0x3.setImage(Imagem.criaimagem("icones/pamarela.png"));
-		q_0x4.setImage(Imagem.criaimagem("icones/pamarela.png"));
+			q_0x0.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(0).set(0, "icones/parede.png");
+			
+			q_0x1.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(0).set(1, "icones/parede.png");
+			
+			q_0x6.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(0).set(6, "icones/parede.png");
+			
+			q_0x7.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(0).set(7, "icones/parede.png");
+			
+			q_2x0.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(2).set(0, "icones/parede.png");
+			
+			q_2x7.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(2).set(7, "icones/parede.png");
+			
+			q_4x0.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(4).set(0, "icones/parede.png");
+			
+			q_4x7.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(4).set(7, "icones/parede.png");
+			
+			q_6x0.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(6).set(0, "icones/parede.png");
+			
+			q_6x7.setImage(Imagem.criaimagem("icones/parede.png"));
+			slinhas.get(6).set(7, "icones/parede.png");
+			
+			q_0x3.setImage(Imagem.criaimagem("icones/pamarela.png"));
+			slinhas.get(0).set(3, "icones/pamarela.png");
+			
+			q_0x4.setImage(Imagem.criaimagem("icones/pamarela.png"));
+			slinhas.get(0).set(4, "icones/pamarela.png");
+			
+			jogadores.add("John");
+			jogadores.add("Dany");
+			jogadores.add("Dragao");
+			jogadores.add("Night King");
 
-		jogadores.add("Player 1");
-		jogadores.add("Player 2");
-		jogadores.add("Dragao 1");
-		jogadores.add("Dragao 2");
-
-		chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
-		chat.setText(Jogo.criachat(chatarray));
-		jogadorVez.setText(jogadores.get(jogadordavez - 1));
-		Jogo.inicio=1;
+			chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+			chat.setText(Jogo.criachat(chatarray));
+			jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			Jogo.inicio = 1;
+		} else {
+			jogardado = Jogo.jogardado;
+			jogadores = Jogo.jogadores;
+			chatarray = Jogo.chatarray;
+			jogadordavez = Jogo.jogadordavez;
+			jogadorVez.setText(jogadores.get(jogadordavez-1));
+			// Matriz
+			
+			
+			resultaDado.setText(Jogo.movimentos);
+			chat.setText(Jogo.criachat(chatarray));
+			slinhas=Jogo.slinhas;
+			
+			for (int i=0;i<slinhas.size();i++) {
+				for (int j=0;j<slinhas.get(i).size();j++) {
+					if (!slinhas.get(i).get(j).equals("nada")) {
+					linhas.get(i).get(j).setImage(Imagem.criaimagem(slinhas.get(i).get(j)));
+					}
+					}
+			}
 		}
 	}
 
 	@FXML
 	void onclickdado(ActionEvent event) throws IOException {
+		salvar();
 		if (jogardado == false) {
 			jogardado = true;
 			chatarray.add(0, Jogo.criaString("Jogou o dado o " + jogadores.get(jogadordavez - 1)));
@@ -290,11 +365,15 @@ public class ControllerGame {
 
 	@FXML
 	void onclicknorte(ActionEvent event) throws IOException {
+		salvar();
+		
+		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
 			if (jogadordavez == 1) {
+				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
 				;
@@ -302,39 +381,169 @@ public class ControllerGame {
 				resultaDado.setText("" + id);
 				if (Jogo.validamovimento(Jogo.pj1.get(0), Jogo.pj1.get(1), "n")) {
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(0);
-
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "nada");
 					// Pintar portas
 					for (int i = 0; i < Jogo.portas.size(); i++) {
-						
-						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)&&Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
-							System.out.println("Entrou");
+
+						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), cordaporta);
 						}
 					}
 					Jogo.pj1.set(0, Jogo.pj1.get(0) - 1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem("icones/js.png"));
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "icones/js.png");
 					chatarray.add(0, Jogo.criaString("Player 1 foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
 				}
 
 			}
+			if (jogadordavez == 2) {
+				regras.Sons.tocarsom("dany");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pj2.get(0), Jogo.pj2.get(1), "n")) {
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
 
+						if (Jogo.pj2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), cordaporta);
+						}
+					}
+					Jogo.pj2.set(0, Jogo.pj2.get(0) - 1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem("icones/dany.png"));
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "icones/dany.png");
+					chatarray.add(0, Jogo.criaString("Player 2 foi para o norte"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 3) {
+				regras.Sons.tocarsom("tr");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd1.get(0), Jogo.pd1.get(1), "n")) {
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), cordaporta);
+						}
+					}
+					Jogo.pd1.set(0, Jogo.pd1.get(0) - 1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
+					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o norte"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 4) {
+				regras.Sons.tocarsom("nk");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd2.get(0), Jogo.pd2.get(1), "n")) {
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), cordaporta);
+						}
+					}
+					Jogo.pd2.set(0, Jogo.pd2.get(0) - 1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
+					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o norte"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if(resultaDado.getText().equals("0")) {
+				jogadordavez=jogadordavez+1;
+				if (jogadordavez==5) {
+					jogadordavez=1;
+				}
+				jogardado = false;
+				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+				chat.setText(Jogo.criachat(chatarray));
+				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			}
 		}
+		
 	}
 
 	@FXML
 	void onclicksul(ActionEvent event) throws IOException {
+		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
 			if (jogadordavez == 1) {
+				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
 				;
@@ -342,39 +551,168 @@ public class ControllerGame {
 				resultaDado.setText("" + id);
 				if (Jogo.validamovimento(Jogo.pj1.get(0), Jogo.pj1.get(1), "s")) {
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(0);
-
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "nada");
 					// Pintar portas
 					for (int i = 0; i < Jogo.portas.size(); i++) {
-						
-						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)&&Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
-							System.out.println("Entrou");
+
+						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), cordaporta);
 						}
 					}
 					Jogo.pj1.set(0, Jogo.pj1.get(0) + 1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem("icones/js.png"));
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "icones/js.png");
 					chatarray.add(0, Jogo.criaString("Player 1 foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
 				}
 
 			}
+			if (jogadordavez == 2) {
+				regras.Sons.tocarsom("dany");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pj2.get(0), Jogo.pj2.get(1), "s")) {
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
 
+						if (Jogo.pj2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), cordaporta);
+						}
+					}
+					Jogo.pj2.set(0, Jogo.pj2.get(0) + 1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem("icones/dany.png"));
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "icones/dany.png");
+					chatarray.add(0, Jogo.criaString("Player 2 foi para o sul"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 3) {
+				regras.Sons.tocarsom("tr");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd1.get(0), Jogo.pd1.get(1), "s")) {
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), cordaporta);
+						}
+					}
+					Jogo.pd1.set(0, Jogo.pd1.get(0) + 1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
+					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o sul"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 4) {
+				regras.Sons.tocarsom("nk");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd2.get(0), Jogo.pd2.get(1), "s")) {
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), cordaporta);
+						}
+					}
+					Jogo.pd2.set(0, Jogo.pd2.get(0) + 1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
+					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o sul"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if(resultaDado.getText().equals("0")) {
+				jogadordavez=jogadordavez+1;
+				if (jogadordavez==5) {
+					jogadordavez=1;
+				}
+				jogardado = false;
+				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+				chat.setText(Jogo.criachat(chatarray));
+				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			}
 		}
 	}
 
 	@FXML
 	void onclickleste(ActionEvent event) throws IOException {
+		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
 			if (jogadordavez == 1) {
+				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
 				;
@@ -382,39 +720,168 @@ public class ControllerGame {
 				resultaDado.setText("" + id);
 				if (Jogo.validamovimento(Jogo.pj1.get(0), Jogo.pj1.get(1), "l")) {
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(0);
-
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "nada");
 					// Pintar portas
 					for (int i = 0; i < Jogo.portas.size(); i++) {
-						
-						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)&&Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
-System.out.println("Entrou");
+
+						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), cordaporta);
 						}
 					}
 					Jogo.pj1.set(1, Jogo.pj1.get(1) + 1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem("icones/js.png"));
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "icones/js.png");
 					chatarray.add(0, Jogo.criaString("Player 1 foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
 				}
 
 			}
+			if (jogadordavez == 2) {
+				regras.Sons.tocarsom("dany");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pj2.get(0), Jogo.pj2.get(1), "l")) {
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
 
+						if (Jogo.pj2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), cordaporta);
+						}
+					}
+					Jogo.pj2.set(1, Jogo.pj2.get(1) + 1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem("icones/dany.png"));
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "icones/dany.png");
+					chatarray.add(0, Jogo.criaString("Player 2 foi para o leste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 3) {
+				regras.Sons.tocarsom("tr");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd1.get(0), Jogo.pd1.get(1), "l")) {
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), cordaporta);
+						}
+					}
+					Jogo.pd1.set(1, Jogo.pd1.get(1) + 1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
+					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o leste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 4) {
+				regras.Sons.tocarsom("nk");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd2.get(0), Jogo.pd2.get(1), "l")) {
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), cordaporta);
+						}
+					}
+					Jogo.pd2.set(1, Jogo.pd2.get(1) + 1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
+					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o leste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if(resultaDado.getText().equals("0")) {
+				jogadordavez=jogadordavez+1;
+				if (jogadordavez==5) {
+					jogadordavez=1;
+				}
+				jogardado = false;
+				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+				chat.setText(Jogo.criachat(chatarray));
+				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			}
 		}
 	}
 
 	@FXML
 	void onclickoeste(ActionEvent event) throws IOException {
+		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
 			if (jogadordavez == 1) {
+				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
 				;
@@ -422,34 +889,163 @@ System.out.println("Entrou");
 				resultaDado.setText("" + id);
 				if (Jogo.validamovimento(Jogo.pj1.get(0), Jogo.pj1.get(1), "o")) {
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(0);
-
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "nada");
 					// Pintar portas
 					for (int i = 0; i < Jogo.portas.size(); i++) {
-						
-						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)&&Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
-							System.out.println("Entrou");
+
+						if (Jogo.pj1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
 							linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), cordaporta);
 						}
 					}
 					Jogo.pj1.set(1, Jogo.pj1.get(1) - 1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pj1.get(0)).get(Jogo.pj1.get(1)).setImage(Imagem.criaimagem("icones/js.png"));
+					slinhas.get(Jogo.pj1.get(0)).set(Jogo.pj1.get(1), "icones/js.png");
 					chatarray.add(0, Jogo.criaString("Player 1 foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
 				}
 
 			}
+			if (jogadordavez == 2) {
+				regras.Sons.tocarsom("dany");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pj2.get(0), Jogo.pj2.get(1), "o")) {
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
 
+						if (Jogo.pj2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pj2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), cordaporta);
+						}
+					}
+					Jogo.pj2.set(1, Jogo.pj2.get(1) - 1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pj2.get(0)).get(Jogo.pj2.get(1)).setImage(Imagem.criaimagem("icones/dany.png"));
+					slinhas.get(Jogo.pj2.get(0)).set(Jogo.pj2.get(1), "icones/dany.png");
+					chatarray.add(0, Jogo.criaString("Player 2 foi para o oeste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 3) {
+				regras.Sons.tocarsom("tr");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd1.get(0), Jogo.pd1.get(1), "o")) {
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd1.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd1.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), cordaporta);
+						}
+					}
+					Jogo.pd1.set(1, Jogo.pd1.get(1) - 1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
+					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o oeste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if (jogadordavez == 4) {
+				regras.Sons.tocarsom("nk");
+				String d = resultaDado.getText();
+				Integer id = Integer.parseInt(d);
+				;
+				id = id - 1;
+				resultaDado.setText("" + id);
+				if (Jogo.validamovimento(Jogo.pd2.get(0), Jogo.pd2.get(1), "o")) {
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(0);
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "nada");
+					// Pintar portas
+					for (int i = 0; i < Jogo.portas.size(); i++) {
+
+						if (Jogo.pd2.get(0) == Jogo.portas.get(i).getLocal().get(0)
+								&& Jogo.pd2.get(1) == Jogo.portas.get(i).getLocal().get(1)) {
+							
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+							String cordaporta = "icones/" + Jogo.corporta(Jogo.portas.get(i).getCor()) + ".png";
+							linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem(cordaporta));
+							slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), cordaporta);
+						}
+					}
+					Jogo.pd2.set(1, Jogo.pd2.get(1) - 1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
+					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
+					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o oeste"));
+					chat.setText(Jogo.criachat(chatarray));
+				} else {
+					chatarray.add(0, Jogo.criaString("Movimento invalido"));
+					chat.setText(Jogo.criachat(chatarray));
+					
+					id = id + 1;
+					resultaDado.setText("" + id);
+					return;
+				}
+
+			}
+			if(resultaDado.getText().equals("0")) {
+				jogadordavez=jogadordavez+1;
+				if (jogadordavez==5) {
+					jogadordavez=1;
+				}
+				jogardado = false;
+				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+				chat.setText(Jogo.criachat(chatarray));
+				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			}
 		}
 	}
 
 	@FXML
 	void onclickacoes(ActionEvent event) throws IOException {
+		salvar();
+		
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Acoes.fxml"));
 		anchorpane.getChildren().setAll(pane);
 	}
@@ -457,6 +1053,21 @@ System.out.println("Entrou");
 	@FXML
 	void onclickenviar(ActionEvent event) throws IOException {
 
+
+chatarray.add(0, Jogo.criaString("Jogador "+jogadores.get(jogadordavez - 1)+": "+digite.getText()));
+chat.setText(Jogo.criachat(chatarray));
+	}
+
+	void salvar() {
+		Jogo.jogardado = jogardado;
+		Jogo.jogadores = jogadores;
+		Jogo.chatarray = chatarray;
+		Jogo.jogadordavez = jogadordavez;
+		// Matriz
+		
+		Jogo.movimentos = resultaDado.getText();
+		Jogo.slinhas=slinhas;
+		Jogo.atualizaproibida();
 	}
 
 	void criamatriz() {
@@ -533,5 +1144,82 @@ System.out.println("Entrou");
 		linhas.add(coluna5);
 		linhas.add(coluna6);
 		linhas.add(coluna7);
+	}
+
+	void criamatrizs() {
+		String nada = "nada";
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna0.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna1.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna2.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna3.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna4.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna5.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna6.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		scoluna7.add(nada);
+		
+		slinhas.add(scoluna0);
+		slinhas.add(scoluna1);
+		slinhas.add(scoluna2);
+		slinhas.add(scoluna3);
+		slinhas.add(scoluna4);
+		slinhas.add(scoluna5);
+		slinhas.add(scoluna6);
+		slinhas.add(scoluna7);
 	}
 }

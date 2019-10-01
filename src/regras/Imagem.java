@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 
 public class Imagem {
 public static Image criaimagem(String a) throws IOException {
+	
 	String caminho = regras.Arquivo.montarCaminho();
 	caminho = caminho + a;
 	File file = new File(caminho);
