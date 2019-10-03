@@ -19,6 +19,17 @@ public class Client {
 	public static boolean envia=false;
     public static void main(String[] args) throws SocketException, IOException, InterruptedException {
         
+    	GerenciadorTarefa.tarefase.clear();
+    	GerenciadorTarefa.tarefasr.clear();
+    	String acao = "ok";
+    	String mensagema ="ok";
+    	Tarefa tarefa = new Tarefa(acao,mensagema);
+    	GerenciadorTarefa.tarefase.add(tarefa);
+    	GerenciadorTarefa.tarefasr.add(tarefa);
+    	Persistencia.save("mr");
+    	Persistencia.save("me");
+    	
+    	
     	System.out.println("Procurando Server....");
     	
          BufferedReader clientRead =new BufferedReader(new InputStreamReader(System.in));
