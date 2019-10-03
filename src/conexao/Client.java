@@ -24,9 +24,9 @@ public class Client {
     	String acao = "ok";
     	String mensagema ="ok";
     	Tarefa tarefa = new Tarefa(acao,mensagema);
+    	
     	GerenciadorTarefa.tarefase.add(tarefa);
-    	GerenciadorTarefa.tarefasr.add(tarefa);
-    	Persistencia.save("mr");
+    	
     	Persistencia.save("me");
     	
     	

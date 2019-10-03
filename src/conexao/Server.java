@@ -22,12 +22,11 @@ public class Server {
     public static  void main(String[] args) throws InterruptedException, IOException  {
     	GerenciadorTarefa.tarefase.clear();
     	GerenciadorTarefa.tarefasr.clear();
-    	String acao = "ok";
-    	String mensagema ="ok";
+    	String acao = "ok2";
+    	String mensagema ="ok2";
     	Tarefa tarefa = new Tarefa(acao,mensagema);
     	GerenciadorTarefa.tarefase.add(tarefa);
-    	GerenciadorTarefa.tarefasr.add(tarefa);
-    	Persistencia.save("mr");
+    	
     	Persistencia.save("me");
     	
     	
