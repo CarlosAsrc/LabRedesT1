@@ -4,6 +4,7 @@ package conexao;
 
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.DatagramPacket;
@@ -15,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Client {
 
-    
+	public static boolean envia=false;
     public static void main(String[] args) throws SocketException, IOException, InterruptedException {
         
     	System.out.println("Procurando Server....");
@@ -32,29 +33,51 @@ public class Client {
       byte[] receivebuffer = new byte[1024];
       
       
-   
-      String clientData = "Cliente espera";
-    
-      if(clientData.equalsIgnoreCase("bye"))
-      {
-          System.out.println("Connection ended by client");
-          break;
-      }
-      TimeUnit.SECONDS.sleep(2);
+      analise();
+      
+      if (envia =true) {
+      while (GerenciadorTarefa.tarefasespera.size()>0) {
+    	  String mensagem = GerenciadorTarefa.tarefasespera.get(0).getAcao()+"/"+GerenciadorTarefa.tarefasespera.get(0).getMensagem();
+          
+    	  String clientData = mensagem;
+        
+      
       sendbuffer = clientData.getBytes();        
       DatagramPacket sendPacket =
       new DatagramPacket(sendbuffer, sendbuffer.length, IP, 9876);
       clientSocket.send(sendPacket);
+      GerenciadorTarefa.tarefasespera.remove(0);
+      }
+      }
+      envia =false;
       
       DatagramPacket receivePacket =
       new DatagramPacket(receivebuffer, receivebuffer.length);
       clientSocket.receive(receivePacket);
       String serverData = new String(receivePacket.getData());
       System.out.print("\nServer: " + serverData);
-      
+      TimeUnit.SECONDS.sleep(2);
+      if (serverData.length()>0) {
+          adicionarmr(serverData);
+        }
      
       }
-      clientSocket.close();
+      
+    }
+    public static void analise () {
+        Persistencia.read("me");
+                if (GerenciadorTarefa.tarefasespera.size()>0) {
+                	envia=true;
+                }
+        }
+    public static void adicionarmr(String a) throws FileNotFoundException {
+    	GerenciadorTarefa.countmr=GerenciadorTarefa.countmr+1;
+       String [] array = a.split("/");
+    String acao = array[0];
+    String mensagem = array[1];
+    Tarefa tarefa = new Tarefa(acao,mensagem);
+    GerenciadorTarefa.tarefasr.add(tarefa);
+    Persistencia.save("mr");
     }
     
 }

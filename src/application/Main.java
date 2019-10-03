@@ -5,6 +5,7 @@ import java.net.SocketException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import conexao.GerenciadorTarefa;
 import conexao.Persistencia;
 import conexao.Server;
 import javafx.application.Application;
@@ -39,7 +40,7 @@ public class Main extends Application {
 		
 		Jogo.iniciarposicoes();
 		  
-	System.out.println( Persistencia.read("server"));
+	 
 	
 	launch(args);
 
