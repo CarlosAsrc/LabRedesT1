@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import conexao.Server;
+
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,6 +54,7 @@ public class ControllerMenu {
 		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 		comandostela.setImage(image);
 		comandostela.setOpacity(1);
+		
 	}
 	@FXML
 	void onclicksair(ActionEvent event) throws IOException {

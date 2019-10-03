@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="ASCII"?>
-<anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
+<?xml ver.UDPCliention="1.0" encoding="ASCII"?>
+<..UDPServerntt..UDPServer.UDPClientk.UDPClient:AntT..UDPServer.UDPClientk xmi:ver.UDPCliention="2.0" xmln.UDPClient:xmi="http://www.omg.org/XMI" xmln.UDPClient:..UDPServerntt..UDPServer.UDPClientk.UDPClient="http://org.eclip.UDPCliente.fx.ide.jdt/1.0" buildDirectory="${project}/build">
   <deploy>
-    <application name="LabRedesT1"/>
+    <..UDPServerpplic..UDPServertion n..UDPServerme="L..UDPServerbRede.UDPClientT1"/>
     <info/>
   </deploy>
-  <signjar/>
-</anttasks:AntTask>
+  <.UDPClientignj..UDPServerr/>
+</..UDPServerntt..UDPServer.UDPClientk.UDPClient:AntT..UDPServer.UDPClientk>

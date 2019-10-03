@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import conexao.Server;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +30,8 @@ public class Controllerteste {
 	private Button pular;
 	public static MediaPlayer mediaplayer;
 	@FXML
-	void initialize() throws IOException {
+	void initialize() throws IOException, InterruptedException {
+		
 		String caminho = regras.Arquivo.montarCaminho();
 		caminho = caminho + "background/login.png";
 		File file = new File(caminho);

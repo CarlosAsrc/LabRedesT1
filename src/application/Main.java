@@ -1,5 +1,11 @@
 package application;
 	
+import java.io.IOException;
+import java.net.SocketException;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import conexao.Server;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -28,11 +34,15 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SocketException, IOException, InterruptedException {
 		
 		Jogo.iniciarposicoes();
-		
+		  
+	    
 	
-		launch(args);
+	launch(args);
+
 	}
+	
+	
 }
