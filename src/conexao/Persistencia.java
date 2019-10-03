@@ -17,15 +17,16 @@ public class Persistencia {
 
 
 
-	public static void read(String a) {
+	public static String read(String a) {
 		Path path2 = Paths.get(a);
-
+		
+		String mensagem="";
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
 
 			String linha = null;
-
-			String situacao="";
-			String mensagem="";
+		
+			
+			
 
 			while ((linha = br.readLine()) != null) {
 
@@ -33,16 +34,18 @@ public class Persistencia {
 
 				Scanner sc = scanner.useDelimiter("/");
 
-				situacao= sc.next().trim();
-				mensagem= sc.next().trim();
+				mensagem= mensagem+ sc.next().trim();
+			
+			
 				
-	
 				
 			}
+			
 		} catch (IOException x) {
 
 		}
-		
+		return mensagem;
+		 
 
 	}
 		
