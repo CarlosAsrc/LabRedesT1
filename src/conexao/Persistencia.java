@@ -69,11 +69,19 @@ if (contlinha >GerenciadorTarefa.countmr) {
 		if (onde.equals("mr")) {
 		for (int i=0;i<GerenciadorTarefa.tarefasr.size();i++) {
 			 arquivo = arquivo+ GerenciadorTarefa.tarefasr.get(i).getAcao()+"/"+GerenciadorTarefa.tarefasr.get(i).getMensagem()+"\n";	
+			 if (i<(GerenciadorTarefa.tarefase.size()-1)) {
+				 arquivo=arquivo+"\n";
+			 }
+		
 		}
+		 
 		}
 		if (onde.equals("me")) {
 			for (int i=0;i<GerenciadorTarefa.tarefase.size();i++) {
-				 arquivo = arquivo+ GerenciadorTarefa.tarefase.get(i).getAcao()+"/"+GerenciadorTarefa.tarefase.get(i).getMensagem()+"\n";	
+				 arquivo = arquivo+ GerenciadorTarefa.tarefase.get(i).getAcao()+"/"+GerenciadorTarefa.tarefase.get(i).getMensagem();
+				 if (i<(GerenciadorTarefa.tarefase.size()-1)) {
+					 arquivo=arquivo+"\n";
+				 }
 			}
 			}
 		try (PrintStream out = new PrintStream(
