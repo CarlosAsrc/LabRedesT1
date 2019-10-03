@@ -20,6 +20,17 @@ public class Server {
 
 	public static boolean envia=false;
     public static  void main(String[] args) throws InterruptedException, IOException  {
+    	GerenciadorTarefa.tarefase.clear();
+    	GerenciadorTarefa.tarefasr.clear();
+    	String acao = "ok";
+    	String mensagema ="ok";
+    	Tarefa tarefa = new Tarefa(acao,mensagema);
+    	GerenciadorTarefa.tarefase.add(tarefa);
+    	GerenciadorTarefa.tarefasr.add(tarefa);
+    	Persistencia.save("mr");
+    	Persistencia.save("me");
+    	
+    	
    
     	System.out.println("Servidor iniciado, aguardando resposta....");
          DatagramSocket serverSocket = new DatagramSocket(9876);

@@ -6,8 +6,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import conexao.GerenciadorTarefa;
+import conexao.Persistencia;
 import conexao.Server;
-
+import conexao.Tarefa;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,6 +57,11 @@ public class ControllerMenu {
 		comandostela.setImage(image);
 		comandostela.setOpacity(1);
 		
+		String acao = "teste";
+	    String mensagem =  "blz";
+	    Tarefa tarefa = new Tarefa(acao,mensagem);
+	    GerenciadorTarefa.tarefase.add(tarefa);
+		Persistencia.save("me");
 	}
 	@FXML
 	void onclicksair(ActionEvent event) throws IOException {
