@@ -80,7 +80,7 @@ public class Persistencia {
 
 				Scanner sc = scanner.useDelimiter("");
 				 count=sc.next().trim();
-				 System.out.println(count);
+				 
 			}
 			GerenciadorTarefa.count=Integer.parseInt(count);
 			}
