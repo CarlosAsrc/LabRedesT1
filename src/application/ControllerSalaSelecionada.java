@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import conexao.Acoes;
 import conexao.Estados;
 import conexao.Refresher;
+import conexao.StringArray;
 import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -128,7 +129,8 @@ public class ControllerSalaSelecionada {
 	public void iniciar(String a) throws IOException {
 		if (comecoPermitido&&a.equals("1")) {
 			Jogo.sorteiaporta();
-			Acoes.criarAcao("portas", "bola");
+			String b= StringArray.portas();
+			Acoes.criarAcao("portas", b);
 			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			anchorpane.getChildren().setAll(pane);
 			}
