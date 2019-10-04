@@ -79,6 +79,7 @@ public class ControllerSalaSelecionada {
 		refresh();
 	}
 	public boolean comecoPermitido=false;
+	
 	public  void refresh() {
 		Timer timer = new Timer();
 	    TimerTask task = new TimerTask() {
