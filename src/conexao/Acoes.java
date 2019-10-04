@@ -41,7 +41,7 @@ public class Acoes {
 				y = array2[5];
 				local.clear();
 				local.add(Integer.parseInt(x));
-				y=y.substring(0, y.length()-1);
+				y=y.substring(0, y.length());
 				local.add(Integer.parseInt(y));
 				Porta porta = new Porta(cor,chave,iten,situacao,local);
 				Jogo.portas.add(porta);
