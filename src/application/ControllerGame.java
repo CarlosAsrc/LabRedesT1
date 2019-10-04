@@ -238,7 +238,7 @@ public class ControllerGame {
 
 			
 			criamatrizs();
-			Jogo.sorteiaporta();
+			
 
 			q_0x2.setImage(Imagem.criaimagem("icones/dragao.png"));
 			slinhas.get(0).set(2, "icones/dragao.png");
