@@ -13,76 +13,140 @@ import java.util.Scanner;
 public class Persistencia {
 
 
-
-
-
-
-	public static void read( String tipomensagem) {
-		Path path2 = Paths.get(tipomensagem);
-		String acao="";
-		String mensagem="";
-		
+	public static int linhaenviar( ) throws IOException {
+		Path path2 = Paths.get("enviar");
+		int contlinha =0;
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
 
 			String linha = null;
-			int contlinha =0;
+			
+			while ((linha = br.readLine()) != null) {
+				contlinha = contlinha+1;
+				
+	}
+		}
+		return contlinha;
+		
+			
+	}
+	public static void readenviar () throws IOException {
+		GerenciadorTarefa.fazer.clear();
+		Path path2 = Paths.get("enviar");
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+
+			String linha = null;
+			String acao="";
+			String mensagem="";
+			while ((linha = br.readLine()) != null) {
+				Scanner scanner = new Scanner(linha);
+
+				Scanner sc = scanner.useDelimiter("/");
+				 acao=sc.next().trim();
+				 mensagem=sc.next().trim();
+				 Tarefa tarefa= new Tarefa(acao,mensagem);
+				 GerenciadorTarefa.envio.add(tarefa);
+			}
+			
+			}
+	}
+	public static void readfazer () throws IOException {
+		GerenciadorTarefa.fazer.clear();
+		Path path2 = Paths.get("fazer");
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+
+			String linha = null;
+			String acao="";
+			String mensagem="";
+			while ((linha = br.readLine()) != null) {
+				Scanner scanner = new Scanner(linha);
+
+				Scanner sc = scanner.useDelimiter("/");
+				 acao=sc.next().trim();
+				 mensagem=sc.next().trim();
+				 Tarefa tarefa= new Tarefa(acao,mensagem);
+				 GerenciadorTarefa.fazer.add(tarefa);
+			}
+			
+			}
+	}
+	public static void readcount () throws IOException {
+		Path path2 = Paths.get("count");
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+
+			String linha = null;
+			String count ="";
+			while ((linha = br.readLine()) != null) {
+				Scanner scanner = new Scanner(linha);
+
+				Scanner sc = scanner.useDelimiter("/");
+				 count=sc.next().trim();
+			}
+			GerenciadorTarefa.count=Integer.parseInt(count);
+			}
+	}
+
+
+
+	public static Tarefa read( String tipomensagem, int diferenca) {
+		Path path2 = Paths.get(tipomensagem);
+		String acao="";
+		String mensagem="";
+		int contlinha =0;
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+
+			String linha = null;
+			
 			
 
 			while ((linha = br.readLine()) != null) {
 				contlinha = contlinha+1;
+				if (contlinha>GerenciadorTarefa.count&&contlinha<GerenciadorTarefa.count+diferenca) {
+					
 				Scanner scanner = new Scanner(linha);
 
 				Scanner sc = scanner.useDelimiter("/");
-				 acao=sc.next().trim();;
+				 acao=sc.next().trim();
 				mensagem=  sc.next().trim();
-	if (tipomensagem.equals("me")) {		
-if (contlinha >GerenciadorTarefa.countme) {
 	Tarefa tarefa = new Tarefa(acao,mensagem);
-	GerenciadorTarefa.tarefase.add(tarefa);
-	GerenciadorTarefa.countme=GerenciadorTarefa.countme+1;
-	GerenciadorTarefa.tarefasespera.add(tarefa);
+	return tarefa;
+				}
 }
-	}
 	
-	if (tipomensagem.equals("mr")) {		
-if (contlinha >GerenciadorTarefa.countmr) {
-	Tarefa tarefa = new Tarefa(acao,mensagem);
-	GerenciadorTarefa.tarefasr.add(tarefa);
-	GerenciadorTarefa.countmr=GerenciadorTarefa.countmr+1;
-	
-}
-	}
 				
-			}
+			
 			
 		} catch (IOException x) {
 
 		}
+		return null;
 		
-		 
-
 	}
+
+	
 		
 
 	public static void save (String onde) throws FileNotFoundException {
 		String arquivo="";
-		if (onde.equals("mr")) {
-		for (int i=0;i<GerenciadorTarefa.tarefasr.size();i++) {
-			 arquivo = arquivo+ GerenciadorTarefa.tarefasr.get(i).getAcao()+"/"+GerenciadorTarefa.tarefasr.get(i).getMensagem()+"\n";	
-			 if (i<(GerenciadorTarefa.tarefase.size()-1)) {
+		if (onde.equals("enviar")) {
+		for (int i=0;i<GerenciadorTarefa.envio.size();i++) {
+			 arquivo = arquivo+ GerenciadorTarefa.envio.get(i).getAcao()+"/"+GerenciadorTarefa.envio.get(i).getMensagem()+"\n";	
+			 if (i<(GerenciadorTarefa.envio.size()-1)) {
 				 arquivo=arquivo+"\n";
 			 }
 		
 		}
 		 
 		}
-		if (onde.equals("me")) {
-			for (int i=0;i<GerenciadorTarefa.tarefase.size();i++) {
-				 arquivo = arquivo+ GerenciadorTarefa.tarefase.get(i).getAcao()+"/"+GerenciadorTarefa.tarefase.get(i).getMensagem();
-				 if (i<(GerenciadorTarefa.tarefase.size()-1)) {
+		if (onde.equals("fazer")) {
+			for (int i=0;i<GerenciadorTarefa.fazer.size();i++) {
+				 arquivo = arquivo+ GerenciadorTarefa.fazer.get(i).getAcao()+"/"+GerenciadorTarefa.fazer.get(i).getMensagem();
+				 if (i<(GerenciadorTarefa.fazer.size()-1)) {
 					 arquivo=arquivo+"\n";
 				 }
 			}
+			if (onde.equals("count")) {
+				arquivo = ""+GerenciadorTarefa.count;
+				}
 			}
 		try (PrintStream out = new PrintStream(
 				new FileOutputStream(onde))) {

@@ -41,11 +41,10 @@ public class Main extends Application {
 		
 		Jogo.iniciarposicoes();
 		  
-		String acao = "ok";
-    	String mensagema ="ok";
-    	Tarefa tarefa = new Tarefa(acao,mensagema);
-    	
-    	GerenciadorTarefa.tarefase.add(tarefa);
+		Persistencia.readenviar();
+		Persistencia.readcount();
+		Persistencia.readfazer();
+		
 	
 	launch(args);
 
