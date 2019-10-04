@@ -61,6 +61,7 @@ public class ControllerMenu {
 	    String mensagem =  "blz";
 	    Tarefa tarefa = new Tarefa(acao,mensagem);
 	    GerenciadorTarefa.tarefase.add(tarefa);
+	    System.out.println(GerenciadorTarefa.tarefase);
 		Persistencia.save("me");
 	}
 	@FXML

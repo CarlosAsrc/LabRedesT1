@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import conexao.GerenciadorTarefa;
 import conexao.Persistencia;
 import conexao.Server;
+import conexao.Tarefa;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -40,7 +41,11 @@ public class Main extends Application {
 		
 		Jogo.iniciarposicoes();
 		  
-	 
+		String acao = "ok";
+    	String mensagema ="ok";
+    	Tarefa tarefa = new Tarefa(acao,mensagema);
+    	
+    	GerenciadorTarefa.tarefase.add(tarefa);
 	
 	launch(args);
 
