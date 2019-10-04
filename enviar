@@ -3,12 +3,12 @@ J1 Pronto!/,
 iniciar/iniciar,
 portas/[Porta [cor=amarela, chave=chave lendaria1, iten=, situacao=fechada, local=[0, 3]]
 , Porta [cor=amarela, chave=chave lendaria2, iten=, situacao=fechada, local=[0, 4]]
-, Porta [cor=roxa, chave=chave epic1, iten=chave lendaria1, situacao=fechada, local=[3, 0]]
-, Porta [cor=roxa, chave=chave epic2, iten=chave lendaria2, situacao=fechada, local=[1, 7]]
-, Porta [cor=azul, chave=chave rare1, iten=chave epic1, situacao=fechada, local=[5, 0]]
-, Porta [cor=azul, chave=chave rare2, iten=chave epic2, situacao=fechada, local=[3, 7]]
-, Porta [cor=verde, chave=chave uncommon1, iten=chave rare1, situacao=fechada, local=[1, 0]]
+, Porta [cor=roxa, chave=chave epic1, iten=chave lendaria1, situacao=fechada, local=[7, 0]]
+, Porta [cor=roxa, chave=chave epic2, iten=chave lendaria2, situacao=fechada, local=[3, 7]]
+, Porta [cor=azul, chave=chave rare1, iten=chave epic1, situacao=fechada, local=[1, 0]]
+, Porta [cor=azul, chave=chave rare2, iten=chave epic2, situacao=fechada, local=[1, 7]]
+, Porta [cor=verde, chave=chave uncommon1, iten=chave rare1, situacao=fechada, local=[3, 0]]
 , Porta [cor=verde, chave=chave uncommon2, iten=chave rare2, situacao=fechada, local=[7, 7]]
-, Porta [cor=branca, chave=chave common1, iten=chave uncommon1, situacao=aberta, local=[7, 0]]
+, Porta [cor=branca, chave=chave common1, iten=chave uncommon1, situacao=aberta, local=[5, 0]]
 , Porta [cor=branca, chave=chave common2, iten=chave uncommon2, situacao=aberta, local=[5, 7]]
 ],

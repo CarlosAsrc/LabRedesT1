@@ -133,7 +133,7 @@ public class ControllerSalaSelecionada {
 			anchorpane.getChildren().setAll(pane);
 			}
 		if (a.equals("2")&&Estados.inicio.equals("comece")) {
-			
+			Estados.inicio="espere";
 			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			anchorpane.getChildren().setAll(pane);
 			}

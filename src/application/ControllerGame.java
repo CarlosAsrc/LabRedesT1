@@ -233,7 +233,9 @@ public class ControllerGame {
 		background.setImage(Imagem.criaimagem("background/game.png"));
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();
+		System.out.println("Inicio: "+Jogo.inicio);
 		if (Jogo.inicio == 0) {
+			System.out.println("entrou no 0");
 			regras.Sons.tocar("monowar");
 
 			
@@ -322,6 +324,7 @@ public class ControllerGame {
 			jogadorVez.setText(jogadores.get(jogadordavez - 1));
 			Jogo.inicio = 1;
 		} else {
+			System.out.println("foi direto para o 1");
 			jogardado = Jogo.jogardado;
 			jogadores = Jogo.jogadores;
 			chatarray = Jogo.chatarray;
