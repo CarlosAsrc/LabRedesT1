@@ -49,10 +49,10 @@ public class Client {
 			clientSocket.receive(receivePacket);
 			String serverData = new String(receivePacket.getData());
 			System.out.print("\nServer: " + serverData);
-
+			
 			analisems(serverData);
 
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(3);
 
 		}
 
@@ -72,11 +72,29 @@ public class Client {
 
 		}
 
-		return "ok/ok";
+		return "ok/ok,";
 	}
-
+public static String limpastring(String a) {
+	String d="";
+	for (int i=0;i<a.length();i++) {
+		char b=a.charAt(i);
+	
+		String c = ""+b;
+		
+		if (c.equals(",")) {
+			break;
+			
+		}
+		d=d+c;	
+		}
+	return d;
+	
+}
 	public static void analisems(String a) throws IOException {
-		if (!a.equals("ok2/ok2")) {
+	String	b= limpastring(a);
+		
+		if (!b.equals("ok2/ok2")) {
+			System.out.println("entrou");
 			Persistencia.readfazer();
 			String[] array = a.split("/");
 			

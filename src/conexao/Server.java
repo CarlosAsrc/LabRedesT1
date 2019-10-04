@@ -64,10 +64,26 @@ public class Server {
 
 		}
 
-		return "ok2/ok2";
+		return "ok2/ok2,";
 	}
-
+	public static String limpastring(String a) {
+		String d="";
+		for (int i=0;i<a.length();i++) {
+			char b=a.charAt(i);
+		
+			String c = ""+b;
+			
+			if (c.equals(",")) {
+				break;
+				
+			}
+			d=d+c;	
+			}
+		return d;
+		
+	}
 	public static void analisemc(String a) throws IOException {
+		String	b= limpastring(a);
 		if (!a.equals("ok/ok")) {
 			Persistencia.readfazer();
 			String[] array = a.split("/");

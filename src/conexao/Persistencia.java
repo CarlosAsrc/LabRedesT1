@@ -30,7 +30,7 @@ public class Persistencia {
 			
 	}
 	public static void readenviar () throws IOException {
-		GerenciadorTarefa.fazer.clear();
+		GerenciadorTarefa.envio.clear();
 		Path path2 = Paths.get("enviar");
 		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
 

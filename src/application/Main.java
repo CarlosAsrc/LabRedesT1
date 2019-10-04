@@ -40,6 +40,9 @@ public class Main extends Application {
 	public static void main(String[] args) throws SocketException, IOException, InterruptedException {
 		
 		Jogo.iniciarposicoes();
+		
+		String a ="ok2/ok2";
+		
 		  
 		Persistencia.readenviar();
 		Persistencia.readcount();
