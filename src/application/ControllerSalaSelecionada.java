@@ -87,8 +87,18 @@ public class ControllerSalaSelecionada {
 	        
 	        @Override
 	        public void run() {
+	        	String a="b";
+	        	try {
+					iniciar(a);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
+		if (Estados.jogadorLogado.equals("jogador1")) {
 		tapar.setOpacity(0);
+		comecoPermitido=true;
+		}
 		Platform.runLater(() -> {
 			situacao1.setText("Pronto");
 			situacao2.setText("Pronto");
@@ -97,7 +107,7 @@ public class ControllerSalaSelecionada {
 		situacao1.setTextFill(Color.web("#0ed145"));
 		
 		situacao2.setTextFill(Color.web("#0ed145"));
-		comecoPermitido=true;
+		
 	}
 	        }
 	    };
@@ -107,11 +117,19 @@ public class ControllerSalaSelecionada {
 	}
 	@FXML
 	void onclickiniciar(ActionEvent event) throws IOException {
-		System.out.println(comecoPermitido);
-		if (comecoPermitido) {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
-		anchorpane.getChildren().setAll(pane);
-		}
+		String a = "1";
+		iniciar(a);
+		Acoes.criarAcao("iniciar", "iniciar");
+	}
+	public void iniciar(String a) throws IOException {
+		if (comecoPermitido&&a.equals("1")) {
+			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
+			anchorpane.getChildren().setAll(pane);
+			}
+		if (a.equals("2")&&Estados.inicio.equals("comece")) {
+			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
+			anchorpane.getChildren().setAll(pane);
+			}
 	}
 	@FXML
 	void onclickvoltar(ActionEvent event) throws IOException {

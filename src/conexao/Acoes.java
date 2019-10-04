@@ -14,6 +14,9 @@ public static void lerAcao(Tarefa a) {
     if (acao.equals("J2 Pronto!")) {
     	Estados.jogador2Pronto="Sim";
 	}
+    if (acao.equals("iniciar")) {
+    	Estados.inicio="comece";
+	}
 	
 }
 

@@ -12,4 +12,6 @@ public static String jogadorDaVez="jogador1";
 
 public static String movimento="nenhum";
 
+public static String inicio="espera";
+
 }

@@ -17,7 +17,7 @@ public class Client {
 		String acao = "ok";
 		String mensagema = "ok";
 		Tarefa tarefa = new Tarefa(acao, mensagema);
-
+		
 		GerenciadorTarefa.envio.add(tarefa);
 		
 		GerenciadorTarefa.count = 0;
