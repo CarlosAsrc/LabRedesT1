@@ -19,7 +19,7 @@ public class Client {
 		Tarefa tarefa = new Tarefa(acao, mensagema);
 
 		GerenciadorTarefa.envio.add(tarefa);
-		GerenciadorTarefa.count=0;
+		GerenciadorTarefa.count = 0;
 
 		Persistencia.save("enviar");
 		Persistencia.save("count");
@@ -33,10 +33,10 @@ public class Client {
 
 		DatagramSocket clientSocket = new DatagramSocket();
 		int contlinha = 0;
-		int tempo =0;
+		int tempo = 0;
 		while (true) {
-			tempo=tempo+1;
-System.out.println("Tempo: "+tempo);
+			tempo = tempo + 1;
+			System.out.println("\nTempo: " + tempo);
 			byte[] sendbuffer = new byte[1024];
 			byte[] receivebuffer = new byte[1024];
 
@@ -51,7 +51,7 @@ System.out.println("Tempo: "+tempo);
 			clientSocket.receive(receivePacket);
 			String serverData = new String(receivePacket.getData());
 			System.out.print("\nServer: " + serverData);
-			
+
 			analisems(serverData);
 
 			TimeUnit.SECONDS.sleep(3);
@@ -65,41 +65,43 @@ System.out.println("Tempo: "+tempo);
 		if (Persistencia.linhaenviar() > GerenciadorTarefa.count) {
 
 			Tarefa tarefa = Persistencia.read("enviar", (Persistencia.linhaenviar() - GerenciadorTarefa.count));
-			
+
 			GerenciadorTarefa.count = GerenciadorTarefa.count + 1;
 			Persistencia.save("count");
 			String resposta = tarefa.getAcao() + "/" + tarefa.getMensagem();
-			
+
 			return resposta;
 
 		}
 
 		return "ok/ok,";
 	}
-public static String limpastring(String a) {
-	String d="";
-	for (int i=0;i<a.length();i++) {
-		char b=a.charAt(i);
-	
-		String c = ""+b;
-		
-		if (c.equals(",")) {
-			break;
-			
+
+	public static String limpastring(String a) {
+		String d = "";
+		for (int i = 0; i < a.length(); i++) {
+			char b = a.charAt(i);
+
+			String c = "" + b;
+
+			if (c.equals(",")) {
+				break;
+
+			}
+			d = d + c;
 		}
-		d=d+c;	
-		}
-	return d;
-	
-}
+		return d;
+
+	}
+
 	public static void analisems(String a) throws IOException {
-	String	b= limpastring(a);
-		
+		String b = limpastring(a);
+
 		if (!b.equals("ok2/ok2")) {
 			System.out.println("entrou");
 			Persistencia.readfazer();
 			String[] array = a.split("/");
-			
+
 			String acao = array[0];
 			String mensagem = array[1];
 			Tarefa tarefa = new Tarefa(acao, mensagem);

@@ -28,10 +28,10 @@ public class Server {
 		System.out.println("Servidor iniciado, aguardando resposta....");
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		boolean bye = false;
-		int tempo =0;
+		int tempo = 0;
 		while (true) {
-			tempo=tempo+1;
-System.out.println("Tempo: "+tempo);
+			tempo = tempo + 1;
+			System.out.println("Tempo: " + tempo);
 			byte[] receivebuffer = new byte[1024];
 			byte[] sendbuffer = new byte[1024];
 			DatagramPacket recvdpkt = new DatagramPacket(receivebuffer, receivebuffer.length);
@@ -68,24 +68,26 @@ System.out.println("Tempo: "+tempo);
 
 		return "ok2/ok2,";
 	}
+
 	public static String limpastring(String a) {
-		String d="";
-		for (int i=0;i<a.length();i++) {
-			char b=a.charAt(i);
-		
-			String c = ""+b;
-			
+		String d = "";
+		for (int i = 0; i < a.length(); i++) {
+			char b = a.charAt(i);
+
+			String c = "" + b;
+
 			if (c.equals(",")) {
 				break;
-				
+
 			}
-			d=d+c;	
-			}
+			d = d + c;
+		}
 		return d;
-		
+
 	}
+
 	public static void analisemc(String a) throws IOException {
-		String	b= limpastring(a);
+		String b = limpastring(a);
 		if (!b.equals("ok/ok")) {
 			Persistencia.readfazer();
 			String[] array = a.split("/");

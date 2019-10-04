@@ -29,6 +29,22 @@ public class Persistencia {
 		
 			
 	}
+	public static int linhafazer( ) throws IOException {
+		Path path2 = Paths.get("fazer");
+		int contlinha =0;
+		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+
+			String linha = null;
+			
+			while ((linha = br.readLine()) != null) {
+				contlinha = contlinha+1;
+				
+	}
+		}
+		return contlinha;
+		
+			
+	}
 	public static void readenviar () throws IOException {
 		GerenciadorTarefa.envio.clear();
 		Path path2 = Paths.get("enviar");

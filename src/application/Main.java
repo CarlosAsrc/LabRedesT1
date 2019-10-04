@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 import conexao.GerenciadorTarefa;
 import conexao.Persistencia;
+import conexao.Refresher;
 import conexao.Server;
 import conexao.Tarefa;
 import javafx.application.Application;
@@ -37,17 +38,17 @@ public class Main extends Application {
 		}
 	}
 	
+public static int linhasfazer=0;
 	public static void main(String[] args) throws SocketException, IOException, InterruptedException {
 		
 		Jogo.iniciarposicoes();
-		
-		String a ="ok2/ok2";
-		
+	
 		  
 		Persistencia.readenviar();
 		Persistencia.readcount();
 		Persistencia.readfazer();
 		
+		Refresher.refresh();
 	
 	launch(args);
 
