@@ -33,8 +33,10 @@ public class Client {
 
 		DatagramSocket clientSocket = new DatagramSocket();
 		int contlinha = 0;
+		int tempo =0;
 		while (true) {
-
+			tempo=tempo+1;
+System.out.println("Tempo: "+tempo);
 			byte[] sendbuffer = new byte[1024];
 			byte[] receivebuffer = new byte[1024];
 
