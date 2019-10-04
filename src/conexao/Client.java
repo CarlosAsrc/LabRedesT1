@@ -15,7 +15,7 @@ public class Client {
 	public static void main(String[] args) throws SocketException, IOException, InterruptedException {
 
 		String acao = "ok";
-		String mensagema = "ok,";
+		String mensagema = "ok";
 		Tarefa tarefa = new Tarefa(acao, mensagema);
 
 		GerenciadorTarefa.envio.add(tarefa);
