@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import conexao.Estados;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,10 +49,16 @@ public class ControllerLogin {
 
 	@FXML
 	void onclickentrar(ActionEvent event) throws IOException {
-		
+		if (login.getText().equals("1")) {
+		Estados.jogadorLogado="jogador1";
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Menu.fxml"));
 		anchorpane.getChildren().setAll(pane);
-
+		}
+		if (login.getText().equals("2")) {
+			Estados.jogadorLogado="jogador2";
+			AnchorPane pane = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+			anchorpane.getChildren().setAll(pane);
+			}
 	}
 
 }

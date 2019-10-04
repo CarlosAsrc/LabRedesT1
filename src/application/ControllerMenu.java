@@ -57,12 +57,7 @@ public class ControllerMenu {
 		comandostela.setImage(image);
 		comandostela.setOpacity(1);
 		
-		Persistencia.readenviar();
-		String acao = "teste";
-	    String mensagem =  "blz";
-	    Tarefa tarefa = new Tarefa(acao,mensagem);
-	    GerenciadorTarefa.envio.add(tarefa);
-	    Persistencia.save("enviar");
+		
 	    
 		
 	}

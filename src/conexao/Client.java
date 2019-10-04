@@ -19,7 +19,7 @@ public class Client {
 		Tarefa tarefa = new Tarefa(acao, mensagema);
 
 		GerenciadorTarefa.envio.add(tarefa);
-		System.out.println(GerenciadorTarefa.fazer);
+		
 		GerenciadorTarefa.count = 0;
 
 		Persistencia.save("enviar");

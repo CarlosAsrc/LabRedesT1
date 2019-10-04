@@ -155,7 +155,7 @@ public class Persistencia {
 			 }
 		
 		}
-		 
+		arquivo=arquivo+",";
 		}
 		if (onde.equals("fazer")) {
 			
@@ -171,7 +171,9 @@ public class Persistencia {
 			
 			arquivo = ""+GerenciadorTarefa.count;
 			}
-		arquivo=arquivo+",";
+		
+		
+		
 		try (PrintStream out = new PrintStream(
 				new FileOutputStream(onde))) {
 			out.print(arquivo);

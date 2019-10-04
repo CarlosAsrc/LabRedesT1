@@ -1,11 +1,17 @@
 package application;
 
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 
+import conexao.Acoes;
+import conexao.Estados;
+import conexao.Refresher;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import regras.Salas;
 
 public class ControllerSalaSelecionada {
@@ -33,6 +40,8 @@ public class ControllerSalaSelecionada {
 	@FXML
 	private Label situacao2;
 	@FXML
+	private ImageView tapar;
+	@FXML
     void initialize() throws IOException{
 		sala.setText(Salas.numeroSala);
 		String caminho = regras.Arquivo.montarCaminho();
@@ -41,11 +50,56 @@ public class ControllerSalaSelecionada {
 		BufferedImage bufferedImage = ImageIO.read(file);
 		Image image = SwingFXUtils.toFXImage(bufferedImage, null);
 		background.setImage(image);
+		
+		
+		String caminho2 = regras.Arquivo.montarCaminho();
+		caminho2 = caminho2 + "icones/tapar.png";
+		File file2 = new File(caminho2);
+		BufferedImage bufferedImage2 = ImageIO.read(file2);
+		Image image2 = SwingFXUtils.toFXImage(bufferedImage2, null);
+		tapar.setImage(image2);
+	
+		
+		
+		if (Estados.jogadorLogado.equals("jogador1")) {
+            Acoes.criarAcao("J1 Pronto!", "");
+			Estados.jogador1Pronto="Sim";
+			situacao1.setText("Pronto");
+			situacao1.setTextFill(Color.web("#0ed145"));
+			
+		}
+		if (Estados.jogadorLogado.equals("jogador2")) {
+			Acoes.criarAcao("J1 Pronto!", "");
+			Estados.jogador2Pronto="Sim";
+			situacao2.setText("Pronto");
+			situacao2.setTextFill(Color.web("#0ed145"));
+			
+		}
+		
+		refresh();
+	}
+	public  void refresh() {
+		Timer timer = new Timer();
+	    TimerTask task = new TimerTask() {
+	        
+	        @Override
+	        public void run() {
+	if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
+		tapar.setOpacity(0);
+		
+	}
+	        }
+	    };
+	    long delay = 0; //
+	    long period = 5000;
+	    timer.schedule(task, delay, period);
 	}
 	@FXML
 	void onclickiniciar(ActionEvent event) throws IOException {
+		if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 		anchorpane.getChildren().setAll(pane);
+		}
 	}
 	@FXML
 	void onclickvoltar(ActionEvent event) throws IOException {

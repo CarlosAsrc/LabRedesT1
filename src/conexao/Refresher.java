@@ -22,7 +22,7 @@ public static void refresh() {
             try {
             	Persistencia.readfazer();
 				if (Persistencia.linhafazer()>0) {
-					System.out.println("Bolacha");
+					Acoes.lerAcao(GerenciadorTarefa.fazer.get(0));
 					GerenciadorTarefa.fazer.remove(0);
 					Persistencia.save("fazer");
 					}
@@ -36,4 +36,5 @@ public static void refresh() {
     long period = 5000;
     timer.schedule(task, delay, period);
 }
+
 }
