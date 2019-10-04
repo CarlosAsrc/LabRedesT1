@@ -101,6 +101,7 @@ public class ControllerSalaSelecionada {
 	}
 	@FXML
 	void onclickiniciar(ActionEvent event) throws IOException {
+		System.out.println(comecoPermitido);
 		if (comecoPermitido) {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 		anchorpane.getChildren().setAll(pane);

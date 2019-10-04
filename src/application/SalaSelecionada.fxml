@@ -14,7 +14,6 @@
             <Image url="@../rsc/background/salaescolhida.png" />
          </image>
       </ImageView>
-      <Button fx:id="comecar" layoutX="197.0" layoutY="746.0" mnemonicParsing="false" onAction="#onclickiniciar" opacity="0.0" prefHeight="86.0" prefWidth="451.0" text="Button" />
       <Button fx:id="voltar" layoutX="829.0" layoutY="746.0" mnemonicParsing="false" onAction="#onclickvoltar" opacity="0.0" prefHeight="78.0" prefWidth="352.0" text="Button" />
       <Label fx:id="sala" layoutX="648.0" layoutY="87.0" prefHeight="95.0" prefWidth="123.0" text="I" textFill="#eb8d1b">
          <font>
@@ -35,5 +34,6 @@
          <image>
             <Image url="@../rsc/icones/tapar.png" />
          </image></ImageView>
+      <Button fx:id="comecar" layoutX="197.0" layoutY="746.0" mnemonicParsing="false" onAction="#onclickiniciar" opacity="0.0" prefHeight="86.0" prefWidth="451.0" text="Button" />
    </children>
 </AnchorPane>
