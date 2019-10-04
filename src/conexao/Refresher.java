@@ -20,9 +20,8 @@ public static void refresh() {
 				e.printStackTrace();
 			}
             try {
-            	System.out.println("Persistencia: "+Persistencia.linhafazer());
-            	System.out.println("Main: "+Main.linhasfazer);
-				if (Persistencia.linhafazer()>Main.linhasfazer) {
+            	
+				if (Persistencia.linhafazer()>0) {
 					
 					}
 			} catch (IOException e) {

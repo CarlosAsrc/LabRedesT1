@@ -16,7 +16,7 @@ public class Server {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 		String acao = "ok2";
-		String mensagema = "ok2";
+		String mensagema = "ok2,";
 		Tarefa tarefa = new Tarefa(acao, mensagema);
 
 		GerenciadorTarefa.envio.add(tarefa);
