@@ -20,9 +20,11 @@ public static void refresh() {
 				e.printStackTrace();
 			}
             try {
-            	
+            	Persistencia.readfazer();
 				if (Persistencia.linhafazer()>0) {
-					
+					System.out.println("Bolacha");
+					GerenciadorTarefa.fazer.remove(0);
+					Persistencia.save("enviar");
 					}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
