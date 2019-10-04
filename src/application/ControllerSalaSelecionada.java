@@ -78,6 +78,7 @@ public class ControllerSalaSelecionada {
 		
 		refresh();
 	}
+	public boolean comecoPermitido=false;
 	public  void refresh() {
 		Timer timer = new Timer();
 	    TimerTask task = new TimerTask() {
@@ -86,7 +87,11 @@ public class ControllerSalaSelecionada {
 	        public void run() {
 	if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
 		tapar.setOpacity(0);
-		
+		situacao1.setText("Pronto");
+		situacao1.setTextFill(Color.web("#0ed145"));
+		situacao2.setText("Pronto");
+		situacao2.setTextFill(Color.web("#0ed145"));
+		comecoPermitido=true;
 	}
 	        }
 	    };
@@ -96,7 +101,7 @@ public class ControllerSalaSelecionada {
 	}
 	@FXML
 	void onclickiniciar(ActionEvent event) throws IOException {
-		if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
+		if (comecoPermitido) {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 		anchorpane.getChildren().setAll(pane);
 		}
