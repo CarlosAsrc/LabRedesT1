@@ -18,6 +18,7 @@ public static void lerAcao(Tarefa a) {
     	Estados.inicio="comece";
 	}
     if (acao.equals("portas")) {
+    	System.out.println("bolacha");
     	System.out.println(mensagem);
 	}
 	
