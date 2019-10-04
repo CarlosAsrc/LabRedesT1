@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import conexao.Acoes;
 import conexao.Estados;
 import conexao.Refresher;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -88,16 +89,20 @@ public class ControllerSalaSelecionada {
 	        public void run() {
 	if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
 		tapar.setOpacity(0);
-		situacao1.setText("Pronto");
+		Platform.runLater(() -> {
+			situacao1.setText("Pronto");
+			situacao2.setText("Pronto");
+		});
+		
 		situacao1.setTextFill(Color.web("#0ed145"));
-		situacao2.setText("Pronto");
+		
 		situacao2.setTextFill(Color.web("#0ed145"));
 		comecoPermitido=true;
 	}
 	        }
 	    };
 	    long delay = 0; //
-	    long period = 5000;
+	    long period = 3000;
 	    timer.schedule(task, delay, period);
 	}
 	@FXML
