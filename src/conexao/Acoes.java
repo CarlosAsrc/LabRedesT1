@@ -17,6 +17,9 @@ public static void lerAcao(Tarefa a) {
     if (acao.equals("iniciar")) {
     	Estados.inicio="comece";
 	}
+    if (acao.equals("portas")) {
+    	System.out.println(mensagem);
+	}
 	
 }
 

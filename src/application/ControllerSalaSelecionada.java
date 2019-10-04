@@ -23,6 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import regras.Jogo;
 import regras.Salas;
 
 public class ControllerSalaSelecionada {
@@ -87,13 +88,15 @@ public class ControllerSalaSelecionada {
 	        
 	        @Override
 	        public void run() {
-	        	String a="b";
-	        	try {
+	        	String a="2";
+	        	Platform.runLater(() -> {
+				try {
 					iniciar(a);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				});
 	if (Estados.jogador1Pronto.equals("Sim")&&Estados.jogador2Pronto.equals("Sim")) {
 		if (Estados.jogadorLogado.equals("jogador1")) {
 		tapar.setOpacity(0);
@@ -117,12 +120,15 @@ public class ControllerSalaSelecionada {
 	}
 	@FXML
 	void onclickiniciar(ActionEvent event) throws IOException {
+		Acoes.criarAcao("iniciar", "iniciar");
 		String a = "1";
 		iniciar(a);
-		Acoes.criarAcao("iniciar", "iniciar");
+		
 	}
 	public void iniciar(String a) throws IOException {
 		if (comecoPermitido&&a.equals("1")) {
+			Jogo.sorteiaporta();
+			Acoes.criarAcao("portas", Jogo.portas.toString());
 			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			anchorpane.getChildren().setAll(pane);
 			}
