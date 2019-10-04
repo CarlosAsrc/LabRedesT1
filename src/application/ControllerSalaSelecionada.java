@@ -69,7 +69,7 @@ public class ControllerSalaSelecionada {
 			
 		}
 		if (Estados.jogadorLogado.equals("jogador2")) {
-			Acoes.criarAcao("J1 Pronto!", "");
+			Acoes.criarAcao("J2 Pronto!", "");
 			Estados.jogador2Pronto="Sim";
 			situacao2.setText("Pronto");
 			situacao2.setTextFill(Color.web("#0ed145"));
