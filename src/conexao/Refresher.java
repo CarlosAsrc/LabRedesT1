@@ -24,7 +24,7 @@ public static void refresh() {
 				if (Persistencia.linhafazer()>0) {
 					System.out.println("Bolacha");
 					GerenciadorTarefa.fazer.remove(0);
-					Persistencia.save("enviar");
+					Persistencia.save("fazer");
 					}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
