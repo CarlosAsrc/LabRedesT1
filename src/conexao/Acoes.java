@@ -31,8 +31,10 @@ public class Acoes {
 			String y;
 			ArrayList<Integer> local = new ArrayList<Integer>();
 			String[] array1 = mensagem.split(">");
+			String[] array2;
 			for (int i = 0; i < array1.length; i++) {
-				String[] array2 = array1[i].split(":");
+				array2=null;
+				array2 = array1[i].split(":");
 				cor = array2[0];
 				chave = array2[1];
 				iten = array2[2];
