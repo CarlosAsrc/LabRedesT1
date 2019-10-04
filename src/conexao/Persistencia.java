@@ -133,7 +133,7 @@ public class Persistencia {
 		if (onde.equals("enviar")) {
 			
 		for (int i=0;i<GerenciadorTarefa.envio.size();i++) {
-			 arquivo = arquivo+ GerenciadorTarefa.envio.get(i).getAcao()+"/"+GerenciadorTarefa.envio.get(i).getMensagem()+"\n";	
+			 arquivo = arquivo+ GerenciadorTarefa.envio.get(i).getAcao()+"/"+GerenciadorTarefa.envio.get(i).getMensagem();	
 			 if (i<(GerenciadorTarefa.envio.size()-1)) {
 				 arquivo=arquivo+"\n";
 			 }
