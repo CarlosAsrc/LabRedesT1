@@ -128,7 +128,7 @@ public class ControllerSalaSelecionada {
 	public void iniciar(String a) throws IOException {
 		if (comecoPermitido&&a.equals("1")) {
 			Jogo.sorteiaporta();
-			Acoes.criarAcao("portas", Jogo.portas.toString());
+			Acoes.criarAcao("portas", "bola");
 			AnchorPane pane = FXMLLoader.load(getClass().getResource("Game.fxml"));
 			anchorpane.getChildren().setAll(pane);
 			}
