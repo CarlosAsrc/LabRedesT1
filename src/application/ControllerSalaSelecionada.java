@@ -102,7 +102,7 @@ public class ControllerSalaSelecionada {
 	        }
 	    };
 	    long delay = 0; //
-	    long period = 3000;
+	    long period = 1000;
 	    timer.schedule(task, delay, period);
 	}
 	@FXML

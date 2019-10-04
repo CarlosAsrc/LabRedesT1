@@ -23,7 +23,7 @@ public class Client {
 		GerenciadorTarefa.count = 0;
 
 		Persistencia.save("enviar");
-		Persistencia.save("count");
+		
 		Persistencia.save("fazer");
 
 		System.out.println("Procurando Server....");
@@ -55,20 +55,20 @@ public class Client {
 
 			analisems(serverData);
 
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(1);
 
 		}
 
 	}
 
 	public static String analiseenviar() throws IOException {
-		Persistencia.readcount();
+		
 		if (Persistencia.linhaenviar() > GerenciadorTarefa.count) {
 
 			Tarefa tarefa = Persistencia.read("enviar", (Persistencia.linhaenviar() - GerenciadorTarefa.count));
 
 			GerenciadorTarefa.count = GerenciadorTarefa.count + 1;
-			Persistencia.save("count");
+			
 			String resposta = tarefa.getAcao() + "/" + tarefa.getMensagem();
 
 			return resposta;

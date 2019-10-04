@@ -13,12 +13,7 @@ public static void refresh() {
         
         @Override
         public void run() {
-        	try {
-				Persistencia.readcount();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        	
             try {
             	Persistencia.readfazer();
 				if (Persistencia.linhafazer()>0) {
@@ -33,7 +28,7 @@ public static void refresh() {
         }
     };
     long delay = 0; //
-    long period = 5000;
+    long period = 1000;
     timer.schedule(task, delay, period);
 }
 

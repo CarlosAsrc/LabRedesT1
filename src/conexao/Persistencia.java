@@ -85,23 +85,7 @@ public class Persistencia {
 			
 			}
 	}
-	public static void readcount () throws IOException {
-		Path path2 = Paths.get("count");
-		try (BufferedReader br = Files.newBufferedReader(path2, Charset.defaultCharset())) {
-
-			String linha = null;
-			String count ="";
-			while ((linha = br.readLine()) != null) {
-				Scanner scanner = new Scanner(linha);
-
-				Scanner sc = scanner.useDelimiter("");
-				 count=sc.next().trim();
-				 
-			}
-			GerenciadorTarefa.count=Integer.parseInt(count);
-			}
-	}
-
+	
 
 
 	public static Tarefa read( String tipomensagem, int diferenca) {
@@ -167,10 +151,7 @@ public class Persistencia {
 			}
 			
 			}
-		if (onde.equals("count")) {
-			
-			arquivo = ""+GerenciadorTarefa.count;
-			}
+		
 		
 		
 		

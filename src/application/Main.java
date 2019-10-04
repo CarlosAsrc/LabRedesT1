@@ -45,7 +45,7 @@ public static int linhasfazer=0;
 	
 		  
 		Persistencia.readenviar();
-		Persistencia.readcount();
+		
 		Persistencia.readfazer();
 		
 		Refresher.refresh();

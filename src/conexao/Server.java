@@ -22,7 +22,7 @@ public class Server {
 		GerenciadorTarefa.envio.add(tarefa);
 
 		Persistencia.save("enviar");
-		Persistencia.save("count");
+		
 		Persistencia.save("fazer");
 
 		System.out.println("Servidor iniciado, aguardando resposta....");
@@ -51,17 +51,17 @@ public class Server {
 
 			serverSocket.send(sendPacket);
 
-			TimeUnit.SECONDS.sleep(2);
+			TimeUnit.SECONDS.sleep(1);
 		}
 	}
 
 	public static String analiseenviar() throws IOException {
-		Persistencia.readcount();
+		
 		if (Persistencia.linhaenviar() > GerenciadorTarefa.count) {
 
 			Tarefa tarefa = Persistencia.read("enviar", (Persistencia.linhaenviar() - GerenciadorTarefa.count));
 			GerenciadorTarefa.count = GerenciadorTarefa.count + 1;
-			Persistencia.save("count");
+			
 			return tarefa.getAcao() + "/" + tarefa.getMensagem();
 
 		}
