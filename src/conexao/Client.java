@@ -19,6 +19,7 @@ public class Client {
 		Tarefa tarefa = new Tarefa(acao, mensagema);
 
 		GerenciadorTarefa.envio.add(tarefa);
+		GerenciadorTarefa.count=0;
 
 		Persistencia.save("enviar");
 		Persistencia.save("count");
@@ -62,9 +63,12 @@ public class Client {
 		if (Persistencia.linhaenviar() > GerenciadorTarefa.count) {
 
 			Tarefa tarefa = Persistencia.read("enviar", (Persistencia.linhaenviar() - GerenciadorTarefa.count));
+			
 			GerenciadorTarefa.count = GerenciadorTarefa.count + 1;
 			Persistencia.save("count");
-			return tarefa.getAcao() + "/" + tarefa.getMensagem();
+			String resposta = tarefa.getAcao() + "/" + tarefa.getMensagem();
+			
+			return resposta;
 
 		}
 

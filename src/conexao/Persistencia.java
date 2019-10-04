@@ -78,8 +78,9 @@ public class Persistencia {
 			while ((linha = br.readLine()) != null) {
 				Scanner scanner = new Scanner(linha);
 
-				Scanner sc = scanner.useDelimiter("/");
+				Scanner sc = scanner.useDelimiter("");
 				 count=sc.next().trim();
+				 System.out.println(count);
 			}
 			GerenciadorTarefa.count=Integer.parseInt(count);
 			}
@@ -100,13 +101,14 @@ public class Persistencia {
 
 			while ((linha = br.readLine()) != null) {
 				contlinha = contlinha+1;
-				if (contlinha>GerenciadorTarefa.count&&contlinha<GerenciadorTarefa.count+diferenca) {
+				if (contlinha>GerenciadorTarefa.count&&contlinha<=GerenciadorTarefa.count+diferenca) {
 					
 				Scanner scanner = new Scanner(linha);
 
 				Scanner sc = scanner.useDelimiter("/");
 				 acao=sc.next().trim();
 				mensagem=  sc.next().trim();
+				
 	Tarefa tarefa = new Tarefa(acao,mensagem);
 	return tarefa;
 				}
@@ -127,7 +129,9 @@ public class Persistencia {
 
 	public static void save (String onde) throws FileNotFoundException {
 		String arquivo="";
+		
 		if (onde.equals("enviar")) {
+			
 		for (int i=0;i<GerenciadorTarefa.envio.size();i++) {
 			 arquivo = arquivo+ GerenciadorTarefa.envio.get(i).getAcao()+"/"+GerenciadorTarefa.envio.get(i).getMensagem()+"\n";	
 			 if (i<(GerenciadorTarefa.envio.size()-1)) {
@@ -138,15 +142,18 @@ public class Persistencia {
 		 
 		}
 		if (onde.equals("fazer")) {
+			
 			for (int i=0;i<GerenciadorTarefa.fazer.size();i++) {
 				 arquivo = arquivo+ GerenciadorTarefa.fazer.get(i).getAcao()+"/"+GerenciadorTarefa.fazer.get(i).getMensagem();
 				 if (i<(GerenciadorTarefa.fazer.size()-1)) {
 					 arquivo=arquivo+"\n";
 				 }
 			}
-			if (onde.equals("count")) {
-				arquivo = ""+GerenciadorTarefa.count;
-				}
+			
+			}
+		if (onde.equals("count")) {
+			
+			arquivo = ""+GerenciadorTarefa.count;
 			}
 		try (PrintStream out = new PrintStream(
 				new FileOutputStream(onde))) {
