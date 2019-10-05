@@ -8,6 +8,8 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
+import conexao.Acoes;
+import conexao.Estados;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -349,6 +351,7 @@ public class ControllerGame {
 
 	@FXML
 	void onclickdado(ActionEvent event) throws IOException {
+		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 		salvar();
 		if (jogardado == false) {
 			jogardado = true;
@@ -365,10 +368,16 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Comando invalido"));
 			chat.setText(Jogo.criachat(chatarray));
 		}
+		}
+		else {
+			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o "+Estados.jogadorDaVez));
+			chat.setText(Jogo.criachat(chatarray));
+		}
 	}
 
 	@FXML
 	void onclicknorte(ActionEvent event) throws IOException {
+		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 		salvar();
 		
 		
@@ -534,13 +543,27 @@ public class ControllerGame {
 				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
 				chat.setText(Jogo.criachat(chatarray));
 				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				Acoes.criarAcao("troca jogador", "troca jogador");
+				if (Estados.jogadorDaVez.equals("jogador1")) {
+					Estados.jogadorDaVez = "jogador2";
+					}
+					if (Estados.jogadorDaVez.equals("jogador2")) {
+						Estados.jogadorDaVez = "jogador1";
+						}
+			
 			}
-		}
 		
+		}
+		}
+		else {
+			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o "+Estados.jogadorDaVez));
+			chat.setText(Jogo.criachat(chatarray));
+		}
 	}
 
 	@FXML
 	void onclicksul(ActionEvent event) throws IOException {
+		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -704,12 +727,25 @@ public class ControllerGame {
 				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
 				chat.setText(Jogo.criachat(chatarray));
 				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				Acoes.criarAcao("troca jogador", "troca jogador");
+				if (Estados.jogadorDaVez.equals("jogador1")) {
+					Estados.jogadorDaVez = "jogador2";
+					}
+					if (Estados.jogadorDaVez.equals("jogador2")) {
+						Estados.jogadorDaVez = "jogador1";
+						}
 			}
 		}
-	}
+		}
+		else {
+			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o "+Estados.jogadorDaVez));
+			chat.setText(Jogo.criachat(chatarray));
+		}
+		}
 
 	@FXML
 	void onclickleste(ActionEvent event) throws IOException {
+		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -873,12 +909,25 @@ public class ControllerGame {
 				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
 				chat.setText(Jogo.criachat(chatarray));
 				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				Acoes.criarAcao("troca jogador", "troca jogador");
+				if (Estados.jogadorDaVez.equals("jogador1")) {
+					Estados.jogadorDaVez = "jogador2";
+					}
+					if (Estados.jogadorDaVez.equals("jogador2")) {
+						Estados.jogadorDaVez = "jogador1";
+						}
 			}
 		}
-	}
+		}
+		else {
+			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o "+Estados.jogadorDaVez));
+			chat.setText(Jogo.criachat(chatarray));
+		}
+		}
 
 	@FXML
 	void onclickoeste(ActionEvent event) throws IOException {
+		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1042,9 +1091,21 @@ public class ControllerGame {
 				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
 				chat.setText(Jogo.criachat(chatarray));
 				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				Acoes.criarAcao("troca jogador", "troca jogador");
+				if (Estados.jogadorDaVez.equals("jogador1")) {
+					Estados.jogadorDaVez = "jogador2";
+					}
+					if (Estados.jogadorDaVez.equals("jogador2")) {
+						Estados.jogadorDaVez = "jogador1";
+						}
 			}
 		}
-	}
+		}
+		else {
+			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o "+Estados.jogadorDaVez));
+			chat.setText(Jogo.criachat(chatarray));
+		}
+		}
 
 	@FXML
 	void onclickacoes(ActionEvent event) throws IOException {

@@ -11,7 +11,14 @@ public class Acoes {
 
 		String acao = a.acao;
 		String mensagem = a.mensagem;
-
+		if (acao.equals("troca jogador")) {
+			if (Estados.jogadorDaVez.equals("jogador1")) {
+			Estados.jogadorDaVez = "jogador2";
+			}
+			if (Estados.jogadorDaVez.equals("jogador2")) {
+				Estados.jogadorDaVez = "jogador1";
+				}
+		}
 		if (acao.equals("J1 Pronto!")) {
 			Estados.jogador1Pronto = "Sim";
 		}
