@@ -426,7 +426,7 @@ public class ControllerGame {
 	void onclickdado(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
-			Acoes.criarAcao("sim", "dado");
+			Acoes.criarAcao("Jogador moveu", "dado");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -454,7 +454,7 @@ public void dado() {
 	void onclicknorte(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			norte();
-			Acoes.criarAcao("sim", "n");
+			Acoes.criarAcao("Jogador moveu", "n");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -656,7 +656,7 @@ public void norte () throws IOException {
 	void onclicksul(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			sul();
-			Acoes.criarAcao("sim", "s");
+			Acoes.criarAcao("Jogador moveu", "s");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -859,6 +859,7 @@ public void sul () throws IOException {
 	void onclickleste(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			leste();
+			Acoes.criarAcao("Jogador moveu", "l");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1056,7 +1057,7 @@ public void leste() throws IOException {
 	void onclickoeste(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			oeste();
-			Acoes.criarAcao("sim", "o");
+			Acoes.criarAcao("Jogador moveu", "s");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
