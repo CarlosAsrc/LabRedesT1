@@ -398,7 +398,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("o")) {
-								System.out.println("entrei no oeste");
+								
 								try {
 									oeste();
 								} catch (IOException e) {
@@ -414,7 +414,7 @@ public class ControllerGame {
 						if (Estados.jogoudado.equals("sim")) {
 							resultaDado.setText(Estados.jogoudadovalor);
 							jogardado=true;
-
+							Estados.jogoudado="nao";
 						}
 
 					}
