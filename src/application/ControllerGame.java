@@ -354,6 +354,7 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
+					System.out.println("Fez a thread");
 					// Atualiza jogador da vez
 					if (Estados.jogadorDaVeztrocou.equals("sim")) {
 						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -362,11 +363,17 @@ public class ControllerGame {
 						Estados.jogadorDaVeztrocou = "nao";
 					}
 					// Atualiza movimentos!!
+					System.out.println("Jogador da vez: "+Estados.jogadorDaVez);
+					System.out.println("Jogador Logado: "+Estados.jogadorLogado);
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
+						System.out.println("Nao sou o jogador da vez");
+						System.out.println("Jogador Moveu? "+Estados.jogadormoveu);
 						if (Estados.jogadormoveu.equals("sim")) {
+							System.out.println("Entrei no jogador moveu");
 							// mova para algum lugar
-							
+							System.out.println("minha direcao: "+Estados.direcao);
 							if (Estados.direcao.equals("n")) {
+							System.out.println("entrei no norte");
 								try {
 									norte();
 								} catch (IOException e) {
