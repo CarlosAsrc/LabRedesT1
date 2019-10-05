@@ -13,7 +13,7 @@ public class Acoes {
 		String mensagem = a.mensagem;
 		if (acao.equals("Jogador moveu")) {
 			Estados.jogadormoveu="sim";
-			Estados.direcao=mensagem;
+			Estados.direcao=mensagem.substring(0, mensagem.length());
 		}
 		
 		if (acao.equals("troca jogador")) {
