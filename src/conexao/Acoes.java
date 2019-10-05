@@ -31,10 +31,10 @@ public class Acoes {
 			String y;
 			ArrayList<Integer> local = new ArrayList<Integer>();
 			String[] array1 = mensagem.split(">");
-			String[] array2;
+			
 			for (int i = 0; i < array1.length; i++) {
-				array2=null;
-				array2 = array1[i].split(":");
+				
+				String[] array2 = array1[i].split(":");
 				cor = array2[0];
 				chave = array2[1];
 				iten = array2[2];
@@ -42,6 +42,7 @@ public class Acoes {
 				x = array2[4];
 				y = array2[5];
 				local.clear();
+				System.out.println("Local:"+local);
 				local.add(Integer.parseInt(x));
 				if (i==array1.length-1) {
 				y=y.substring(0, y.length()-1);
