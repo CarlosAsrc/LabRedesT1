@@ -29,7 +29,7 @@ public class Acoes {
 			String situacao;
 			String x;
 			String y;
-			ArrayList<Integer> local = new ArrayList<Integer>();
+			
 			String[] array1 = mensagem.split(">");
 			
 			for (int i = 0; i < array1.length; i++) {
@@ -41,8 +41,8 @@ public class Acoes {
 				situacao = array2[3];
 				x = array2[4];
 				y = array2[5];
-				local.clear();
-				System.out.println("Local:"+local);
+				
+				ArrayList<Integer> local = new ArrayList<Integer>();
 				local.add(Integer.parseInt(x));
 				if (i==array1.length-1) {
 				y=y.substring(0, y.length()-1);
