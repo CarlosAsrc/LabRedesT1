@@ -11,9 +11,12 @@ public class Acoes {
 
 		String acao = a.acao;
 		String mensagem = a.mensagem;
+		//Remove a virgula
+		mensagem=mensagem.substring(0, mensagem.length()-1);
+		
 		if (acao.equals("Jogador moveu")) {
 			Estados.jogadormoveu="sim";
-			Estados.direcao=mensagem.substring(0, mensagem.length());
+			Estados.direcao=mensagem;
 		}
 		
 		if (acao.equals("troca jogador")) {
@@ -63,9 +66,6 @@ public class Acoes {
 				
 				ArrayList<Integer> local = new ArrayList<Integer>();
 				local.add(Integer.parseInt(x));
-				if (i==array1.length-1) {
-				y=y.substring(0, y.length()-1);
-				}
 				local.add(Integer.parseInt(y));
 				Porta porta = new Porta(cor,chave,iten,situacao,local);
 				Jogo.portas.add(porta);
