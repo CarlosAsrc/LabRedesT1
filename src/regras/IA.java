@@ -1,10 +1,12 @@
+package regras;
+
 import java.util.*;
 
 
 public class IA {
 
-    private static int dragaoX = 3;
-    private static int dragaoY = 2;
+    private static int dragaoX = 0;
+    private static int dragaoY = 0;
     private static Random random = new Random();
     private static Map<Integer, String> direcoes = new HashMap<Integer, String>(){{
         put(0, "n");
@@ -13,9 +15,7 @@ public class IA {
         put(3, "o");
     }};
 
-    public static void main(String args []) {
-         System.out.println(direcionar(3, 2, 2, 1, true, false));
-    }
+    
 
     public static String direcionar (int x1, int y1, int x2, int y2, boolean visibilidade1, boolean visibilidade2) {
         //Ambos invisíveis

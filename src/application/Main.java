@@ -13,6 +13,7 @@ import conexao.Tarefa;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import regras.IA;
 import regras.Jogo;
 import regras.codigo;
 import javafx.scene.Scene;
@@ -50,6 +51,9 @@ public static int linhasfazer=0;
 		
 		Refresher.refresh();
 	
+	System.out.println(IA.direcionar(0,2, 2, 2, true, true));
+		
+		
 	launch(args);
 
 	}

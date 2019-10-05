@@ -1,3 +1,5 @@
+package regras;
+
 public class Perimetro {
     private String direcao;
     private Double distancia;

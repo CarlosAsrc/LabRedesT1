@@ -405,7 +405,7 @@ public class ControllerGame {
 						}
 					
 					// Atualiza jogador da vez
-					if (Estados.jogadorDaVeztrocou.equals("sim")) {
+					if (Estados.jogadorDaVeztrocou.equals("sim")&&resultaDado.equals("0")) {
 						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
 						chat.setText(Jogo.criachat(chatarray));
 						jogadorVez.setText(Estados.jogadorDaVez);
