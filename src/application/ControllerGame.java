@@ -413,6 +413,7 @@ public class ControllerGame {
 						// Dado
 						if (Estados.jogoudado.equals("sim")) {
 							resultaDado.setText(Estados.jogoudadovalor);
+							jogardado=true;
 
 						}
 
