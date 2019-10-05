@@ -14,6 +14,11 @@ public class Acoes {
 		//Remove a virgula
 		mensagem=mensagem.substring(0, mensagem.length()-1);
 		
+		if (acao.equals("Dado")) {
+			Estados.jogoudado="sim";
+			Estados.jogoudadovalor=mensagem;
+		}
+		
 		if (acao.equals("Jogador moveu")) {
 			Estados.jogadormoveu="sim";
 			Estados.direcao=mensagem;
