@@ -1,12 +1,10 @@
-package regras;
-
 import java.util.*;
 
 
 public class IA {
 
-    private static int dragaoX = 0;
-    private static int dragaoY = 0;
+    private static int dragaoX = 8;
+    private static int dragaoY = 2;
     private static Random random = new Random();
     private static Map<Integer, String> direcoes = new HashMap<Integer, String>(){{
         put(0, "n");
@@ -15,7 +13,9 @@ public class IA {
         put(3, "o");
     }};
 
-    
+    public static void main(String args []) {
+         System.out.println(direcionar(6, 2, 4, 2, true, true));
+    }
 
     public static String direcionar (int x1, int y1, int x2, int y2, boolean visibilidade1, boolean visibilidade2) {
         //Ambos invisíveis
@@ -45,12 +45,11 @@ public class IA {
 
 
     private static String definirDirecao(int jogadorX, int jogadorY) {
-        double distanciaN = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
-        Perimetro perimetroN = new Perimetro("n", distanciaN);
-        double distanciaS = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
+        double distanciaN = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
+        double distanciaS = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
         double distanciaL = medirDistancia(dragaoX, dragaoY + 1, jogadorX, jogadorY);
         double distanciaO = medirDistancia(dragaoX, dragaoY - 1, jogadorX, jogadorY);
-
+        Perimetro perimetroN = new Perimetro("n", distanciaN);
         Perimetro perimetroS = new Perimetro("s", distanciaS);
         Perimetro perimetroL = new Perimetro("l", distanciaL);
         Perimetro perimetroO = new Perimetro("o", distanciaO);
