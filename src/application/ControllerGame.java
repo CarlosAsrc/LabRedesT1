@@ -355,13 +355,6 @@ public class ControllerGame {
 
 				Platform.runLater(() -> {
 
-					// Atualiza jogador da vez
-					if (Estados.jogadorDaVeztrocou.equals("sim")) {
-						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
-						chat.setText(Jogo.criachat(chatarray));
-						jogadorVez.setText(Estados.jogadorDaVez);
-						Estados.jogadorDaVeztrocou = "nao";
-					}
 					// Atualiza movimentos!!
 
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
@@ -410,6 +403,15 @@ public class ControllerGame {
 							Estados.jogadormoveu = "nao";
 
 						}
+					
+					// Atualiza jogador da vez
+					if (Estados.jogadorDaVeztrocou.equals("sim")) {
+						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+						chat.setText(Jogo.criachat(chatarray));
+						jogadorVez.setText(Estados.jogadorDaVez);
+						Estados.jogadorDaVeztrocou = "nao";
+					}
+					
 						// Dado
 						if (Estados.jogoudado.equals("sim")) {
 							resultaDado.setText(Estados.jogoudadovalor);
