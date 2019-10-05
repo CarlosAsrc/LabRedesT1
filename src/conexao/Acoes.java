@@ -16,8 +16,15 @@ public class Acoes {
 			Estados.jogadorDaVez = "jogador2";
 			}
 			else if (Estados.jogadorDaVez.equals("jogador2")) {
+				Estados.jogadorDaVez = "dragao";
+				}
+			else if (Estados.jogadorDaVez.equals("dragao")) {
+				Estados.jogadorDaVez = "Night King";
+				}
+			else if (Estados.jogadorDaVez.equals("Night King")) {
 				Estados.jogadorDaVez = "jogador1";
 				}
+			Estados.jogadorDaVeztrocou="sim";
 		}
 		if (acao.equals("J1 Pronto!")) {
 			Estados.jogador1Pronto = "Sim";

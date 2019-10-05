@@ -9,6 +9,7 @@ public static String jogador1Pronto="nao";
 public static String jogador2Pronto="nao";
 
 public static String jogadorDaVez="jogador1";
+public static String jogadorDaVeztrocou="nao";
 
 public static String movimento="nenhum";
 
