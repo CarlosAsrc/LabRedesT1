@@ -15,7 +15,7 @@ public class Acoes {
 			if (Estados.jogadorDaVez.equals("jogador1")) {
 			Estados.jogadorDaVez = "jogador2";
 			}
-			if (Estados.jogadorDaVez.equals("jogador2")) {
+			else if (Estados.jogadorDaVez.equals("jogador2")) {
 				Estados.jogadorDaVez = "jogador1";
 				}
 		}
