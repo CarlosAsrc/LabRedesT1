@@ -382,6 +382,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("s")) {
+								System.out.println("entrei no sul");
 								try {
 									sul();
 								} catch (IOException e) {
@@ -390,6 +391,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("l")) {
+								System.out.println("entrei no leste");
 								try {
 									leste();
 								} catch (IOException e) {
@@ -398,6 +400,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("o")) {
+								System.out.println("entrei no oeste");
 								try {
 									oeste();
 								} catch (IOException e) {
@@ -406,6 +409,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("dado")) {
+								System.out.println("entrei no dado");
 								dado();
 							}
 
