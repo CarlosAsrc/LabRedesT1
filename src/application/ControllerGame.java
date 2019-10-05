@@ -1058,7 +1058,7 @@ public class ControllerGame {
 	void onclickoeste(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			oeste();
-			Acoes.criarAcao("Jogador moveu", "s");
+			Acoes.criarAcao("Jogador moveu", "o");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
