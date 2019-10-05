@@ -29,7 +29,7 @@ public class Acoes {
 			Estados.inicio = "comece";
 		}
 		if (acao.equals("portas")) {
-			System.out.println("bolacha");
+			
 			String cor;
 			String chave;
 			String iten;
@@ -58,9 +58,7 @@ public class Acoes {
 				Porta porta = new Porta(cor,chave,iten,situacao,local);
 				Jogo.portas.add(porta);
 			}
-for (int i=0;i<Jogo.portas.size();i++) {
-	System.out.println(Jogo.portas.get(i));
-}
+
 			
 		}
 

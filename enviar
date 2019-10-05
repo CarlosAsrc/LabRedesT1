@@ -1,7 +1,1 @@
 ok/ok,
-J1 Pronto!/,
-iniciar/iniciar,
-portas/amarela:chave lendaria1::fechada:0:3>amarela:chave lendaria2::fechada:0:4>roxa:chave epic1:chave lendaria1:fechada:7:0>roxa:chave epic2:chave lendaria2:fechada:5:7>azul:chave rare1:chave epic1:fechada:1:0>azul:chave rare2:chave epic2:fechada:1:7>verde:chave uncommon1:chave rare1:fechada:5:0>verde:chave uncommon2:chave rare2:fechada:3:7>branca:chave common1:chave uncommon1:aberta:3:0>branca:chave common2:chave uncommon2:aberta:7:7,
-troca jogador/troca jogador,
-troca jogador/troca jogador,
-troca jogador/troca jogador,
