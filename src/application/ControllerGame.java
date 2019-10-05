@@ -205,9 +205,9 @@ public class ControllerGame {
 	private Button enviar;
 
 	boolean jogardado = false;
-	ArrayList<String> jogadores = new ArrayList<String>();
+	
 	ArrayList<String> chatarray = new ArrayList<String>();
-	int jogadordavez = 1;
+	
 	// Matriz
 	ArrayList<ArrayList<ImageView>> linhas = new ArrayList<ArrayList<ImageView>>();
 	ArrayList<ImageView> coluna0 = new ArrayList<ImageView>();
@@ -235,9 +235,9 @@ public class ControllerGame {
 		background.setImage(Imagem.criaimagem("background/game.png"));
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();
-		System.out.println("Inicio: "+Jogo.inicio);
+		
 		if (Jogo.inicio == 0) {
-			System.out.println("entrou no 0");
+			
 			regras.Sons.tocar("monowar");
 
 			
@@ -316,22 +316,19 @@ public class ControllerGame {
 			q_0x4.setImage(Imagem.criaimagem("icones/pamarela.png"));
 			slinhas.get(0).set(4, "icones/pamarela.png");
 			
-			jogadores.add("John");
-			jogadores.add("Dany");
-			jogadores.add("Dragao");
-			jogadores.add("Night King");
+			
 
-			chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
+			chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
-			jogadorVez.setText(jogadores.get(jogadordavez - 1));
+			jogadorVez.setText(Estados.jogadorDaVez);
 			Jogo.inicio = 1;
 		} else {
-			System.out.println("foi direto para o 1");
+			
 			jogardado = Jogo.jogardado;
-			jogadores = Jogo.jogadores;
+			
 			chatarray = Jogo.chatarray;
-			jogadordavez = Jogo.jogadordavez;
-			jogadorVez.setText(jogadores.get(jogadordavez-1));
+			
+			jogadorVez.setText(Estados.jogadorDaVez);
 			// Matriz
 			
 			
@@ -355,7 +352,7 @@ public class ControllerGame {
 		salvar();
 		if (jogardado == false) {
 			jogardado = true;
-			chatarray.add(0, Jogo.criaString("Jogou o dado o " + jogadores.get(jogadordavez - 1)));
+			chatarray.add(0, Jogo.criaString("Jogou o dado o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
 			Random rnd = new Random();
 			int i = rnd.nextInt(6);
@@ -385,7 +382,7 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
-			if (jogadordavez == 1) {
+			if (Estados.jogadorDaVez .equals("jogador1") ) {
 				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -422,7 +419,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 2) {
+			if (Estados.jogadorDaVez .equals("jogador2")) {
 				regras.Sons.tocarsom("dany");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -459,7 +456,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 3) {
+			if (Estados.jogadorDaVez .equals("Dragao")) {
 				regras.Sons.tocarsom("tr");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -496,7 +493,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 4) {
+			if (Estados.jogadorDaVez .equals("Nigth King")) {
 				regras.Sons.tocarsom("nk");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -535,21 +532,34 @@ public class ControllerGame {
 
 			}
 			if(resultaDado.getText().equals("0")) {
-				jogadordavez=jogadordavez+1;
-				if (jogadordavez==5) {
-					jogadordavez=1;
-				}
+				
 				jogardado = false;
-				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
-				chat.setText(Jogo.criachat(chatarray));
-				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				
 				Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
 					}
 				else	if (Estados.jogadorDaVez.equals("jogador2")) {
-						Estados.jogadorDaVez = "jogador1";
+						Estados.jogadorDaVez = "dragao";
+						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+						chat.setText(Jogo.criachat(chatarray));
+						jogadorVez.setText(Estados.jogadorDaVez);
 						}
+				else	if (Estados.jogadorDaVez.equals("dragao")) {
+					Estados.jogadorDaVez = "Night King";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
+				else	if (Estados.jogadorDaVez.equals("Night King")) {
+					Estados.jogadorDaVez = "jogador1";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
 			
 			}
 		
@@ -569,7 +579,8 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
-			if (jogadordavez == 1) {
+			 
+			if (Estados.jogadorDaVez .equals("jogador1")) {
 				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -606,7 +617,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 2) {
+			if (Estados.jogadorDaVez .equals("jogador2")) {
 				regras.Sons.tocarsom("dany");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -643,7 +654,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 3) {
+			if (Estados.jogadorDaVez .equals("dragao")) {
 				regras.Sons.tocarsom("tr");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -680,7 +691,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 4) {
+			if (Estados.jogadorDaVez .equals("Night King")) {
 				regras.Sons.tocarsom("nk");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -719,21 +730,37 @@ public class ControllerGame {
 
 			}
 			if(resultaDado.getText().equals("0")) {
-				jogadordavez=jogadordavez+1;
-				if (jogadordavez==5) {
-					jogadordavez=1;
-				}
+				
 				jogardado = false;
-				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
-				chat.setText(Jogo.criachat(chatarray));
-				jogadorVez.setText(jogadores.get(jogadordavez - 1));
+				
 				Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
 					}
 				else	if (Estados.jogadorDaVez.equals("jogador2")) {
-						Estados.jogadorDaVez = "jogador1";
+						Estados.jogadorDaVez = "dragao";
+						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+						chat.setText(Jogo.criachat(chatarray));
+						jogadorVez.setText(Estados.jogadorDaVez);
+						
 						}
+				else	if (Estados.jogadorDaVez.equals("dragao")) {
+					Estados.jogadorDaVez = "Night King";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					
+					}
+				else	if (Estados.jogadorDaVez.equals("Night King")) {
+					Estados.jogadorDaVez = "jogador1";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					
+					}
 			}
 		}
 		}
@@ -751,7 +778,7 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
-			if (jogadordavez == 1) {
+			if (Estados.jogadorDaVez .equals("jogador1")) {
 				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -788,7 +815,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 2) {
+			if (Estados.jogadorDaVez .equals("jogador2")) {
 				regras.Sons.tocarsom("dany");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -825,7 +852,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 3) {
+			if (Estados.jogadorDaVez .equals("dragao")) {
 				regras.Sons.tocarsom("tr");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -862,7 +889,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 4) {
+			if (Estados.jogadorDaVez .equals("Night King")) {
 				regras.Sons.tocarsom("nk");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -901,21 +928,33 @@ public class ControllerGame {
 
 			}
 			if(resultaDado.getText().equals("0")) {
-				jogadordavez=jogadordavez+1;
-				if (jogadordavez==5) {
-					jogadordavez=1;
-				}
+				
 				jogardado = false;
-				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
-				chat.setText(Jogo.criachat(chatarray));
-				jogadorVez.setText(jogadores.get(jogadordavez - 1));
 				Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
 					}
 				else	if (Estados.jogadorDaVez.equals("jogador2")) {
-						Estados.jogadorDaVez = "jogador1";
+						Estados.jogadorDaVez = "dragao";
+						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+						chat.setText(Jogo.criachat(chatarray));
+						jogadorVez.setText(Estados.jogadorDaVez);
 						}
+				else	if (Estados.jogadorDaVez.equals("dragao")) {
+					Estados.jogadorDaVez = "Night King";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
+				else	if (Estados.jogadorDaVez.equals("Night King")) {
+					Estados.jogadorDaVez = "jogador1";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
 			}
 		}
 		}
@@ -933,7 +972,7 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
 		} else {
-			if (jogadordavez == 1) {
+			if (Estados.jogadorDaVez .equals("jogador1")) {
 				regras.Sons.tocarsom("kn");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -970,7 +1009,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 2) {
+			if (Estados.jogadorDaVez .equals("jogador2")) {
 				regras.Sons.tocarsom("dany");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -1007,7 +1046,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 3) {
+			if (Estados.jogadorDaVez .equals("dragao")) {
 				regras.Sons.tocarsom("tr");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -1044,7 +1083,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (jogadordavez == 4) {
+			if (Estados.jogadorDaVez .equals("Night King")) {
 				regras.Sons.tocarsom("nk");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -1083,21 +1122,32 @@ public class ControllerGame {
 
 			}
 			if(resultaDado.getText().equals("0")) {
-				jogadordavez=jogadordavez+1;
-				if (jogadordavez==5) {
-					jogadordavez=1;
-				}
 				jogardado = false;
-				chatarray.add(0, Jogo.criaString("Vez do jogador " + jogadores.get(jogadordavez - 1)));
-				chat.setText(Jogo.criachat(chatarray));
-				jogadorVez.setText(jogadores.get(jogadordavez - 1));
 				Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
 					}
-				else if (Estados.jogadorDaVez.equals("jogador2")) {
-						Estados.jogadorDaVez = "jogador1";
+				else	if (Estados.jogadorDaVez.equals("jogador2")) {
+						Estados.jogadorDaVez = "dragao";
+						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+						chat.setText(Jogo.criachat(chatarray));
+						jogadorVez.setText(Estados.jogadorDaVez);
 						}
+				else	if (Estados.jogadorDaVez.equals("dragao")) {
+					Estados.jogadorDaVez = "Night King";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
+				else	if (Estados.jogadorDaVez.equals("Night King")) {
+					Estados.jogadorDaVez = "jogador1";
+					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+					chat.setText(Jogo.criachat(chatarray));
+					jogadorVez.setText(Estados.jogadorDaVez);
+					}
 			}
 		}
 		}
@@ -1119,15 +1169,15 @@ public class ControllerGame {
 	void onclickenviar(ActionEvent event) throws IOException {
 
 
-chatarray.add(0, Jogo.criaString("Jogador "+jogadores.get(jogadordavez - 1)+": "+digite.getText()));
+chatarray.add(0, Jogo.criaString("Jogador "+Estados.jogadorDaVez+": "+digite.getText()));
 chat.setText(Jogo.criachat(chatarray));
 	}
 
 	void salvar() {
 		Jogo.jogardado = jogardado;
-		Jogo.jogadores = jogadores;
+		
 		Jogo.chatarray = chatarray;
-		Jogo.jogadordavez = jogadordavez;
+		
 		// Matriz
 		
 		Jogo.movimentos = resultaDado.getText();
