@@ -359,10 +359,10 @@ public class ControllerGame {
 					
 					if (Estados.nmchat.equals("sim")) {
 						String a="";
-						if (Estados.jogadorDaVez.equals("jogador 2")) {
+						if (Estados.jogadorLogado.equals("jogador2")) {
 							a= "jogador 1";
 						}
-						if (Estados.jogadorDaVez.equals("jogador 1")) {
+						if (Estados.jogadorLogado.equals("jogador1")) {
 							a= "jogador 2";
 						}
 						chatarray.add(0, Jogo.criaString("Jogador " + a + ": " + Estados.mensagem));
