@@ -48,10 +48,10 @@ public class IA {
 	}
 
 	private static String definirDirecao(int jogadorX, int jogadorY) {
-		double distanciaN = medirDistancia(dragaoX, dragaoY + 1, jogadorX, jogadorY);
-		double distanciaS = medirDistancia(dragaoX, dragaoY - 1, jogadorX, jogadorY);
-		double distanciaL = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
-		double distanciaO = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
+		double distanciaN = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
+		double distanciaS = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
+		double distanciaL = medirDistancia(dragaoX, dragaoY + 1, jogadorX, jogadorY);
+		double distanciaO = medirDistancia(dragaoX, dragaoY - 1, jogadorX, jogadorY);
 		Perimetro perimetroN = new Perimetro("n", distanciaN);
 		Perimetro perimetroS = new Perimetro("s", distanciaS);
 		Perimetro perimetroL = new Perimetro("l", distanciaL);
