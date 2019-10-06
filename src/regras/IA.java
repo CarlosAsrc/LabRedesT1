@@ -25,7 +25,7 @@ public class IA {
 
 		// Ambos invisíveis
 		if ((!visibilidade1) && (!visibilidade2)) {
-			return buscarPosicaoAleatoria();
+			return buscarPosicaoAleatoria(xia,yia);
 		}
 
 		// Os dois visíveis
@@ -80,48 +80,32 @@ public class IA {
 		return Math.sqrt(Math.abs(x1 - x2) + Math.abs(y1 - y2));
 	}
 
-	private static String buscarPosicaoAleatoria() {
+	private static String buscarPosicaoAleatoria(Integer xia, Integer yia) {
 		int movimentoNumero;
 		String movimento;
 		while (true) {
 			movimentoNumero = random.nextInt(4);
 			movimento = direcoes.get(movimentoNumero);
-		//	if (validarMovimento(movimento)) {
+			if (Jogo.validamovimento(xia, yia, movimento)) {
 				return movimento;
-			//}
+			}
+			else if (Jogo.validamovimento(xia, yia, "n")) {
+				return movimento;
+			} 
+			else if (Jogo.validamovimento(xia, yia, "s")) {
+				return movimento;
+			} 
+			else if (Jogo.validamovimento(xia, yia, "l")) {
+				return movimento;
+			} 
+			else if (Jogo.validamovimento(xia, yia, "o")) {
+				return movimento;
+			} 
 		}
 	}
 
 	private static boolean validarMovimento(String movimento) {
-		Integer xia = 0;
-		Integer yia = 0;
-		if (Estados.jogadorDaVez.equals("Dragao")) {
-			xia = Jogo.pd1.get(0);
-			yia = Jogo.pd1.get(1);
-		}
-		if (Estados.jogadorDaVez.equals("Night King")) {
-			xia = Jogo.pd2.get(0);
-			yia = Jogo.pd2.get(1);
-		}
-
-		if (movimento.equals("n")) {
-			xia = xia - 1;
-		}
-		if (movimento.equals("s")) {
-			xia = xia + 1;
-		}
-		if (movimento.equals("l")) {
-			yia = yia + 1;
-		}
-		if (movimento.equals("o")) {
-			yia = yia - 1;
-		}
-
-		for (int i = 0; i < Jogo.proibida.size(); i++) {
-			if (xia == Jogo.proibida.get(i).get(0) && yia == Jogo.proibida.get(i).get(1)) {
-				return false;
-			}
-		}
+		
 		return true;
 	}
 }

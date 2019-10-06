@@ -247,10 +247,10 @@ public static ArrayList<ArrayList<Integer>> paredes = new ArrayList<ArrayList<In
 public static ArrayList<ArrayList<Integer>> proibida = new ArrayList<ArrayList<Integer>>();
 
 public static void atualizaproibida() {
-	proibida.set(0, pj1);
-	proibida.set(1, pj2);
-	proibida.set(2, pd1);
-	proibida.set(3, pd2);
+//	proibida.set(0, pj1);
+//	proibida.set(1, pj2);
+	proibida.set(0, pd1);
+	proibida.set(1, pd2);
 }
 
 public static void iniciarposicoes() {
@@ -304,8 +304,8 @@ public static void iniciarposicoes() {
 	paredes.add(parede9);
 	paredes.add(parede10);
 	
-	proibida.add(pj1);
-	proibida.add(pj2);
+//	proibida.add(pj1);
+//	proibida.add(pj2);
 	proibida.add(pd1);
 	proibida.add(pd2);
 	
