@@ -426,7 +426,7 @@ public class ControllerGame {
 
 							if (jogardado == false) {
 								dado();
-
+								jogardado = true;
 							} else {
 								Integer xia = 0;
 								Integer yia = 0;
