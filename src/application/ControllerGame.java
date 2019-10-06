@@ -424,7 +424,7 @@ public class ControllerGame {
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
 							try {
-								TimeUnit.SECONDS.sleep(2);
+								
 							} catch (InterruptedException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -518,7 +518,7 @@ public class ControllerGame {
 
 		};
 		long delay = 0; //
-		long period = 1000;
+		long period = 2000;
 		timer.schedule(task, delay, period);
 	}
 
