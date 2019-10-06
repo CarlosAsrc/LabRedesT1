@@ -3,6 +3,7 @@ package regras;
 import java.util.ArrayList;
 import java.util.Random;
 
+import conexao.Estados;
 import javafx.scene.image.ImageView;
 
 public class Jogo {
@@ -177,6 +178,11 @@ public static String corporta(String a) {
 			if (a>0) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a-1&&proibida.get(i).get(1)==b) {
+						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
+							return true;
+						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
+							return true;
+						}
 						return false;
 					}
 				}
@@ -189,6 +195,11 @@ public static String corporta(String a) {
 			if (a<7) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a+1&&proibida.get(i).get(1)==b) {
+						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
+							return true;
+						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
+							return true;
+						}
 						return false;
 					}
 				}
@@ -201,6 +212,11 @@ public static String corporta(String a) {
 			if (b<7) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b+1) {
+						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
+							return true;
+						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
+							return true;
+						}
 						return false;
 					}
 				}
@@ -213,6 +229,11 @@ public static String corporta(String a) {
 			if (b>0) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b-1) {
+						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
+							return true;
+						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
+							return true;
+						}
 						return false;
 					}
 				}

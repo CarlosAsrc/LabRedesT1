@@ -89,18 +89,22 @@ public class IA {
 			if (Jogo.validamovimento(xia, yia, movimento)) {
 				return movimento;
 			}
-			else if (Jogo.validamovimento(xia, yia, "n")) {
+			else {
+				while (!Jogo.validamovimento(xia, yia, movimento)) {
+					ArrayList <String> ms = new ArrayList <String>();
+					ms.add("n");
+					ms.add("s");
+					ms.add("l");
+					ms.add("o");
+					
+					    Random random = new Random();        
+			            int intervalo_randomico = random.nextInt(3);
+			            movimento = ms.get(intervalo_randomico);
+			            
+				}
 				return movimento;
-			} 
-			else if (Jogo.validamovimento(xia, yia, "s")) {
-				return movimento;
-			} 
-			else if (Jogo.validamovimento(xia, yia, "l")) {
-				return movimento;
-			} 
-			else if (Jogo.validamovimento(xia, yia, "o")) {
-				return movimento;
-			} 
+			}
+
 		}
 	}
 
