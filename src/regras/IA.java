@@ -9,6 +9,28 @@ public class IA {
 	private static int dragaoX = 0;
 	private static int dragaoY = 0;
 	private static Random random = new Random();
+	
+	public static String movimentoaleatoriovalido(Integer xia, Integer yia) {
+		
+		String movimento ="";
+		while (!Jogo.validamovimento(xia, yia, movimento)) {
+			ArrayList <String> ms = new ArrayList <String>();
+			ms.add("n");
+			ms.add("s");
+			ms.add("l");
+			ms.add("o");
+			
+			    Random random = new Random();        
+	            int intervalo_randomico = random.nextInt(3);
+	            movimento = ms.get(intervalo_randomico);
+	            
+		}
+		return movimento;
+		
+	
+		
+	}
+	
 	private static Map<Integer, String> direcoes = new HashMap<Integer, String>() {
 		{
 			put(0, "n");
@@ -21,26 +43,19 @@ public class IA {
 	public static String direcionar(Integer xia, Integer yia, Integer x1, Integer y1, Integer x2, Integer y2,
 			boolean visibilidade1, boolean visibilidade2) {
 		
+		if (xia==x1&&yia==y1) {
+			visibilidade1=false;
+		}
+		else if (xia==x2&&yia==y2) {
+			visibilidade2=false;
+		}
 		
 		dragaoX = xia;
 		dragaoY = yia;
 
 		// Ambos invisíveis
 		if ((!visibilidade1) && (!visibilidade2)) {
-			String movimento ="";
-			while (!Jogo.validamovimento(xia, yia, movimento)) {
-				ArrayList <String> ms = new ArrayList <String>();
-				ms.add("n");
-				ms.add("s");
-				ms.add("l");
-				ms.add("o");
-				
-				    Random random = new Random();        
-		            int intervalo_randomico = random.nextInt(3);
-		            movimento = ms.get(intervalo_randomico);
-		            
-			}
-			return movimento;
+			movimentoaleatoriovalido(xia,yia);
 		}
 
 		// Os dois visíveis
@@ -103,19 +118,7 @@ public class IA {
 				return movimento;
 			}
 			else {
-				while (!Jogo.validamovimento(xia, yia, movimento)) {
-					ArrayList <String> ms = new ArrayList <String>();
-					ms.add("n");
-					ms.add("s");
-					ms.add("l");
-					ms.add("o");
-					
-					    Random random = new Random();        
-			            int intervalo_randomico = random.nextInt(3);
-			            movimento = ms.get(intervalo_randomico);
-			            
-				}
-				return movimento;
+				return movimentoaleatoriovalido(xia,yia);
 			
 
 		}
