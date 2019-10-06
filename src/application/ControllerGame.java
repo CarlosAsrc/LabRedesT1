@@ -437,13 +437,22 @@ public class ControllerGame {
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
 							
 							if (jogardado == false) {
+								if (Estados.jogadorLogado.equals("jogador2")) {
 								try {
+									
 									dado();
+									String a = resultaDado.getText();
+									criaracao("Dado", a);
+									
 								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
 								jogardado = true;
+							}
 							} else {
 								Integer xia = 0;
 								Integer yia = 0;
