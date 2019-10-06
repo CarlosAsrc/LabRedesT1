@@ -372,6 +372,9 @@ public class ControllerGame {
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
 								}
 							}
 							if (Estados.direcao.equals("s")) {
@@ -379,6 +382,9 @@ public class ControllerGame {
 								try {
 									sul();
 								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
@@ -390,6 +396,9 @@ public class ControllerGame {
 								} catch (IOException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
 								}
 							}
 							if (Estados.direcao.equals("o")) {
@@ -397,6 +406,9 @@ public class ControllerGame {
 								try {
 									oeste();
 								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								} catch (InterruptedException e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
@@ -425,7 +437,12 @@ public class ControllerGame {
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
 							
 							if (jogardado == false) {
-								dado();
+								try {
+									dado();
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
 								jogardado = true;
 							} else {
 								Integer xia = 0;
@@ -469,6 +486,9 @@ public class ControllerGame {
 									} catch (IOException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
 									}
 								}
 								if (movimento.equals("s")) {
@@ -476,6 +496,9 @@ public class ControllerGame {
 										sul();
 										criaracao("Jogador moveu", "s");
 									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (InterruptedException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
@@ -488,6 +511,9 @@ public class ControllerGame {
 									} catch (IOException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
 									}
 								}
 								if (movimento.equals("o")) {
@@ -495,6 +521,9 @@ public class ControllerGame {
 										oeste();
 										criaracao("Jogador moveu", "o");
 									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (InterruptedException e) {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
@@ -513,7 +542,7 @@ public class ControllerGame {
 
 		};
 		long delay = 0; //
-		long period = 2000;
+		long period = 1000;
 		timer.schedule(task, delay, period);
 	}
 
@@ -523,7 +552,7 @@ public class ControllerGame {
 	}
 
 	@FXML
-	void onclickdado(ActionEvent event) throws IOException {
+	void onclickdado(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
 			String a = resultaDado.getText();
@@ -534,7 +563,8 @@ public class ControllerGame {
 		}
 	}
 
-	public void dado() {
+	public void dado() throws InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		salvar();
 		if (jogardado == false) {
 			jogardado = true;
@@ -554,7 +584,7 @@ public class ControllerGame {
 	}
 
 	@FXML
-	void onclicknorte(ActionEvent event) throws IOException {
+	void onclicknorte(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			norte();
 			criaracao("Jogador moveu", "n");
@@ -564,7 +594,8 @@ public class ControllerGame {
 		}
 	}
 
-	public void norte() throws IOException {
+	public void norte() throws IOException, InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		salvar();
 
 		if (jogardado == false) {
@@ -752,7 +783,7 @@ public class ControllerGame {
 	}
 
 	@FXML
-	void onclicksul(ActionEvent event) throws IOException {
+	void onclicksul(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			sul();
 			criaracao("Jogador moveu", "s");
@@ -762,7 +793,8 @@ public class ControllerGame {
 		}
 	}
 
-	public void sul() throws IOException {
+	public void sul() throws IOException, InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -951,7 +983,8 @@ public class ControllerGame {
 	}
 
 	@FXML
-	void onclickleste(ActionEvent event) throws IOException {
+	void onclickleste(ActionEvent event) throws IOException, InterruptedException {
+		
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			leste();
 			criaracao("Jogador moveu", "l");
@@ -961,7 +994,8 @@ public class ControllerGame {
 		}
 	}
 
-	public void leste() throws IOException {
+	public void leste() throws IOException, InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1146,7 +1180,7 @@ public class ControllerGame {
 	}
 
 	@FXML
-	void onclickoeste(ActionEvent event) throws IOException {
+	void onclickoeste(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			oeste();
 			criaracao("Jogador moveu", "o");
@@ -1156,7 +1190,8 @@ public class ControllerGame {
 		}
 	}
 
-	public void oeste() throws IOException {
+	public void oeste() throws IOException, InterruptedException {
+		TimeUnit.SECONDS.sleep(2);
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
