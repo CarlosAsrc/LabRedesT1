@@ -20,12 +20,27 @@ public class IA {
 
 	public static String direcionar(Integer xia, Integer yia, Integer x1, Integer y1, Integer x2, Integer y2,
 			boolean visibilidade1, boolean visibilidade2) {
+		
+		
 		dragaoX = xia;
 		dragaoY = yia;
 
 		// Ambos invisíveis
 		if ((!visibilidade1) && (!visibilidade2)) {
-			return buscarPosicaoAleatoria(xia,yia);
+			String movimento ="";
+			while (!Jogo.validamovimento(xia, yia, movimento)) {
+				ArrayList <String> ms = new ArrayList <String>();
+				ms.add("n");
+				ms.add("s");
+				ms.add("l");
+				ms.add("o");
+				
+				    Random random = new Random();        
+		            int intervalo_randomico = random.nextInt(3);
+		            movimento = ms.get(intervalo_randomico);
+		            
+			}
+			return movimento;
 		}
 
 		// Os dois visíveis
@@ -33,17 +48,17 @@ public class IA {
 			double distancia1 = medirDistancia(dragaoX, dragaoY, x1, y1);
 			double distancia2 = medirDistancia(dragaoX, dragaoY, x2, y2);
 			if (distancia1 >= distancia2) {
-				return definirDirecao(x2, y2);
+			return	movimentofinal(xia,yia,definirDirecao(x2, y2)) ;
 			} else {
-				return definirDirecao(x1, y1);
+				return	movimentofinal(xia,yia,definirDirecao(x1, y1));
 			}
 		}
 
 		// Somente um visível
 		if (visibilidade1) {
-			return definirDirecao(x1, y1);
+			return	movimentofinal(xia,yia,definirDirecao(x1, y1));
 		} else {
-			return definirDirecao(x2, y2);
+			return	movimentofinal(xia,yia,definirDirecao(x2, y2));
 		}
 	}
 
@@ -80,12 +95,10 @@ public class IA {
 		return Math.sqrt(Math.abs(x1 - x2) + Math.abs(y1 - y2));
 	}
 
-	private static String buscarPosicaoAleatoria(Integer xia, Integer yia) {
-		int movimentoNumero;
-		String movimento;
-		while (true) {
-			movimentoNumero = random.nextInt(4);
-			movimento = direcoes.get(movimentoNumero);
+	private static String movimentofinal(Integer xia, Integer yia, String movimento) {
+		
+	
+	
 			if (Jogo.validamovimento(xia, yia, movimento)) {
 				return movimento;
 			}
@@ -103,7 +116,7 @@ public class IA {
 			            
 				}
 				return movimento;
-			}
+			
 
 		}
 	}
