@@ -356,10 +356,13 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
-					System.out.println(Estados.nmchat);
+					
 					if (Estados.nmchat.equals("sim")) {
-						System.out.println("entrou");
-						chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
+						String a = "jogador 1";
+						if (Estados.jogadorDaVez.equals("jogador 1")) {
+							a= "jogador 2";
+						}
+						chatarray.add(0, Jogo.criaString("Jogador " + a + ": " + Estados.mensagem));
 						chat.setText(Jogo.criachat(chatarray));
 
 						Estados.nmchat = "nao";
