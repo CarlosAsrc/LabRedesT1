@@ -86,9 +86,9 @@ public class IA {
 		while (true) {
 			movimentoNumero = random.nextInt(4);
 			movimento = direcoes.get(movimentoNumero);
-			if (validarMovimento(movimento)) {
+		//	if (validarMovimento(movimento)) {
 				return movimento;
-			}
+		//	}
 		}
 	}
 
