@@ -551,7 +551,7 @@ public class ControllerGame {
 
 		};
 		long delay = 0; //
-		long period = 1000;
+		long period = 500;
 		timer.schedule(task, delay, period);
 	}
 
@@ -748,7 +748,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("dragao 2 foi para o norte"));
+					chatarray.add(0, Jogo.criaString("Night King foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -947,7 +947,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("dragao 2 foi para o sul"));
+					chatarray.add(0, Jogo.criaString("Night King foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1147,7 +1147,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("dragao 2 foi para o leste"));
+					chatarray.add(0, Jogo.criaString("Night King foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1343,7 +1343,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("dragao 2 foi para o oeste"));
+					chatarray.add(0, Jogo.criaString("Night King foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
