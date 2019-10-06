@@ -356,7 +356,7 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
-					
+					//Chat
 					if (Estados.nmchat.equals("sim")) {
 						String a="";
 						if (Estados.jogadorLogado.equals("jogador2")) {
@@ -449,9 +449,9 @@ public class ControllerGame {
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
-
+							if (Estados.jogadorLogado.equals("jogador2")) {
 							if (jogardado == false) {
-								if (Estados.jogadorLogado.equals("jogador2")) {
+								
 									try {
 
 										dado();

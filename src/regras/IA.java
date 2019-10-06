@@ -83,9 +83,9 @@ public class IA {
 		perimetros.sort(Comparator.comparingDouble(Perimetro::getDistancia));
 
 		for (Perimetro perimetro : perimetros) {
-			if (validarMovimento(perimetro.getDirecao())) {
+			
 				return perimetro.getDirecao();
-			}
+			
 		}
 
 		return "Nenhum movimento válido";
@@ -121,8 +121,5 @@ public class IA {
 		}
 	}
 
-	private static boolean validarMovimento(String movimento) {
-		
-		return true;
-	}
+	
 }
