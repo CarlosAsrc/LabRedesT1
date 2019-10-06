@@ -37,6 +37,7 @@ public class Server {
 			DatagramPacket recvdpkt = new DatagramPacket(receivebuffer, receivebuffer.length);
 			serverSocket.receive(recvdpkt);
 			InetAddress IP = recvdpkt.getAddress();
+		
 			int portno = recvdpkt.getPort();
 			String clientdata = new String(recvdpkt.getData());
 			System.out.println("\nClient : " + clientdata);
