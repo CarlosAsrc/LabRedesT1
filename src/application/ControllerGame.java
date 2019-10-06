@@ -357,17 +357,20 @@ public class ControllerGame {
 
 				Platform.runLater(() -> {
 
+					if (Estados.nmchat.equals("sim")) {
+						
+						chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
+						chat.setText(Jogo.criachat(chatarray));
+						
+						Estados.nmchat="nao";
+					}
+					
+					
 					// Atualiza movimentos!!
 
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 
-						if (Estados.nmchat.equals("sim")) {
-							
-							chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
-							chat.setText(Jogo.criachat(chatarray));
-							
-							Estados.nmchat="nao";
-						}
+						
 						
 						if (Estados.jogadormoveu.equals("sim")) {
 
