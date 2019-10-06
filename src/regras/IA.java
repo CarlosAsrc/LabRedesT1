@@ -86,9 +86,9 @@ public class IA {
 		while (true) {
 			movimentoNumero = random.nextInt(4);
 			movimento = direcoes.get(movimentoNumero);
-		//	if (validarMovimento(movimento)) {
+			if (validarMovimento(movimento)) {
 				return movimento;
-		//	}
+			}
 		}
 	}
 
@@ -105,16 +105,16 @@ public class IA {
 		}
 
 		if (movimento.equals("n")) {
-			yia = yia + 1;
+			xia = xia - 1;
 		}
 		if (movimento.equals("s")) {
-			yia = yia - 1;
-		}
-		if (movimento.equals("l")) {
 			xia = xia + 1;
 		}
+		if (movimento.equals("l")) {
+			yia = yia + 1;
+		}
 		if (movimento.equals("o")) {
-			xia = xia - 1;
+			yia = yia - 1;
 		}
 
 		for (int i = 0; i < Jogo.proibida.size(); i++) {
