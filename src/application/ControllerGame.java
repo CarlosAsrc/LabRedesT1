@@ -422,7 +422,7 @@ public class ControllerGame {
 						}
 
 						// Vez do IA
-						if (Estados.jogadorDaVez.equals("Dragao") || Estados.jogadorDaVez.equals("Night King")) {
+						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
 
 							if (jogardado == false) {
 								dado();
@@ -436,7 +436,7 @@ public class ControllerGame {
 								Integer y2 = 0;
 								boolean v1 = true;
 								boolean v2 = true;
-								if (Estados.jogadorDaVez.equals("Dragao")) {
+								if (Estados.jogadorDaVez.equals("dragao")) {
 									xia = Jogo.pd1.get(0);
 									yia = Jogo.pd1.get(1);
 								}
@@ -648,7 +648,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (Estados.jogadorDaVez.equals("Dragao")) {
+			if (Estados.jogadorDaVez.equals("dragao")) {
 				regras.Sons.tocarsom("tr");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
@@ -674,7 +674,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o norte"));
+					chatarray.add(0, Jogo.criaString("dragao 1 foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -711,7 +711,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o norte"));
+					chatarray.add(0, Jogo.criaString("dragao 2 foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -872,7 +872,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o sul"));
+					chatarray.add(0, Jogo.criaString("dragao 1 foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -909,7 +909,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o sul"));
+					chatarray.add(0, Jogo.criaString("dragao 2 foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1107,7 +1107,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o leste"));
+					chatarray.add(0, Jogo.criaString("dragao 2 foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1265,7 +1265,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o oeste"));
+					chatarray.add(0, Jogo.criaString("dragao 1 foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1302,7 +1302,7 @@ public class ControllerGame {
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
-					chatarray.add(0, Jogo.criaString("Dragao 2 foi para o oeste"));
+					chatarray.add(0, Jogo.criaString("dragao 2 foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));

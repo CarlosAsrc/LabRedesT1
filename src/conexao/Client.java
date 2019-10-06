@@ -30,7 +30,7 @@ public class Client {
 
 		BufferedReader clientRead = new BufferedReader(new InputStreamReader(System.in));
 
-		InetAddress IP = InetAddress.getByName("2804:14d:4c86:8f60:b1b9:4ba7:3554:13da");
+		InetAddress IP = InetAddress.getByName("192.168.0.18");
 
 		DatagramSocket clientSocket = new DatagramSocket();
 		int contlinha = 0;
