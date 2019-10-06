@@ -1,10 +1,12 @@
+package regras;
+
 import java.util.*;
 
 
 public class IA {
 
-    private static int dragaoX = 2;
-    private static int dragaoY = 8;
+    private static int dragaoX = 9;
+    private static int dragaoY = 3;
     private static Random random = new Random();
     private static Map<Integer, String> direcoes = new HashMap<Integer, String>(){{
         put(0, "n");

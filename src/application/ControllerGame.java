@@ -405,7 +405,7 @@ public class ControllerGame {
 						}
 					
 					// Atualiza jogador da vez
-					if (Estados.jogadorDaVeztrocou.equals("sim")&&resultaDado.getText().equals("0")) {
+					if (Estados.jogadorDaVeztrocou.equals("sim")) {
 						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
 						chat.setText(Jogo.criachat(chatarray));
 						jogadorVez.setText(Estados.jogadorDaVez);
@@ -633,7 +633,7 @@ public class ControllerGame {
 
 				jogardado = false;
 
-				Acoes.criarAcao("troca jogador", "troca jogador");
+			//	Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -832,7 +832,7 @@ public class ControllerGame {
 
 				jogardado = false;
 
-				Acoes.criarAcao("troca jogador", "troca jogador");
+			//	Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -1030,7 +1030,7 @@ public class ControllerGame {
 			if (resultaDado.getText().equals("0")) {
 
 				jogardado = false;
-				Acoes.criarAcao("troca jogador", "troca jogador");
+			//	Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -1224,7 +1224,7 @@ public class ControllerGame {
 			}
 			if (resultaDado.getText().equals("0")) {
 				jogardado = false;
-				Acoes.criarAcao("troca jogador", "troca jogador");
+		//		Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
