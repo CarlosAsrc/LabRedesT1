@@ -564,7 +564,7 @@ public class ControllerGame {
 	}
 
 	public void dado() throws InterruptedException {
-		TimeUnit.SECONDS.sleep(1);
+		
 		salvar();
 		if (jogardado == false) {
 			jogardado = true;
@@ -595,7 +595,7 @@ public class ControllerGame {
 	}
 
 	public void norte() throws IOException, InterruptedException {
-		TimeUnit.SECONDS.sleep(1);
+		
 		salvar();
 
 		if (jogardado == false) {
@@ -794,7 +794,7 @@ public class ControllerGame {
 	}
 
 	public void sul() throws IOException, InterruptedException {
-		TimeUnit.SECONDS.sleep(1);
+		
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -995,7 +995,7 @@ public class ControllerGame {
 	}
 
 	public void leste() throws IOException, InterruptedException {
-		TimeUnit.SECONDS.sleep(1);
+		
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1191,7 +1191,7 @@ public class ControllerGame {
 	}
 
 	public void oeste() throws IOException, InterruptedException {
-		TimeUnit.SECONDS.sleep(1);
+		
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
