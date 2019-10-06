@@ -360,8 +360,9 @@ public class ControllerGame {
 					// Atualiza movimentos!!
 
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
-
+System.out.println(Estados.nmchat);
 						if (Estados.nmchat.equals("sim")) {
+							System.out.println("entrou");
 							chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
 							chat.setText(Jogo.criachat(chatarray));
 							
