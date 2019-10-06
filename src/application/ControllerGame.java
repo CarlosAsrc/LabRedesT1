@@ -356,22 +356,19 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
-
+					System.out.println(Estados.nmchat);
 					if (Estados.nmchat.equals("sim")) {
-						
+						System.out.println("entrou");
 						chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
 						chat.setText(Jogo.criachat(chatarray));
-						
-						Estados.nmchat="nao";
+
+						Estados.nmchat = "nao";
 					}
-					
-					
+
 					// Atualiza movimentos!!
 
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 
-						
-						
 						if (Estados.jogadormoveu.equals("sim")) {
 
 							// mova para algum lugar
@@ -446,24 +443,24 @@ public class ControllerGame {
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
-							
+
 							if (jogardado == false) {
 								if (Estados.jogadorLogado.equals("jogador2")) {
-								try {
-									
-									dado();
-									String a = resultaDado.getText();
-									criaracao("Dado", a);
-									
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
+									try {
+
+										dado();
+										String a = resultaDado.getText();
+										criaracao("Dado", a);
+
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+									jogardado = true;
 								}
-								jogardado = true;
-							}
 							} else {
 								Integer xia = 0;
 								Integer yia = 0;
@@ -549,9 +546,7 @@ public class ControllerGame {
 									}
 								}
 							}
-							
-								
-							
+
 						}
 
 					}
@@ -584,7 +579,7 @@ public class ControllerGame {
 	}
 
 	public void dado() throws InterruptedException {
-		
+
 		salvar();
 		if (jogardado == false) {
 			jogardado = true;
@@ -615,7 +610,7 @@ public class ControllerGame {
 	}
 
 	public void norte() throws IOException, InterruptedException {
-		
+
 		salvar();
 
 		if (jogardado == false) {
@@ -814,7 +809,7 @@ public class ControllerGame {
 	}
 
 	public void sul() throws IOException, InterruptedException {
-		
+
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1004,7 +999,7 @@ public class ControllerGame {
 
 	@FXML
 	void onclickleste(ActionEvent event) throws IOException, InterruptedException {
-		
+
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			leste();
 			criaracao("Jogador moveu", "l");
@@ -1015,7 +1010,7 @@ public class ControllerGame {
 	}
 
 	public void leste() throws IOException, InterruptedException {
-		
+
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1211,7 +1206,7 @@ public class ControllerGame {
 	}
 
 	public void oeste() throws IOException, InterruptedException {
-		
+
 		salvar();
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -1405,11 +1400,11 @@ public class ControllerGame {
 	@FXML
 	void onclickenviar(ActionEvent event) throws IOException {
 
-		chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + digite.getText()));
+		chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorLogado + ": " + digite.getText()));
 		chat.setText(Jogo.criachat(chatarray));
-		
+
 		Acoes.criarAcao("chat", digite.getText());
-		
+
 	}
 
 	void salvar() {
