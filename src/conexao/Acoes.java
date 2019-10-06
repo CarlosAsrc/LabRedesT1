@@ -13,7 +13,7 @@ public class Acoes {
 		String mensagem = a.mensagem;
 		//Remove a virgula
 		mensagem=mensagem.substring(0, mensagem.length()-1);
-		
+		//chat
 		if (acao.equals("chat")) {
 			Estados.nmchat="sim";
 			Estados.mensagem=mensagem;
