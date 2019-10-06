@@ -423,7 +423,12 @@ public class ControllerGame {
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
-
+							try {
+								TimeUnit.SECONDS.sleep(2);
+							} catch (InterruptedException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							if (jogardado == false) {
 								dado();
 								jogardado = true;
@@ -500,12 +505,9 @@ public class ControllerGame {
 									}
 								}
 							}
-							try {
-								TimeUnit.SECONDS.sleep(2);
-							} catch (InterruptedException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+							
+								
+							
 						}
 
 					}
