@@ -14,6 +14,12 @@ public class Acoes {
 		//Remove a virgula
 		mensagem=mensagem.substring(0, mensagem.length()-1);
 		
+		if (acao.equals("chat")) {
+			Estados.nmchat="sim";
+			Estados.mensagem=mensagem;
+		}
+		
+		
 		if (acao.equals("Dado")) {
 			Estados.jogoudado="sim";
 			Estados.jogoudadovalor=mensagem;

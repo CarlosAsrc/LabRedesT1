@@ -361,6 +361,13 @@ public class ControllerGame {
 
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 
+						if (Estados.nmchat.equals("sim")) {
+							chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + Estados.mensagem));
+							chat.setText(Jogo.criachat(chatarray));
+							
+							Estados.nmchat="nao";
+						}
+						
 						if (Estados.jogadormoveu.equals("sim")) {
 
 							// mova para algum lugar
@@ -1396,6 +1403,9 @@ public class ControllerGame {
 
 		chatarray.add(0, Jogo.criaString("Jogador " + Estados.jogadorDaVez + ": " + digite.getText()));
 		chat.setText(Jogo.criachat(chatarray));
+		
+		Acoes.criarAcao("chat", digite.getText());
+		
 	}
 
 	void salvar() {

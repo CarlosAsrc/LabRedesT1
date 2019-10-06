@@ -17,6 +17,8 @@ public static String direcao="";
 public static String jogoudado="nao";
 public static String jogoudadovalor="";
 
+public static String nmchat = "nao";
+public static String mensagem="";
 
 
 
