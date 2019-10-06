@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
@@ -25,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import regras.Arquivo;
+import regras.IA;
 import regras.Imagem;
 import regras.Jogo;
 
@@ -391,7 +393,7 @@ public class ControllerGame {
 								}
 							}
 							if (Estados.direcao.equals("o")) {
-								
+
 								try {
 									oeste();
 								} catch (IOException e) {
@@ -403,20 +405,107 @@ public class ControllerGame {
 							Estados.jogadormoveu = "nao";
 
 						}
-					
-					// Atualiza jogador da vez
-					if (Estados.jogadorDaVeztrocou.equals("sim")) {
-						chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
-						chat.setText(Jogo.criachat(chatarray));
-						jogadorVez.setText(Estados.jogadorDaVez);
-						Estados.jogadorDaVeztrocou = "nao";
-					}
-					
+
+						// Atualiza jogador da vez
+						if (Estados.jogadorDaVeztrocou.equals("sim")) {
+							chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+							chat.setText(Jogo.criachat(chatarray));
+							jogadorVez.setText(Estados.jogadorDaVez);
+							Estados.jogadorDaVeztrocou = "nao";
+						}
+
 						// Dado
 						if (Estados.jogoudado.equals("sim")) {
 							resultaDado.setText(Estados.jogoudadovalor);
-							jogardado=true;
-							Estados.jogoudado="nao";
+							jogardado = true;
+							Estados.jogoudado = "nao";
+						}
+
+						// Vez do IA
+						if (Estados.jogadorDaVez.equals("Dragao") || Estados.jogadorDaVez.equals("Night King")) {
+
+							if (jogardado == false) {
+								dado();
+
+							} else {
+								Integer xia = 0;
+								Integer yia = 0;
+								Integer x1 = 0;
+								Integer y1 = 0;
+								Integer x2 = 0;
+								Integer y2 = 0;
+								boolean v1 = true;
+								boolean v2 = true;
+								if (Estados.jogadorDaVez.equals("Dragao")) {
+									xia = Jogo.pd1.get(0);
+									yia = Jogo.pd1.get(1);
+								}
+								if (Estados.jogadorDaVez.equals("Night King")) {
+									xia = Jogo.pd2.get(0);
+									yia = Jogo.pd2.get(1);
+								}
+								x1 = Jogo.pj1.get(0);
+								y1 = Jogo.pj1.get(1);
+								x2 = Jogo.pj2.get(0);
+								y2 = Jogo.pj2.get(1);
+
+								for (int i = 0; i < Jogo.piportas().size(); i++) {
+									if (x1 == Jogo.piportas().get(i).get(0) && y1 == Jogo.piportas().get(i).get(1)) {
+										v1 = false;
+										break;
+									}
+									if (x2 == Jogo.piportas().get(i).get(0) && y2 == Jogo.piportas().get(i).get(1)) {
+										v2 = false;
+										break;
+									}
+								}
+
+								String movimento = IA.direcionar(xia, yia, x1, y1, x2, y2, v1, v2);
+
+								if (movimento.equals("n")) {
+									try {
+										norte();
+										criaracao("Jogador moveu", "n");
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								if (movimento.equals("s")) {
+									try {
+										sul();
+										criaracao("Jogador moveu", "s");
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+
+								}
+								if (movimento.equals("l")) {
+									try {
+										leste();
+										criaracao("Jogador moveu", "l");
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+								if (movimento.equals("o")) {
+									try {
+										oeste();
+										criaracao("Jogador moveu", "o");
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+							}
+							try {
+								TimeUnit.SECONDS.sleep(2);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 
 					}
@@ -431,12 +520,17 @@ public class ControllerGame {
 		timer.schedule(task, delay, period);
 	}
 
+	public static void criaracao(String a, String b) throws IOException {
+
+		Acoes.criarAcao(a, b);
+	}
+
 	@FXML
 	void onclickdado(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
 			String a = resultaDado.getText();
-			Acoes.criarAcao("Dado", a);
+			criaracao("Dado", a);
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -466,7 +560,7 @@ public class ControllerGame {
 	void onclicknorte(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			norte();
-			Acoes.criarAcao("Jogador moveu", "n");
+			criaracao("Jogador moveu", "n");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -633,7 +727,6 @@ public class ControllerGame {
 
 				jogardado = false;
 
-			//	Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -665,7 +758,7 @@ public class ControllerGame {
 	void onclicksul(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			sul();
-			Acoes.criarAcao("Jogador moveu", "s");
+			criaracao("Jogador moveu", "s");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -832,7 +925,6 @@ public class ControllerGame {
 
 				jogardado = false;
 
-			//	Acoes.criarAcao("troca jogador", "troca jogador");
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -865,7 +957,7 @@ public class ControllerGame {
 	void onclickleste(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			leste();
-			Acoes.criarAcao("Jogador moveu", "l");
+			criaracao("Jogador moveu", "l");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1030,7 +1122,7 @@ public class ControllerGame {
 			if (resultaDado.getText().equals("0")) {
 
 				jogardado = false;
-			//	Acoes.criarAcao("troca jogador", "troca jogador");
+
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
@@ -1060,7 +1152,7 @@ public class ControllerGame {
 	void onclickoeste(ActionEvent event) throws IOException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			oeste();
-			Acoes.criarAcao("Jogador moveu", "o");
+			criaracao("Jogador moveu", "o");
 		} else {
 			chatarray.add(0, Jogo.criaString("Espere sua vez! Agora esta jogando o " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1224,7 +1316,7 @@ public class ControllerGame {
 			}
 			if (resultaDado.getText().equals("0")) {
 				jogardado = false;
-		//		Acoes.criarAcao("troca jogador", "troca jogador");
+
 				if (Estados.jogadorDaVez.equals("jogador1")) {
 					Estados.jogadorDaVez = "jogador2";
 					chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));

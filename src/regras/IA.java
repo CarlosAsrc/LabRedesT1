@@ -2,94 +2,126 @@ package regras;
 
 import java.util.*;
 
+import conexao.Estados;
 
 public class IA {
 
-    private static int dragaoX = 9;
-    private static int dragaoY = 3;
-    private static Random random = new Random();
-    private static Map<Integer, String> direcoes = new HashMap<Integer, String>(){{
-        put(0, "n");
-        put(1, "s");
-        put(2, "l");
-        put(3, "o");
-    }};
+	private static int dragaoX = 0;
+	private static int dragaoY = 0;
+	private static Random random = new Random();
+	private static Map<Integer, String> direcoes = new HashMap<Integer, String>() {
+		{
+			put(0, "n");
+			put(1, "s");
+			put(2, "l");
+			put(3, "o");
+		}
+	};
 
-    public static void main(String args []) {
-         System.out.println(direcionar(9, 3, 1, 8, true, true));
-    }
+	public static String direcionar(Integer xia, Integer yia, Integer x1, Integer y1, Integer x2, Integer y2,
+			boolean visibilidade1, boolean visibilidade2) {
+		dragaoX = xia;
+		dragaoY = yia;
 
-    public static String direcionar (int x1, int y1, int x2, int y2, boolean visibilidade1, boolean visibilidade2) {
-        //Ambos invisíveis
-        if( (!visibilidade1) && (!visibilidade2) ) {
-            return buscarPosicaoAleatoria();
-        }
+		// Ambos invisíveis
+		if ((!visibilidade1) && (!visibilidade2)) {
+			return buscarPosicaoAleatoria();
+		}
 
-        //Os dois visíveis
-        if(visibilidade1 && visibilidade2) {
-            double distancia1 = medirDistancia(dragaoX, dragaoY, x1, y1);
-            double distancia2 = medirDistancia(dragaoX, dragaoY, x2, y2);
-            if(distancia1 >= distancia2) {
-                return definirDirecao(x2, y2);
-            } else {
-                return definirDirecao(x1, y1);
-            }
-        }
+		// Os dois visíveis
+		if (visibilidade1 && visibilidade2) {
+			double distancia1 = medirDistancia(dragaoX, dragaoY, x1, y1);
+			double distancia2 = medirDistancia(dragaoX, dragaoY, x2, y2);
+			if (distancia1 >= distancia2) {
+				return definirDirecao(x2, y2);
+			} else {
+				return definirDirecao(x1, y1);
+			}
+		}
 
-        //Somente um visível
-        if(visibilidade1) {
-            return definirDirecao(x1, y1);
-        } else {
-            return definirDirecao(x2, y2);
-        }
-    }
+		// Somente um visível
+		if (visibilidade1) {
+			return definirDirecao(x1, y1);
+		} else {
+			return definirDirecao(x2, y2);
+		}
+	}
 
+	private static String definirDirecao(int jogadorX, int jogadorY) {
+		double distanciaN = medirDistancia(dragaoX, dragaoY + 1, jogadorX, jogadorY);
+		double distanciaS = medirDistancia(dragaoX, dragaoY - 1, jogadorX, jogadorY);
+		double distanciaL = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
+		double distanciaO = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
+		Perimetro perimetroN = new Perimetro("n", distanciaN);
+		Perimetro perimetroS = new Perimetro("s", distanciaS);
+		Perimetro perimetroL = new Perimetro("l", distanciaL);
+		Perimetro perimetroO = new Perimetro("o", distanciaO);
+		List<Perimetro> perimetros = new ArrayList<Perimetro>() {
+			{
+				add(perimetroN);
+				add(perimetroS);
+				add(perimetroL);
+				add(perimetroO);
+			}
+		};
 
+		perimetros.sort(Comparator.comparingDouble(Perimetro::getDistancia));
 
-    private static String definirDirecao(int jogadorX, int jogadorY) {
-        double distanciaN = medirDistancia(dragaoX, dragaoY + 1, jogadorX, jogadorY);
-        double distanciaS = medirDistancia(dragaoX, dragaoY - 1, jogadorX, jogadorY);
-        double distanciaL = medirDistancia(dragaoX + 1, dragaoY, jogadorX, jogadorY);
-        double distanciaO = medirDistancia(dragaoX - 1, dragaoY, jogadorX, jogadorY);
-        Perimetro perimetroN = new Perimetro("n", distanciaN);
-        Perimetro perimetroS = new Perimetro("s", distanciaS);
-        Perimetro perimetroL = new Perimetro("l", distanciaL);
-        Perimetro perimetroO = new Perimetro("o", distanciaO);
-        List<Perimetro> perimetros =  new ArrayList<Perimetro>(){{
-            add(perimetroN);
-            add(perimetroS);
-            add(perimetroL);
-            add(perimetroO);
-        }};
+		for (Perimetro perimetro : perimetros) {
+			if (validarMovimento(perimetro.getDirecao())) {
+				return perimetro.getDirecao();
+			}
+		}
 
-        perimetros.sort(Comparator.comparingDouble(Perimetro::getDistancia));
+		return "Nenhum movimento válido";
+	}
 
-        for(Perimetro perimetro: perimetros) {
-            if(validarMovimento(perimetro.getDirecao())) {
-                return perimetro.getDirecao();
-            }
-        }
+	private static double medirDistancia(int x1, int y1, int x2, int y2) {
+		return Math.sqrt(Math.abs(x1 - x2) + Math.abs(y1 - y2));
+	}
 
-        return "Nenhum movimento válido";
-    }
+	private static String buscarPosicaoAleatoria() {
+		int movimentoNumero;
+		String movimento;
+		while (true) {
+			movimentoNumero = random.nextInt(4);
+			movimento = direcoes.get(movimentoNumero);
+			if (validarMovimento(movimento)) {
+				return movimento;
+			}
+		}
+	}
 
-    private static double medirDistancia(int x1, int y1, int x2, int y2) {
-        return Math.sqrt( Math.abs(x1-x2) + Math.abs(y1-y2) );
-    }
+	private static boolean validarMovimento(String movimento) {
+		Integer xia = 0;
+		Integer yia = 0;
+		if (Estados.jogadorDaVez.equals("Dragao")) {
+			xia = Jogo.pd1.get(0);
+			yia = Jogo.pd1.get(1);
+		}
+		if (Estados.jogadorDaVez.equals("Night King")) {
+			xia = Jogo.pd2.get(0);
+			yia = Jogo.pd2.get(1);
+		}
 
-    private static String buscarPosicaoAleatoria() {
-        int movimentoNumero;
-        String movimento;
-        while(true) {
-            movimentoNumero = random.nextInt(4);
-            movimento = direcoes.get(movimentoNumero);
-            if(validarMovimento(movimento)) {
-                return movimento;
-            }
-        }
-    }
+		if (movimento.equals("n")) {
+			yia = yia + 1;
+		}
+		if (movimento.equals("s")) {
+			yia = yia - 1;
+		}
+		if (movimento.equals("l")) {
+			xia = xia + 1;
+		}
+		if (movimento.equals("o")) {
+			xia = xia - 1;
+		}
 
-    private static boolean validarMovimento(String movimento) {
-        return true;
-    }
+		for (int i = 0; i < Jogo.proibida.size(); i++) {
+			if (xia == Jogo.proibida.get(i).get(0) && yia == Jogo.proibida.get(i).get(1)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

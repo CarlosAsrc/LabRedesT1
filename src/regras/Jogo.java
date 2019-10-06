@@ -14,7 +14,47 @@ public class Jogo {
 	public static int jogadordavez = 1;
 	// Matriz
 	public static ArrayList<ArrayList<String>> slinhas = new ArrayList<ArrayList<String>>();
+public static ArrayList<ArrayList> piportas(){
+	ArrayList a1 = new ArrayList<>();
+	a1.add(1);
+	a1.add(0);
+	ArrayList a2 = new ArrayList<>();
+	a2.add(3);
+	a2.add(0);
+	ArrayList a3 = new ArrayList<>();
+	a3.add(5);
+	a3.add(0);
+	ArrayList a4 = new ArrayList<>();
+	a4.add(7);
+	a4.add(0);
+	ArrayList a5 = new ArrayList<>();
+	a5.add(1);
+	a5.add(7);
+	ArrayList a6 = new ArrayList<>();
+	a6.add(3);
+	a6.add(7);
+	ArrayList a7 = new ArrayList<>();
+	a7.add(5);
+	a7.add(7);
+	ArrayList a8 = new ArrayList<>();
+	a8.add(7);
+	a8.add(7);
 	
+	ArrayList<ArrayList> portas = new ArrayList<ArrayList>();
+	
+	portas.add(a1);
+	portas.add(a2);
+	portas.add(a3);
+	portas.add(a4);
+	portas.add(a5);
+	portas.add(a6);
+	portas.add(a7);
+	portas.add(a8);
+	
+	return portas;
+	
+			
+}
 public static String corporta(String a) {
 		if (a.equals("amarela")) {
 			return "pamarela";

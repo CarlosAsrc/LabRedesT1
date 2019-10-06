@@ -51,7 +51,7 @@ public static int linhasfazer=0;
 		
 		Refresher.refresh();
 	
-	System.out.println(IA.direcionar(9,3, 1, 8, true, true));
+	
 		
 		
 	launch(args);
