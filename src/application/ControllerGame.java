@@ -323,10 +323,8 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
 			chat.setText(Jogo.criachat(chatarray));
 			jogadorVez.setText(Estados.jogadorDaVez);
-			Jogo.inicio = 1;
-			refresh();
-	
 			
+			refresh();
 		
 	}
 
@@ -359,20 +357,7 @@ public class ControllerGame {
 
 						if (Estados.jogadormoveu.equals("sim")) {
 							
-							// Atualiza jogador da vez
-							if (Estados.jogadorDaVeztrocou.equals("sim")) {
-								chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
-								chat.setText(Jogo.criachat(chatarray));
-								jogadorVez.setText(Estados.jogadorDaVez);
-								Estados.jogadorDaVeztrocou = "nao";
-							}
-
-							// Dado
-							if (Estados.jogoudado.equals("sim")) {
-								resultaDado.setText(Estados.jogoudadovalor);
-								jogardado = true;
-								Estados.jogoudado = "nao";
-							}
+							
 
 							// mova para algum lugar
 
@@ -429,7 +414,20 @@ public class ControllerGame {
 
 						}
 
-						
+						// Atualiza jogador da vez
+						if (Estados.jogadorDaVeztrocou.equals("sim")) {
+							chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+							chat.setText(Jogo.criachat(chatarray));
+							jogadorVez.setText(Estados.jogadorDaVez);
+							Estados.jogadorDaVeztrocou = "nao";
+						}
+
+						// Dado
+						if (Estados.jogoudado.equals("sim")) {
+							resultaDado.setText(Estados.jogoudadovalor);
+							jogardado = true;
+							Estados.jogoudado = "nao";
+						}
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
