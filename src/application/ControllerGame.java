@@ -423,12 +423,7 @@ public class ControllerGame {
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
-							try {
-								
-							} catch (InterruptedException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
+							
 							if (jogardado == false) {
 								dado();
 								jogardado = true;
