@@ -358,7 +358,10 @@ public class ControllerGame {
 				Platform.runLater(() -> {
 					
 					if (Estados.nmchat.equals("sim")) {
-						String a = "jogador 1";
+						String a="";
+						if (Estados.jogadorDaVez.equals("jogador 2")) {
+							a= "jogador 1";
+						}
 						if (Estados.jogadorDaVez.equals("jogador 1")) {
 							a= "jogador 2";
 						}
