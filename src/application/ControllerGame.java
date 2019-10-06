@@ -242,7 +242,7 @@ public class ControllerGame {
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();
 
-		if (Jogo.inicio == 0) {
+		
 
 			regras.Sons.tocar("monowar");
 
@@ -325,27 +325,9 @@ public class ControllerGame {
 			jogadorVez.setText(Estados.jogadorDaVez);
 			Jogo.inicio = 1;
 			refresh();
-		} else {
-
-			jogardado = Jogo.jogardado;
-
-			chatarray = Jogo.chatarray;
-
-			jogadorVez.setText(Estados.jogadorDaVez);
-			// Matriz
-
-			resultaDado.setText(Jogo.movimentos);
-			chat.setText(Jogo.criachat(chatarray));
-			slinhas = Jogo.slinhas;
-
-			for (int i = 0; i < slinhas.size(); i++) {
-				for (int j = 0; j < slinhas.get(i).size(); j++) {
-					if (!slinhas.get(i).get(j).equals("nada")) {
-						linhas.get(i).get(j).setImage(Imagem.criaimagem(slinhas.get(i).get(j)));
-					}
-				}
-			}
-		}
+	
+			
+		
 	}
 
 	public void refresh() {
@@ -376,6 +358,21 @@ public class ControllerGame {
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 
 						if (Estados.jogadormoveu.equals("sim")) {
+							
+							// Atualiza jogador da vez
+							if (Estados.jogadorDaVeztrocou.equals("sim")) {
+								chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+								chat.setText(Jogo.criachat(chatarray));
+								jogadorVez.setText(Estados.jogadorDaVez);
+								Estados.jogadorDaVeztrocou = "nao";
+							}
+
+							// Dado
+							if (Estados.jogoudado.equals("sim")) {
+								resultaDado.setText(Estados.jogoudadovalor);
+								jogardado = true;
+								Estados.jogoudado = "nao";
+							}
 
 							// mova para algum lugar
 
@@ -432,20 +429,7 @@ public class ControllerGame {
 
 						}
 
-						// Atualiza jogador da vez
-						if (Estados.jogadorDaVeztrocou.equals("sim")) {
-							chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
-							chat.setText(Jogo.criachat(chatarray));
-							jogadorVez.setText(Estados.jogadorDaVez);
-							Estados.jogadorDaVeztrocou = "nao";
-						}
-
-						// Dado
-						if (Estados.jogoudado.equals("sim")) {
-							resultaDado.setText(Estados.jogoudadovalor);
-							jogardado = true;
-							Estados.jogoudado = "nao";
-						}
+						
 
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
