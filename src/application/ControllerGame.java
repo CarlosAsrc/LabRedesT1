@@ -810,11 +810,13 @@ public class ControllerGame {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+						q_7x3.setOpacity(1);
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+						q_7x4.setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));

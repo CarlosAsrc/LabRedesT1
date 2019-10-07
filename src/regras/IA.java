@@ -25,6 +25,7 @@ public class IA {
 	            movimento = ms.get(intervalo_randomico);
 	            boolean a=   Jogo.validamovimento(xia, yia, movimento);
 	            if (a) {
+	            	
 	            	break;
 	            }
 		}
