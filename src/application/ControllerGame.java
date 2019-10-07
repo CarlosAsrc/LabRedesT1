@@ -353,6 +353,7 @@ public class ControllerGame {
 							Jogo.videofinal="danypronto.mp4";
 							Jogo.backgroundfinal="background/vj2.png";
 						}
+						Sons.controlador.stop();
 						AnchorPane pane = null;
 						try {
 							pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
