@@ -80,10 +80,8 @@ public static String corporta(String a) {
 	public static ArrayList<Porta> portas= new ArrayList<Porta>();
 	
 	//conjunto das salas inferiores f1
-		static	ArrayList<ArrayList<Integer>> cs1 = new ArrayList<ArrayList<Integer>>();
-		//conjunto das salas inferiores f2
-				static	ArrayList<ArrayList<Integer>> cs2 = new ArrayList<ArrayList<Integer>>();
-	public static void sorteiaporta() {
+		static	ArrayList<ArrayList<Integer>> cs = new ArrayList<ArrayList<Integer>>();
+		public static void sorteiaporta() {
 		ArrayList<Integer> pamarela1 = new ArrayList<Integer>();
 		pamarela1.add(0);
 		pamarela1.add(3);
@@ -108,37 +106,40 @@ public static String corporta(String a) {
 		s4f1.add(7);
 		s4f1.add(0);
 		
-		cs1.add(s1f1);
-		cs1.add(s2f1);
-		cs1.add(s3f1);
-		cs1.add(s4f1);
-		Porta roxa1 = new Porta("roxa","chave epic1","chave lendaria1","fechada",sp1());
-		Porta azul1 = new Porta("azul","chave rare1","chave epic1","fechada",sp1());
-		Porta verde1 = new Porta("verde","chave uncommon1","chave rare1","fechada",sp1());
-		Porta branca1 = new Porta("branca","chave common1","chave uncommon1","aberta",sp1());
-			
+		cs.add(s1f1);
+		cs.add(s2f1);
+		cs.add(s3f1);
+		cs.add(s4f1);
+		
 		//salasf2
-				ArrayList<Integer> s1f2 = new ArrayList<Integer>();
-				s1f2.add(1);
-				s1f2.add(7);
-				ArrayList<Integer> s2f2 = new ArrayList<Integer>();
-				s2f2.add(3);
-				s2f2.add(7);
-				ArrayList<Integer> s3f2 = new ArrayList<Integer>();
-				s3f2.add(5);
-				s3f2.add(7);
-				ArrayList<Integer> s4f2 = new ArrayList<Integer>();
-				s4f2.add(7);
-				s4f2.add(7);
-				
-				cs2.add(s1f2);
-				cs2.add(s2f2);
-				cs2.add(s3f2);
-				cs2.add(s4f2);
-				Porta roxa2 = new Porta("roxa","chave epic2","chave lendaria2","fechada",sp2());
-				Porta azul2 = new Porta("azul","chave rare2","chave epic2","fechada",sp2());
-				Porta verde2 = new Porta("verde","chave uncommon2","chave rare2","fechada",sp2());
-				Porta branca2 = new Porta("branca","chave common2","chave uncommon2","aberta",sp2());
+		ArrayList<Integer> s1f2 = new ArrayList<Integer>();
+		s1f2.add(1);
+		s1f2.add(7);
+		ArrayList<Integer> s2f2 = new ArrayList<Integer>();
+		s2f2.add(3);
+		s2f2.add(7);
+		ArrayList<Integer> s3f2 = new ArrayList<Integer>();
+		s3f2.add(5);
+		s3f2.add(7);
+		ArrayList<Integer> s4f2 = new ArrayList<Integer>();
+		s4f2.add(7);
+		s4f2.add(7);
+		
+		cs.add(s1f2);
+		cs.add(s2f2);
+		cs.add(s3f2);
+		cs.add(s4f2);
+		
+		Porta roxa1 = new Porta("roxa","chave epic1","chave lendaria1","fechada",sp());
+		Porta azul1 = new Porta("azul","chave rare1","chave epic1","fechada",sp());
+		Porta verde1 = new Porta("verde","chave uncommon1","chave rare1","fechada",sp());
+		Porta branca1 = new Porta("branca","chave common1","chave uncommon1","aberta",sp());
+			
+		
+				Porta roxa2 = new Porta("roxa","chave epic2","chave lendaria2","fechada",sp());
+				Porta azul2 = new Porta("azul","chave rare2","chave epic2","fechada",sp());
+				Porta verde2 = new Porta("verde","chave uncommon2","chave rare2","fechada",sp());
+				Porta branca2 = new Porta("branca","chave common2","chave uncommon2","aberta",sp());
 		
 				portas.add(amarela1);
 				portas.add(amarela2);
@@ -151,28 +152,19 @@ public static String corporta(String a) {
 				portas.add(branca1);
 				portas.add(branca2);
 				
-			//	System.out.println(portas);
+			
 	}
-	public static ArrayList<Integer> sp1(){
+	public static ArrayList<Integer> sp(){
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		
 		Random rnd = new Random();
-		int i=rnd.nextInt(cs1.size());
-		a=cs1.get(i);
-		cs1.remove(i);
+		int i=rnd.nextInt(cs.size());
+		a=cs.get(i);
+		cs.remove(i);
 		
 		return a;
 		}
-	public static ArrayList<Integer> sp2(){
-		ArrayList<Integer> a = new ArrayList<Integer>();
-		
-		Random rnd = new Random();
-		int i=rnd.nextInt(cs2.size());
-		a=cs2.get(i);
-		cs2.remove(i);
-		
-		return a;
-		}
+	
 	
 	
 	public static boolean validamovimento(int a, int b, String d) {
