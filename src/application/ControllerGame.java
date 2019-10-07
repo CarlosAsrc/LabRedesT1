@@ -346,7 +346,7 @@ public class ControllerGame {
 				Platform.runLater(() -> {
 					//Finalizar jogo
 					if (Estados.finalizarjogo.equals("sim")) {
-						if (Estados.mensagem.equals("js")) {
+						if (Estados.vencedor.equals("js")) {
 						Jogo.videofinal="jspronto.mp4";
 						Jogo.backgroundfinal="background/vj1.png";
 						}else {
