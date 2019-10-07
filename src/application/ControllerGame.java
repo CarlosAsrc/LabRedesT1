@@ -598,7 +598,7 @@ public class ControllerGame {
 			chat.setText(Jogo.criachat(chatarray));
 			resultaDado.setText("" + i);
 			//Facilitador Temporario
-			if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+			if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")||Estados.jogadorDaVez.equals("jogador1")) {
 				resultaDado.setText("1");
 			}else {
 				resultaDado.setText("100");
@@ -772,7 +772,7 @@ System.out.println("nao entrou");
 					if (procuraporta("F1-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
 						Sons.controlador.stop();
-						Jogo.videofinal="teste.mp4";
+						Jogo.videofinal="jspronto.mp4";
 						Jogo.backgroundfinal="background/vj1.png";
 						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
 						anchorpane.getChildren().setAll(pane);
@@ -839,6 +839,8 @@ System.out.println("nao entrou");
 					if (procuraporta("F2-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
 						Sons.controlador.stop();
+						Jogo.videofinal="danypronto.mp4";
+						Jogo.backgroundfinal="background/vj2.png";
 						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
 						anchorpane.getChildren().setAll(pane);
 						chatarray.add(0, Jogo.criaString("O jogador 2 GANHOUU!!!!!!!!!"));
