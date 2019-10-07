@@ -184,7 +184,7 @@ public static String corporta(String a) {
 					}
 					
 				}
-				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+				if (pd1.get(0)==a&&pd1.get(1)==b||pd2.get(0)==a&&pd2.get(1)==b) {
 					for (int i=0;i<proibida2.size();i++) {
 						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
 						return false;
@@ -204,7 +204,7 @@ public static String corporta(String a) {
 						return false;
 					}
 				}
-				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+				if (pd1.get(0)==a&&pd1.get(1)==b||pd2.get(0)==a&&pd2.get(1)==b) {
 					for (int i=0;i<proibida2.size();i++) {
 						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
 						return false;
@@ -224,7 +224,7 @@ public static String corporta(String a) {
 						return false;
 					}
 				}
-				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+				if (pd1.get(0)==a&&pd1.get(1)==b||pd2.get(0)==a&&pd2.get(1)==b) {
 					for (int i=0;i<proibida2.size();i++) {
 						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
 						return false;
@@ -244,7 +244,7 @@ public static String corporta(String a) {
 						return false;
 					}
 				}
-				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+				if (pd1.get(0)==a&&pd1.get(1)==b||pd2.get(0)==a&&pd2.get(1)==b) {
 					for (int i=0;i<proibida2.size();i++) {
 						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
 						return false;
