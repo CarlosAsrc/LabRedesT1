@@ -602,7 +602,7 @@ public class ControllerGame {
 			dado();
 			//Testes
 			if (Estados.jogadorDaVez.equals("jogador1")||Estados.jogadorDaVez.equals("jogador2")) {
-				resultaDado.setText("100");
+				resultaDado.setText("25");
 			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);
@@ -749,7 +749,7 @@ System.out.println("nao entrou");
 					chatarray.add(0,
 							Jogo.criaString("O jogador 1 abriu a primeira porta e ganhou a chave para a segunda!"));
 					chat.setText(Jogo.criachat(chatarray));
-					Acoes.criarAcao("chat", digite.getText());
+					Acoes.criarAcao("chat", "O jogador 1 abriu a primeira porta e ganhou a chave para a segunda!");
 					abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 				} else if (portaatual.getText().equals("F1-Verde 2")) {
 					if (procuraporta("F1-Branca 1").getSituacao().equals("aberta")) {
@@ -758,7 +758,7 @@ System.out.println("nao entrou");
 						chatarray.add(0,
 								Jogo.criaString("O jogador 1 abriu a segunda porta e ganhou a chave para a terceira!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 1 abriu a segunda porta e ganhou a chave para a terceira!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
@@ -772,7 +772,7 @@ System.out.println("nao entrou");
 						chatarray.add(0,
 								Jogo.criaString("O jogador 1 abriu a terceira porta e ganhou a chave para a quarta!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 1 abriu a terceira porta e ganhou a chave para a quarta!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 
 					} else {
@@ -787,7 +787,7 @@ System.out.println("nao entrou");
 						chatarray.add(0, Jogo
 								.criaString("O jogador 1 abriu a quarta porta e ganhou a chave para a porta final!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 1 abriu a quarta porta e ganhou a chave para a porta final!!!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 
 					} else {
@@ -821,7 +821,7 @@ System.out.println("nao entrou");
 					chatarray.add(0,
 							Jogo.criaString("O jogador 2 abriu a primeira porta e ganhou a chave para a segunda!"));
 					chat.setText(Jogo.criachat(chatarray));
-					Acoes.criarAcao("chat", digite.getText());
+					Acoes.criarAcao("chat", "O jogador 2 abriu a primeira porta e ganhou a chave para a segunda!");
 				} else if (portaatual.getText().equals("F2-Verde 2")) {
 					if (procuraporta("F2-Branca 1").getSituacao().equals("aberta")) {
 						procuraporta("F2-Verde 2").setSituacao("aberta");
@@ -829,7 +829,7 @@ System.out.println("nao entrou");
 						chatarray.add(0,
 								Jogo.criaString("O jogador 2 abriu a segunda porta e ganhou a chave para a terceira!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 2 abriu a segunda porta e ganhou a chave para a terceira!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 
 					} else {
@@ -844,7 +844,7 @@ System.out.println("nao entrou");
 						chatarray.add(0,
 								Jogo.criaString("O jogador 2 abriu a terceira porta e ganhou a chave para a quarta!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 2 abriu a terceira porta e ganhou a chave para a quarta!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 
 					} else {
@@ -859,7 +859,7 @@ System.out.println("nao entrou");
 						chatarray.add(0, Jogo
 								.criaString("O jogador 2 abriu a quarta porta e ganhou a chave para a porta final!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						Acoes.criarAcao("chat", digite.getText());
+						Acoes.criarAcao("chat", "O jogador 2 abriu a quarta porta e ganhou a chave para a porta final!!!");
 						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
 
 					} else {
