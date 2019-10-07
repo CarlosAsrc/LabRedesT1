@@ -76,10 +76,10 @@ public class IA {
 		// Somente um visível
 		if (visibilidade1) {
 			System.out.println("Entrou na situacao de apenas 1 invi e foi o v1 invi");
-			return	movimentofinal(xia,yia,definirDirecao(x2, y2));
+			return	movimentofinal(xia,yia,definirDirecao(x1, y1));
 		} else {
 			System.out.println("Entrou na situacao de apenas 1 invi e foi o v2 invi");
-			return	movimentofinal(xia,yia,definirDirecao(x1, y1));
+			return	movimentofinal(xia,yia,definirDirecao(x2, y2));
 		}
 	}
 
