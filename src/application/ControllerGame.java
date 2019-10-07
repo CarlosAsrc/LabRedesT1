@@ -362,12 +362,9 @@ public class ControllerGame {
 							e.printStackTrace();
 						}
 						anchorpane.getChildren().setAll(pane);
-						try {
-							TimeUnit.SECONDS.sleep(600);
-						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+						
+							
+						timer.cancel();
 					}
 					
 					// Chat
@@ -605,7 +602,7 @@ public class ControllerGame {
 			dado();
 			//Testes
 			if (Estados.jogadorDaVez.equals("jogador1")||Estados.jogadorDaVez.equals("jogador2")) {
-				resultaDado.setText("50");
+				resultaDado.setText("100");
 			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);

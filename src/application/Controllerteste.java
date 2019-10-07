@@ -3,10 +3,13 @@ package application;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 
 import conexao.Server;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,12 +47,16 @@ public class Controllerteste {
 		
 		String musicFile = a;     
 		Media sound = new Media(new File(musicFile).toURI().toString());
-		final MediaPlayer mp = new MediaPlayer(sound);
+		 MediaPlayer mp = new MediaPlayer(sound);
 		mediaplayer=mp;
 		mediaplayer.setAutoPlay(true);
 	mv.setMediaPlayer(mp);
+	
+	
 	}
 	
+
+	        	
 	@FXML
 	void onclickpular(ActionEvent event) throws IOException {
 		mediaplayer.stop();

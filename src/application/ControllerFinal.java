@@ -46,5 +46,6 @@ public class ControllerFinal {
 		mediaplayer=mp;
 		mediaplayer.setAutoPlay(true);
 	mv.setMediaPlayer(mp);
+	
 	}
 }
