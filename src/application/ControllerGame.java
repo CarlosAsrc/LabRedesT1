@@ -596,6 +596,10 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("" + i + "!"));
 			chat.setText(Jogo.criachat(chatarray));
 			resultaDado.setText("" + i);
+			//Facilitador Temporario
+			if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+				resultaDado.setText("1");
+			}
 
 		} else {
 			chatarray.add(0, Jogo.criaString("Comando invalido"));
