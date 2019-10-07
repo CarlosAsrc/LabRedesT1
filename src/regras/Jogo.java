@@ -180,12 +180,7 @@ public static String corporta(String a) {
 			if (a>0) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a-1&&proibida.get(i).get(1)==b) {
-						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
-							
-							return true;
-						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
-							return true;
-						}
+						
 						return false;
 					}
 				}
@@ -198,11 +193,7 @@ public static String corporta(String a) {
 			if (a<7) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a+1&&proibida.get(i).get(1)==b) {
-						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
-							return true;
-						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
-							return true;
-						}
+						
 						return false;
 					}
 				}
@@ -215,11 +206,7 @@ public static String corporta(String a) {
 			if (b<7) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b+1) {
-						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
-							return true;
-						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
-							return true;
-						}
+						
 						return false;
 					}
 				}
@@ -232,11 +219,7 @@ public static String corporta(String a) {
 			if (b>0) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a&&proibida.get(i).get(1)==b-1) {
-						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
-							return true;
-						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
-							return true;
-						}
+						
 						return false;
 					}
 				}
@@ -270,12 +253,7 @@ public static ArrayList<Integer> pd2= new ArrayList<Integer>();
 public static ArrayList<ArrayList<Integer>> paredes = new ArrayList<ArrayList<Integer>>();
 public static ArrayList<ArrayList<Integer>> proibida = new ArrayList<ArrayList<Integer>>();
 
-public static void atualizaproibida() {
-//	proibida.set(0, pj1);
-//	proibida.set(1, pj2);
-	proibida.set(0, pd1);
-	proibida.set(1, pd2);
-}
+
 
 public static void iniciarposicoes() {
 	pj1.add(7);
@@ -327,11 +305,7 @@ public static void iniciarposicoes() {
 	paredes.add(parede8);
 	paredes.add(parede9);
 	paredes.add(parede10);
-	
-//	proibida.add(pj1);
-//	proibida.add(pj2);
-	proibida.add(pd1);
-	proibida.add(pd2);
+
 	
 	for (int i=0;i<paredes.size();i++) {
 		proibida.add(paredes.get(i));

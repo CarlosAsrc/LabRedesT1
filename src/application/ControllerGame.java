@@ -578,7 +578,7 @@ public class ControllerGame {
 
 	public void dado() throws InterruptedException {
 
-		salvar();
+		
 		if (jogardado == false) {
 			jogardado = true;
 			chatarray.add(0, Jogo.criaString("Jogou o dado o " + Estados.jogadorDaVez));
@@ -609,7 +609,7 @@ public class ControllerGame {
 
 	public void norte() throws IOException, InterruptedException {
 
-		salvar();
+		
 
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -860,7 +860,7 @@ public class ControllerGame {
 
 	public void sul() throws IOException, InterruptedException {
 
-		salvar();
+		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1113,7 +1113,7 @@ public class ControllerGame {
 
 	public void leste() throws IOException, InterruptedException {
 
-		salvar();
+		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1362,7 +1362,7 @@ public class ControllerGame {
 
 	public void oeste() throws IOException, InterruptedException {
 
-		salvar();
+		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1598,7 +1598,7 @@ public class ControllerGame {
 
 	@FXML
 	void onclickacoes(ActionEvent event) throws IOException {
-		salvar();
+		
 
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Acoes.fxml"));
 		anchorpane.getChildren().setAll(pane);
@@ -1614,17 +1614,7 @@ public class ControllerGame {
 
 	}
 
-	void salvar() {
-		Jogo.jogardado = jogardado;
-
-		Jogo.chatarray = chatarray;
-
-		// Matriz
-
-		Jogo.movimentos = resultaDado.getText();
-		Jogo.slinhas = slinhas;
-		Jogo.atualizaproibida();
-	}
+	
 
 	void criamatriz() {
 		coluna0.add(q_0x0);
