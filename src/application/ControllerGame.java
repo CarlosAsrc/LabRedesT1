@@ -585,7 +585,7 @@ public class ControllerGame {
 		}
 	}
 
-	public void dado() throws InterruptedException {
+	public void dado() throws InterruptedException, IOException {
 
 		if (jogardado == false) {
 			jogardado = true;
@@ -602,6 +602,8 @@ public class ControllerGame {
 				resultaDado.setText("1");
 			}else {
 				resultaDado.setText("100");
+				String a = resultaDado.getText();
+				criaracao("Dado", a);
 			}
 
 		} else {
