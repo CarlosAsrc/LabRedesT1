@@ -13,7 +13,7 @@ public class IA {
 	public static String movimentoaleatoriovalido(Integer xia, Integer yia) {
 		
 		String movimento ="";
-		while (!Jogo.validamovimento(xia, yia, movimento)) {
+		while (true) {
 			ArrayList <String> ms = new ArrayList <String>();
 			ms.add("n");
 			ms.add("s");
@@ -23,7 +23,10 @@ public class IA {
 			    Random random = new Random();        
 	            int intervalo_randomico = random.nextInt(3);
 	            movimento = ms.get(intervalo_randomico);
-	            
+	            boolean a=   Jogo.validamovimento(xia, yia, movimento);
+	            if (a==true) {
+	            	break;
+	            }
 		}
 		return movimento;
 		
