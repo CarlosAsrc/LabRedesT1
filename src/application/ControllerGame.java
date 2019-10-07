@@ -647,7 +647,8 @@ public class ControllerGame {
 					p8.setText(Jogo.portas.get(i).getChave());
 					portaatual = p1;
 				}
-				;
+				
+				
 
 				return true;
 			}
@@ -657,14 +658,16 @@ public class ControllerGame {
 		return false;
 
 	}
-public Porta procuraporta(String a) {
-	for (int i=0;i<Jogo.portas.size();i++) {
-		if (Jogo.portas.get(i).getChave().equals(a)) {
-			return Jogo.portas.get(i);
+
+	public Porta procuraporta(String a) {
+		for (int i = 0; i < Jogo.portas.size(); i++) {
+			if (Jogo.portas.get(i).getChave().equals(a)) {
+				return Jogo.portas.get(i);
+			}
 		}
+		return null;
 	}
-	return null;
-}
+
 	@FXML
 	void onclickabrirpegar(ActionEvent event) throws IOException, InterruptedException {
 		int x = 0;
@@ -678,133 +681,149 @@ public Porta procuraporta(String a) {
 			y = Jogo.pj2.get(1);
 		}
 		if (verificaporta(x, y)) {
-
+			abrirpegarIV.setOpacity(1);
+			if (portaatual.getText().equals("F1-Branca 1") || portaatual.getText().equals("F2-Branca 1")) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/pbranca.png"));
+			}
+			if (portaatual.getText().equals("F1-Verde 2") || portaatual.getText().equals("F2-Verde 2")) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/pverde.png"));
+			}
+			if (portaatual.getText().equals("F1-Azul 3") || portaatual.getText().equals("F2-Azul 3")) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/pazul.png"));
+			}
+			if (portaatual.getText().equals("F1-Roxa 4") || portaatual.getText().equals("F2-Roxa 4")) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/proxa.png"));
+			}
+			if (x==0&&y==3) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/pamarela.png"));
+			}
+			if (x==0&&y==4) {
+				abrirpegarIV.setImage(Imagem.criaimagem("icones/pamarela.png"));
+			}
 			if (Estados.jogadorDaVez.equals("jogador1")) {
 				if (portaatual.getText().equals("F1-Branca 1")) {
 					procuraporta("F1-Branca 1").setSituacao("aberta");
 					linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-					chatarray.add(0, Jogo.criaString("O jogador 1 abriu a primeira porta e ganhou a chave para a segunda!"));
+					chatarray.add(0,
+							Jogo.criaString("O jogador 1 abriu a primeira porta e ganhou a chave para a segunda!"));
 					chat.setText(Jogo.criachat(chatarray));
-				}
-				else if(portaatual.getText().equals("F1-Verde 2")) {
+					abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+				} else if (portaatual.getText().equals("F1-Verde 2")) {
 					if (procuraporta("F1-Branca 1").getSituacao().equals("aberta")) {
 						procuraporta("F1-Verde 2").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a segunda porta e ganhou a chave para a terceira!"));
+						chatarray.add(0,
+								Jogo.criaString("O jogador 1 abriu a segunda porta e ganhou a chave para a terceira!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(portaatual.getText().equals("F1-Azul 3")) {
+
+				} else if (portaatual.getText().equals("F1-Azul 3")) {
 					if (procuraporta("F1-Verde 2").getSituacao().equals("aberta")) {
 						procuraporta("F1-Azul 3").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a terceira porta e ganhou a chave para a quarta!"));
+						chatarray.add(0,
+								Jogo.criaString("O jogador 1 abriu a terceira porta e ganhou a chave para a quarta!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(portaatual.getText().equals("F1-Roxa 4")) {
+
+				} else if (portaatual.getText().equals("F1-Roxa 4")) {
 					if (procuraporta("F1-Azul 3").getSituacao().equals("aberta")) {
 						procuraporta("F1-Roxa 4").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a quarta porta e ganhou a chave para a porta final!!!"));
+						chatarray.add(0, Jogo
+								.criaString("O jogador 1 abriu a quarta porta e ganhou a chave para a porta final!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(x==0&&y==3) {
+
+				} else if (x == 0 && y == 3) {
 					if (procuraporta("F1-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
-						
+
 						chatarray.add(0, Jogo.criaString("O jogador 1 GANHOUU!!!!!!!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
+
 				}
 
-			}else {
+			} else {
 				if (portaatual.getText().equals("F2-Branca 1")) {
 					procuraporta("F2-Branca 1").setSituacao("aberta");
 					linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-					chatarray.add(0, Jogo.criaString("O jogador 2 abriu a primeira porta e ganhou a chave para a segunda!"));
+					chatarray.add(0,
+							Jogo.criaString("O jogador 2 abriu a primeira porta e ganhou a chave para a segunda!"));
 					chat.setText(Jogo.criachat(chatarray));
-				}
-				else if(portaatual.getText().equals("F2-Verde 2")) {
+				} else if (portaatual.getText().equals("F2-Verde 2")) {
 					if (procuraporta("F2-Branca 1").getSituacao().equals("aberta")) {
 						procuraporta("F2-Verde 2").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a segunda porta e ganhou a chave para a terceira!"));
+						chatarray.add(0,
+								Jogo.criaString("O jogador 2 abriu a segunda porta e ganhou a chave para a terceira!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(portaatual.getText().equals("F2-Azul 3")) {
+
+				} else if (portaatual.getText().equals("F2-Azul 3")) {
 					if (procuraporta("F2-Verde 2").getSituacao().equals("aberta")) {
 						procuraporta("F2-Azul 3").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a terceira porta e ganhou a chave para a quarta!"));
+						chatarray.add(0,
+								Jogo.criaString("O jogador 2 abriu a terceira porta e ganhou a chave para a quarta!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(portaatual.getText().equals("F2-Roxa 4")) {
+
+				} else if (portaatual.getText().equals("F2-Roxa 4")) {
 					if (procuraporta("F2-Azul 3").getSituacao().equals("aberta")) {
 						procuraporta("F2-Roxa 4").setSituacao("aberta");
 						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
-						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a quarta porta e ganhou a chave para a porta final!!!"));
+						chatarray.add(0, Jogo
+								.criaString("O jogador 2 abriu a quarta porta e ganhou a chave para a porta final!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+						abrirpegarIV.setImage(Imagem.criaimagem("icones/paberta.png"));
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
-				}
-				else if(x==0&&y==4) {
+
+				} else if (x == 0 && y == 4) {
 					if (procuraporta("F2-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
-						
+
 						chatarray.add(0, Jogo.criaString("O jogador 2 GANHOUU!!!!!!!!!"));
 						chat.setText(Jogo.criachat(chatarray));
-						
-					}
-					else {
+
+					} else {
 						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
 						chat.setText(Jogo.criachat(chatarray));
 					}
-									
+
 				}
 			}
 
@@ -822,6 +841,7 @@ public Porta procuraporta(String a) {
 
 	@FXML
 	void onclicknorte(ActionEvent event) throws IOException, InterruptedException {
+		abrirpegarIV.setOpacity(0);
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			norte();
 			criaracao("Jogador moveu", "n");
@@ -1085,6 +1105,7 @@ public Porta procuraporta(String a) {
 
 	@FXML
 	void onclicksul(ActionEvent event) throws IOException, InterruptedException {
+		abrirpegarIV.setOpacity(0);
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			sul();
 			criaracao("Jogador moveu", "s");
@@ -1348,6 +1369,7 @@ public Porta procuraporta(String a) {
 
 	@FXML
 	void onclickleste(ActionEvent event) throws IOException, InterruptedException {
+		abrirpegarIV.setOpacity(0);
 
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			leste();
@@ -1609,6 +1631,7 @@ public Porta procuraporta(String a) {
 
 	@FXML
 	void onclickoeste(ActionEvent event) throws IOException, InterruptedException {
+		abrirpegarIV.setOpacity(0);
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			oeste();
 			criaracao("Jogador moveu", "o");
