@@ -85,11 +85,11 @@ public static String corporta(String a) {
 		ArrayList<Integer> pamarela1 = new ArrayList<Integer>();
 		pamarela1.add(0);
 		pamarela1.add(3);
-		Porta amarela1 = new Porta("amarela", "chave lendaria1", "", "fechada", pamarela1);
+		Porta amarela1 = new Porta("amarela", "F1-Amarela 5", "", "fechada", pamarela1);
 		ArrayList<Integer> pamarela2 = new ArrayList<Integer>();
 		pamarela2.add(0);
 		pamarela2.add(4);
-		Porta amarela2 = new Porta("amarela","chave lendaria2", "", "fechada", pamarela2);
+		Porta amarela2 = new Porta("amarela","F2-Amarela 5", "", "fechada", pamarela2);
 		
 		
 		//salasf1
@@ -130,16 +130,16 @@ public static String corporta(String a) {
 		cs.add(s3f2);
 		cs.add(s4f2);
 		
-		Porta roxa1 = new Porta("roxa","chave epic1","chave lendaria1","fechada",sp());
-		Porta azul1 = new Porta("azul","chave rare1","chave epic1","fechada",sp());
-		Porta verde1 = new Porta("verde","chave uncommon1","chave rare1","fechada",sp());
-		Porta branca1 = new Porta("branca","chave common1","chave uncommon1","aberta",sp());
+		Porta roxa1 = new Porta("roxa","F1-Roxa 4","chave amarela1","fechada",sp());
+		Porta azul1 = new Porta("azul","F1-Azul 3","chave roxa1","fechada",sp());
+		Porta verde1 = new Porta("verde","F1-Verde 2","chave azul1","fechada",sp());
+		Porta branca1 = new Porta("branca","F1-Branca 1","chave verde1","fechada",sp());
 			
 		
-				Porta roxa2 = new Porta("roxa","chave epic2","chave lendaria2","fechada",sp());
-				Porta azul2 = new Porta("azul","chave rare2","chave epic2","fechada",sp());
-				Porta verde2 = new Porta("verde","chave uncommon2","chave rare2","fechada",sp());
-				Porta branca2 = new Porta("branca","chave common2","chave uncommon2","aberta",sp());
+				Porta roxa2 = new Porta("roxa","F2-Roxa 4","chave amarela2","fechada",sp());
+				Porta azul2 = new Porta("azul","F2-Azul 3","chave roxa2","fechada",sp());
+				Porta verde2 = new Porta("verde","F2-Verde 2","chave azul2","fechada",sp());
+				Porta branca2 = new Porta("branca","F2-Branca 1","chave verde2","fechada",sp());
 		
 				portas.add(amarela1);
 				portas.add(amarela2);

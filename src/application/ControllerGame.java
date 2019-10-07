@@ -29,6 +29,7 @@ import regras.Arquivo;
 import regras.IA;
 import regras.Imagem;
 import regras.Jogo;
+import regras.Porta;
 
 public class ControllerGame {
 	@FXML
@@ -209,6 +210,14 @@ public class ControllerGame {
 	private Button acoes;
 	@FXML
 	private Button enviar;
+	@FXML
+	private Button abrirpegar;
+	@FXML
+	private Button fechar;
+	@FXML
+	private ImageView acoesIV;
+	@FXML
+	private ImageView abrirpegarIV;
 
 	boolean jogardado = false;
 
@@ -478,22 +487,21 @@ public class ControllerGame {
 									}
 								}
 
-								if (x1==7&&y1==3) {
-									v1=false;
+								if (x1 == 7 && y1 == 3) {
+									v1 = false;
 								}
-								if (x1==7&&y1==4) {
-									v1=false;
+								if (x1 == 7 && y1 == 4) {
+									v1 = false;
 								}
-								if (x2==7&&y2==3) {
-									v2=false;
+								if (x2 == 7 && y2 == 3) {
+									v2 = false;
 								}
-								if (x2==7&&y2==4) {
-									v2=false;
+								if (x2 == 7 && y2 == 4) {
+									v2 = false;
 								}
-								
-								
+
 								String movimento = IA.direcionar(xia, yia, x1, y1, x2, y2, v1, v2);
-							
+
 								if (movimento.equals("n")) {
 									try {
 										norte();
@@ -578,7 +586,6 @@ public class ControllerGame {
 
 	public void dado() throws InterruptedException {
 
-		
 		if (jogardado == false) {
 			jogardado = true;
 			chatarray.add(0, Jogo.criaString("Jogou o dado o " + Estados.jogadorDaVez));
@@ -596,6 +603,223 @@ public class ControllerGame {
 		}
 	}
 
+	Label portaatual = null;
+
+	public boolean verificaporta(int x, int y) {
+		for (int i = 0; i < Jogo.portas.size(); i++) {
+			if (Jogo.portas.get(i).getLocal().get(0) == x && Jogo.portas.get(i).getLocal().get(1) == y) {
+				if (x == 1 && y == 0) {
+					p1.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 3 && y == 0) {
+					p2.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 5 && y == 0) {
+					p3.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 7 && y == 0) {
+					p4.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 1 && y == 7) {
+					p5.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 3 && y == 7) {
+					p6.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 5 && y == 7) {
+					p7.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+				if (x == 7 && y == 7) {
+					p8.setText(Jogo.portas.get(i).getChave());
+					portaatual = p1;
+				}
+				;
+
+				return true;
+			}
+
+		}
+
+		return false;
+
+	}
+public Porta procuraporta(String a) {
+	for (int i=0;i<Jogo.portas.size();i++) {
+		if (Jogo.portas.get(i).getChave().equals(a)) {
+			return Jogo.portas.get(i);
+		}
+	}
+	return null;
+}
+	@FXML
+	void onclickabrirpegar(ActionEvent event) throws IOException, InterruptedException {
+		int x = 0;
+		int y = 0;
+		if (Estados.jogadorDaVez.equals("jogador1")) {
+			x = Jogo.pj1.get(0);
+			y = Jogo.pj1.get(1);
+		}
+		if (Estados.jogadorDaVez.equals("jogador2")) {
+			x = Jogo.pj2.get(0);
+			y = Jogo.pj2.get(1);
+		}
+		if (verificaporta(x, y)) {
+
+			if (Estados.jogadorDaVez.equals("jogador1")) {
+				if (portaatual.getText().equals("F1-Branca 1")) {
+					procuraporta("F1-Branca 1").setSituacao("aberta");
+					linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+					chatarray.add(0, Jogo.criaString("O jogador 1 abriu a primeira porta e ganhou a chave para a segunda!"));
+					chat.setText(Jogo.criachat(chatarray));
+				}
+				else if(portaatual.getText().equals("F1-Verde 2")) {
+					if (procuraporta("F1-Branca 1").getSituacao().equals("aberta")) {
+						procuraporta("F1-Verde 2").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a segunda porta e ganhou a chave para a terceira!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(portaatual.getText().equals("F1-Azul 3")) {
+					if (procuraporta("F1-Verde 2").getSituacao().equals("aberta")) {
+						procuraporta("F1-Azul 3").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a terceira porta e ganhou a chave para a quarta!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(portaatual.getText().equals("F1-Roxa 4")) {
+					if (procuraporta("F1-Azul 3").getSituacao().equals("aberta")) {
+						procuraporta("F1-Roxa 4").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 1 abriu a quarta porta e ganhou a chave para a porta final!!!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(x==0&&y==3) {
+					if (procuraporta("F1-Roxa 4").getSituacao().equals("aberta")) {
+						// FINAL DO JOGO AQUI!
+						
+						chatarray.add(0, Jogo.criaString("O jogador 1 GANHOUU!!!!!!!!!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+
+			}else {
+				if (portaatual.getText().equals("F2-Branca 1")) {
+					procuraporta("F2-Branca 1").setSituacao("aberta");
+					linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+					chatarray.add(0, Jogo.criaString("O jogador 2 abriu a primeira porta e ganhou a chave para a segunda!"));
+					chat.setText(Jogo.criachat(chatarray));
+				}
+				else if(portaatual.getText().equals("F2-Verde 2")) {
+					if (procuraporta("F2-Branca 1").getSituacao().equals("aberta")) {
+						procuraporta("F2-Verde 2").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a segunda porta e ganhou a chave para a terceira!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(portaatual.getText().equals("F2-Azul 3")) {
+					if (procuraporta("F2-Verde 2").getSituacao().equals("aberta")) {
+						procuraporta("F2-Azul 3").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a terceira porta e ganhou a chave para a quarta!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(portaatual.getText().equals("F2-Roxa 4")) {
+					if (procuraporta("F2-Azul 3").getSituacao().equals("aberta")) {
+						procuraporta("F2-Roxa 4").setSituacao("aberta");
+						linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+						chatarray.add(0, Jogo.criaString("O jogador 2 abriu a quarta porta e ganhou a chave para a porta final!!!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+				else if(x==0&&y==4) {
+					if (procuraporta("F2-Roxa 4").getSituacao().equals("aberta")) {
+						// FINAL DO JOGO AQUI!
+						
+						chatarray.add(0, Jogo.criaString("O jogador 2 GANHOUU!!!!!!!!!"));
+						chat.setText(Jogo.criachat(chatarray));
+						
+					}
+					else {
+						chatarray.add(0, Jogo.criaString("Voce ainda nao possui a chave dessa porta!"));
+						chat.setText(Jogo.criachat(chatarray));
+					}
+									
+				}
+			}
+
+		} else {
+			chatarray.add(0, Jogo.criaString("Voce nao esta em uma porta!"));
+			chat.setText(Jogo.criachat(chatarray));
+		}
+
+	}
+
+	@FXML
+	void onclickfechar(ActionEvent event) throws IOException, InterruptedException {
+		acoesIV.setOpacity(0);
+	}
+
 	@FXML
 	void onclicknorte(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
@@ -608,8 +832,6 @@ public class ControllerGame {
 	}
 
 	public void norte() throws IOException, InterruptedException {
-
-		
 
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
@@ -649,9 +871,10 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
@@ -704,9 +927,10 @@ public class ControllerGame {
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
@@ -872,7 +1096,6 @@ public class ControllerGame {
 
 	public void sul() throws IOException, InterruptedException {
 
-		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -912,9 +1135,10 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
@@ -967,9 +1191,10 @@ public class ControllerGame {
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
@@ -1135,7 +1360,6 @@ public class ControllerGame {
 
 	public void leste() throws IOException, InterruptedException {
 
-		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1174,9 +1398,10 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
@@ -1229,9 +1454,10 @@ public class ControllerGame {
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
@@ -1394,7 +1620,6 @@ public class ControllerGame {
 
 	public void oeste() throws IOException, InterruptedException {
 
-		
 		if (jogardado == false) {
 			chatarray.add(0, Jogo.criaString("Jogue o dado primeiro!"));
 			chat.setText(Jogo.criachat(chatarray));
@@ -1433,9 +1658,10 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
@@ -1488,9 +1714,10 @@ public class ControllerGame {
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
-						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1))
+								.setImage(Imagem.criaimagem("icones/dragao.png"));
 						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
-						
+
 					}
 					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
@@ -1640,10 +1867,9 @@ public class ControllerGame {
 
 	@FXML
 	void onclickacoes(ActionEvent event) throws IOException {
-		
+		acoesIV.setImage(Imagem.criaimagem("background/controls.png"));
+		acoesIV.setOpacity(1);
 
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("Acoes.fxml"));
-		anchorpane.getChildren().setAll(pane);
 	}
 
 	@FXML
@@ -1655,8 +1881,6 @@ public class ControllerGame {
 		Acoes.criarAcao("chat", digite.getText());
 
 	}
-
-	
 
 	void criamatriz() {
 		coluna0.add(q_0x0);
