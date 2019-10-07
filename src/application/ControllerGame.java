@@ -649,12 +649,17 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
 					}
-					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
-						Jogo.pj2.set(0, 7);
-						Jogo.pj2.set(1, 4);
-						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-						q_7x4.setOpacity(1);
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -694,17 +699,22 @@ public class ControllerGame {
 					chatarray.add(0, Jogo.criaString("Player 2 foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
 					// Matou jogador
-					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
-						Jogo.pj1.set(0, 7);
-						Jogo.pj1.set(1, 3);
-						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-						q_7x3.setOpacity(1);
-					}
 					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
+					}
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -900,12 +910,17 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
 					}
-					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
-						Jogo.pj2.set(0, 7);
-						Jogo.pj2.set(1, 4);
-						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-						q_7x4.setOpacity(1);
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -945,17 +960,22 @@ public class ControllerGame {
 					chatarray.add(0, Jogo.criaString("Player 2 foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
 					// Matou jogador
-					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
-						Jogo.pj1.set(0, 7);
-						Jogo.pj1.set(1, 3);
-						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-						q_7x3.setOpacity(1);
-					}
 					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
+					}
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1152,12 +1172,17 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
 					}
-					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
-						Jogo.pj2.set(0, 7);
-						Jogo.pj2.set(1, 4);
-						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-						q_7x4.setOpacity(1);
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1197,17 +1222,22 @@ public class ControllerGame {
 					chatarray.add(0, Jogo.criaString("Player 2 foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
 					// Matou jogador
-					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
-						Jogo.pj1.set(0, 7);
-						Jogo.pj1.set(1, 3);
-						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-						q_7x3.setOpacity(1);
-					}
 					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
+					}
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1401,12 +1431,17 @@ public class ControllerGame {
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
 					}
-					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
-						Jogo.pj2.set(0, 7);
-						Jogo.pj2.set(1, 4);
-						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-						q_7x4.setOpacity(1);
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+						q_7x3.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
@@ -1446,17 +1481,22 @@ public class ControllerGame {
 					chatarray.add(0, Jogo.criaString("Player 2 foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
 					// Matou jogador
-					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
-						Jogo.pj1.set(0, 7);
-						Jogo.pj1.set(1, 3);
-						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-						q_7x3.setOpacity(1);
-					}
 					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
+						linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
+						
+					}
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+						q_7x4.setOpacity(1);
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setImage(Imagem.criaimagem("icones/nk.png"));
+						linhas.get(Jogo.pd2.get(0)).get(Jogo.pd2.get(1)).setOpacity(1);
 					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
