@@ -449,7 +449,7 @@ public class ControllerGame {
 									}
 									jogardado = true;
 								}
-							} else {
+							} else if (Integer.parseInt(resultaDado.getText())>0) {
 								Integer xia = 0;
 								Integer yia = 0;
 								Integer x1 = 0;
