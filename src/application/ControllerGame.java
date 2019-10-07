@@ -247,7 +247,7 @@ public class ControllerGame {
 
 	@FXML
 	void initialize() throws IOException {
-	if (Estados.jogadorLogado.equals("player1")) {
+	if (Estados.jogadorLogado.equals("jogador1")) {
 		jogador1.setText(Estados.nomedojogador);
 		Acoes.criarAcao("nomejogador",Estados.nomedojogador );
 	}else {
