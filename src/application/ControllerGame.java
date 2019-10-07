@@ -344,6 +344,25 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
+					//Finalizar jogo
+					if (Estados.finalizarjogo.equals("sim")) {
+						if (Estados.mensagem.equals("js")) {
+						Jogo.videofinal="jspronto.mp4";
+						Jogo.backgroundfinal="background/vj1.png";
+						}else {
+							Jogo.videofinal="danypronto.mp4";
+							Jogo.backgroundfinal="background/vj2.png";
+						}
+						AnchorPane pane = null;
+						try {
+							pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						anchorpane.getChildren().setAll(pane);
+					}
+					
 					// Chat
 					if (Estados.nmchat.equals("sim")) {
 						String a = "";
@@ -774,6 +793,7 @@ System.out.println("nao entrou");
 						Sons.controlador.stop();
 						Jogo.videofinal="jspronto.mp4";
 						Jogo.backgroundfinal="background/vj1.png";
+						Acoes.criarAcao("finalizar", "js");
 						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
 						anchorpane.getChildren().setAll(pane);
 						chatarray.add(0, Jogo.criaString("O jogador 1 GANHOUU!!!!!!!!!"));
@@ -841,6 +861,7 @@ System.out.println("nao entrou");
 						Sons.controlador.stop();
 						Jogo.videofinal="danypronto.mp4";
 						Jogo.backgroundfinal="background/vj2.png";
+						Acoes.criarAcao("finalizar", "dany");
 						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
 						anchorpane.getChildren().setAll(pane);
 						chatarray.add(0, Jogo.criaString("O jogador 2 GANHOUU!!!!!!!!!"));

@@ -13,6 +13,15 @@ public class Acoes {
 		String mensagem = a.mensagem;
 		//Remove a virgula
 		mensagem=mensagem.substring(0, mensagem.length()-1);
+		
+	    //Finaliza o jogo
+		
+		if (acao.equals("finalizar")) {
+		Estados.finalizarjogo="sim";
+		
+		Estados.vencedor=mensagem;
+	}
+		
 		//chat
 		if (acao.equals("chat")) {
 			Estados.nmchat="sim";
