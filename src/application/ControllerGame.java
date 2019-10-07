@@ -605,7 +605,7 @@ public class ControllerGame {
 		}
 	}
 
-	Label portaatual = null;
+	Label portaatual = p1;
 	
 
 	public boolean verificaporta(int x, int y) {
