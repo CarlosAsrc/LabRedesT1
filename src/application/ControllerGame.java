@@ -577,6 +577,10 @@ public class ControllerGame {
 	void onclickdado(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
+			//Testes
+			if (Estados.jogadorDaVez.equals("player1")||Estados.jogadorDaVez.equals("player2")) {
+				resultaDado.setAccessibleHelp("50");
+			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);
 		} else {
@@ -597,6 +601,7 @@ public class ControllerGame {
 			chatarray.add(0, Jogo.criaString("" + i + "!"));
 			chat.setText(Jogo.criachat(chatarray));
 			resultaDado.setText("" + i);
+			
 			
 
 		} else {
