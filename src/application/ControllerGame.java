@@ -599,6 +599,8 @@ public class ControllerGame {
 			//Facilitador Temporario
 			if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
 				resultaDado.setText("1");
+			}else {
+				resultaDado.setText("10");
 			}
 
 		} else {
