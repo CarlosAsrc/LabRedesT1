@@ -10,7 +10,6 @@
 
 <AnchorPane fx:id="anchorpane" prefHeight="950.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ControllerGame">
    <children>
-      <ImageView fx:id="acoesIV" fitHeight="603.0" fitWidth="1069.0" layoutX="129.0" layoutY="213.0" pickOnBounds="true" />
       <ImageView fx:id="background" fitHeight="950.0" fitWidth="1900.0" pickOnBounds="true">
          <image>
             <Image url="@../rsc/background/game.png" />
@@ -284,6 +283,7 @@
       <Button fx:id="enviar" layoutX="1688.0" layoutY="127.0" mnemonicParsing="false" onAction="#onclickenviar" opacity="0.0" prefHeight="39.0" prefWidth="207.0" text="Enviar" />
       <Button fx:id="abrirpegar" layoutX="1333.0" layoutY="891.0" mnemonicParsing="false" onAction="#onclickabrirpegar" opacity="0.0" prefHeight="39.0" prefWidth="525.0" text="Button" />
       <ImageView fx:id="abrirpegarIV" fitHeight="205.0" fitWidth="290.0" layoutX="1430.0" layoutY="679.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="acoesIV" fitHeight="603.0" fitWidth="1069.0" layoutX="129.0" layoutY="213.0" pickOnBounds="true" />
       <Button fx:id="fechar" layoutX="1002.0" layoutY="728.0" mnemonicParsing="false" onAction="#onclickfechar" opacity="0.0" prefHeight="86.0" prefWidth="151.0" text="Button" />
    </children>
 </AnchorPane>
