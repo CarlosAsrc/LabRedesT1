@@ -247,7 +247,7 @@ public class ControllerGame {
 
 	@FXML
 	void initialize() throws IOException {
-
+		portaatual=p1;
 		background.setImage(Imagem.criaimagem("background/game.png"));
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();
@@ -605,7 +605,7 @@ public class ControllerGame {
 		}
 	}
 
-	Label portaatual = p1;
+	Label portaatual = new Label();
 	
 
 	public boolean verificaporta(int x, int y) {
