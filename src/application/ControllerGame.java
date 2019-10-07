@@ -579,7 +579,7 @@ public class ControllerGame {
 			dado();
 			//Testes
 			if (Estados.jogadorDaVez.equals("player1")||Estados.jogadorDaVez.equals("player2")) {
-				resultaDado.setAccessibleHelp("50");
+				resultaDado.setText("50");
 			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);
