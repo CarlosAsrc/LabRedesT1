@@ -483,7 +483,7 @@ public class ControllerGame {
 								}
 
 								String movimento = IA.direcionar(xia, yia, x1, y1, x2, y2, v1, v2);
-
+System.out.println("movimento: "+movimento);
 								if (movimento.equals("n")) {
 									try {
 										norte();
