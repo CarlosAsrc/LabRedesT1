@@ -242,90 +242,88 @@ public class ControllerGame {
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
 		criamatriz();
 
-		
+		regras.Sons.tocar("monowar");
 
-			regras.Sons.tocar("monowar");
+		criamatrizs();
 
-			criamatrizs();
+		q_0x2.setImage(Imagem.criaimagem("icones/dragao.png"));
+		slinhas.get(0).set(2, "icones/dragao.png");
 
-			q_0x2.setImage(Imagem.criaimagem("icones/dragao.png"));
-			slinhas.get(0).set(2, "icones/dragao.png");
+		q_0x5.setImage(Imagem.criaimagem("icones/nk.png"));
+		slinhas.get(0).set(5, "icones/nk.png");
 
-			q_0x5.setImage(Imagem.criaimagem("icones/nk.png"));
-			slinhas.get(0).set(5, "icones/nk.png");
+		q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+		slinhas.get(7).set(3, "icones/js.png");
 
-			q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
-			slinhas.get(7).set(3, "icones/js.png");
+		q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+		slinhas.get(7).set(4, "icones/dany.png");
 
-			q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
-			slinhas.get(7).set(4, "icones/dany.png");
+		q_1x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(1).set(0, "icones/ppreta.png");
 
-			q_1x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(1).set(0, "icones/ppreta.png");
+		q_1x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(1).set(7, "icones/ppreta.png");
 
-			q_1x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(1).set(7, "icones/ppreta.png");
+		q_3x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(3).set(0, "icones/ppreta.png");
 
-			q_3x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(3).set(0, "icones/ppreta.png");
+		q_3x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(3).set(7, "icones/ppreta.png");
 
-			q_3x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(3).set(7, "icones/ppreta.png");
+		q_5x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(5).set(0, "icones/ppreta.png");
 
-			q_5x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(5).set(0, "icones/ppreta.png");
+		q_5x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(5).set(7, "icones/ppreta.png");
 
-			q_5x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(5).set(7, "icones/ppreta.png");
+		q_7x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(7).set(0, "icones/ppreta.png");
 
-			q_7x0.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(7).set(0, "icones/ppreta.png");
+		q_7x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
+		slinhas.get(7).set(7, "icones/ppreta.png");
 
-			q_7x7.setImage(Imagem.criaimagem("icones/ppreta.png"));
-			slinhas.get(7).set(7, "icones/ppreta.png");
+		q_0x0.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(0).set(0, "icones/parede.png");
 
-			q_0x0.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(0).set(0, "icones/parede.png");
+		q_0x1.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(0).set(1, "icones/parede.png");
 
-			q_0x1.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(0).set(1, "icones/parede.png");
+		q_0x6.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(0).set(6, "icones/parede.png");
 
-			q_0x6.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(0).set(6, "icones/parede.png");
+		q_0x7.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(0).set(7, "icones/parede.png");
 
-			q_0x7.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(0).set(7, "icones/parede.png");
+		q_2x0.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(2).set(0, "icones/parede.png");
 
-			q_2x0.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(2).set(0, "icones/parede.png");
+		q_2x7.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(2).set(7, "icones/parede.png");
 
-			q_2x7.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(2).set(7, "icones/parede.png");
+		q_4x0.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(4).set(0, "icones/parede.png");
 
-			q_4x0.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(4).set(0, "icones/parede.png");
+		q_4x7.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(4).set(7, "icones/parede.png");
 
-			q_4x7.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(4).set(7, "icones/parede.png");
+		q_6x0.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(6).set(0, "icones/parede.png");
 
-			q_6x0.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(6).set(0, "icones/parede.png");
+		q_6x7.setImage(Imagem.criaimagem("icones/parede.png"));
+		slinhas.get(6).set(7, "icones/parede.png");
 
-			q_6x7.setImage(Imagem.criaimagem("icones/parede.png"));
-			slinhas.get(6).set(7, "icones/parede.png");
+		q_0x3.setImage(Imagem.criaimagem("icones/pamarela.png"));
+		slinhas.get(0).set(3, "icones/pamarela.png");
 
-			q_0x3.setImage(Imagem.criaimagem("icones/pamarela.png"));
-			slinhas.get(0).set(3, "icones/pamarela.png");
+		q_0x4.setImage(Imagem.criaimagem("icones/pamarela.png"));
+		slinhas.get(0).set(4, "icones/pamarela.png");
 
-			q_0x4.setImage(Imagem.criaimagem("icones/pamarela.png"));
-			slinhas.get(0).set(4, "icones/pamarela.png");
+		chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
+		chat.setText(Jogo.criachat(chatarray));
+		jogadorVez.setText(Estados.jogadorDaVez);
 
-			chatarray.add(0, Jogo.criaString("Vez do jogador " + Estados.jogadorDaVez));
-			chat.setText(Jogo.criachat(chatarray));
-			jogadorVez.setText(Estados.jogadorDaVez);
-			
-			refresh();
-		
+		refresh();
+
 	}
 
 	public void refresh() {
@@ -336,14 +334,14 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
-					//Chat
+					// Chat
 					if (Estados.nmchat.equals("sim")) {
-						String a="";
+						String a = "";
 						if (Estados.jogadorLogado.equals("jogador2")) {
-							a= "jogador 1";
+							a = "jogador 1";
 						}
 						if (Estados.jogadorLogado.equals("jogador1")) {
-							a= "jogador 2";
+							a = "jogador 2";
 						}
 						chatarray.add(0, Jogo.criaString("Jogador " + a + ": " + Estados.mensagem));
 						chat.setText(Jogo.criachat(chatarray));
@@ -356,8 +354,6 @@ public class ControllerGame {
 					if (!Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 
 						if (Estados.jogadormoveu.equals("sim")) {
-							
-							
 
 							// mova para algum lugar
 
@@ -432,8 +428,8 @@ public class ControllerGame {
 						// Vez do IA
 						if (Estados.jogadorDaVez.equals("dragao") || Estados.jogadorDaVez.equals("Night King")) {
 							if (Estados.jogadorLogado.equals("jogador2")) {
-							if (jogardado == false) {
-								
+								if (jogardado == false) {
+
 									try {
 
 										dado();
@@ -449,7 +445,7 @@ public class ControllerGame {
 									}
 									jogardado = true;
 								}
-							} else if (Integer.parseInt(resultaDado.getText())>0) {
+							} else if (Integer.parseInt(resultaDado.getText()) > 0) {
 								Integer xia = 0;
 								Integer yia = 0;
 								Integer x1 = 0;
@@ -482,8 +478,22 @@ public class ControllerGame {
 									}
 								}
 
+								if (x1==7&&y1==3) {
+									v1=false;
+								}
+								if (x1==7&&y1==4) {
+									v1=false;
+								}
+								if (x2==7&&y2==3) {
+									v2=false;
+								}
+								if (x2==7&&y2==4) {
+									v2=false;
+								}
+								
+								
 								String movimento = IA.direcionar(xia, yia, x1, y1, x2, y2, v1, v2);
-System.out.println("movimento: "+movimento);
+							
 								if (movimento.equals("n")) {
 									try {
 										norte();
@@ -707,21 +717,21 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
 					chatarray.add(0, Jogo.criaString("dragao foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
-					
-					//Matou jogador 
-					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+
+					// Matou jogador
+					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
 					}
-					
+
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -759,13 +769,13 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 					}
-					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
@@ -932,14 +942,14 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
 					chatarray.add(0, Jogo.criaString("dragao foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
@@ -982,14 +992,14 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
@@ -1158,20 +1168,20 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
 					chatarray.add(0, Jogo.criaString("dragao foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
 						q_7x4.setOpacity(1);
 					}
-					
+
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -1209,14 +1219,14 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
@@ -1381,14 +1391,14 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
 					chatarray.add(0, Jogo.criaString("dragao foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd1.get(0) == Jogo.pj1.get(0) && Jogo.pd1.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd1.get(0) == Jogo.pj2.get(0) && Jogo.pd1.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
@@ -1431,14 +1441,14 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
-					//Matou jogador 
-					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+					// Matou jogador
+					if (Jogo.pd2.get(0) == Jogo.pj1.get(0) && Jogo.pd2.get(1) == Jogo.pj1.get(1)) {
 						Jogo.pj1.set(0, 7);
 						Jogo.pj1.set(1, 3);
 						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
 						q_7x3.setOpacity(1);
 					}
-					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+					if (Jogo.pd2.get(0) == Jogo.pj2.get(0) && Jogo.pd2.get(1) == Jogo.pj2.get(1)) {
 						Jogo.pj2.set(0, 7);
 						Jogo.pj2.set(1, 4);
 						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));

@@ -41,6 +41,7 @@ public static ArrayList<ArrayList> piportas(){
 	a8.add(7);
 	a8.add(7);
 	
+	
 	ArrayList<ArrayList> portas = new ArrayList<ArrayList>();
 	
 	portas.add(a1);
@@ -51,6 +52,7 @@ public static ArrayList<ArrayList> piportas(){
 	portas.add(a6);
 	portas.add(a7);
 	portas.add(a8);
+	
 	
 	return portas;
 	
