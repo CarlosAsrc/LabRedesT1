@@ -716,7 +716,7 @@ public class ControllerGame {
 				}
 
 			}
-			if (Estados.jogadorDaVez.equals("Nigth King")) {
+			if (Estados.jogadorDaVez.equals("Night King")) {
 				regras.Sons.tocarsom("nk");
 				String d = resultaDado.getText();
 				Integer id = Integer.parseInt(d);
