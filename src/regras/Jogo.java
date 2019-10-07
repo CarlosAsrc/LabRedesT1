@@ -181,6 +181,7 @@ public static String corporta(String a) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a-1&&proibida.get(i).get(1)==b) {
 						if (Estados.jogadorDaVez.equals("dragao")&&i==1) {
+							
 							return true;
 						}else if (Estados.jogadorDaVez.equals("Night King")&&i==0) {
 							return true;
@@ -335,5 +336,55 @@ public static void iniciarposicoes() {
 	for (int i=0;i<paredes.size();i++) {
 		proibida.add(paredes.get(i));
 	}
+	ArrayList<Integer>p1 = new ArrayList<Integer>();
+	p1.add(1);
+	p1.add(0);
+	ArrayList<Integer>p2 = new ArrayList<Integer>();
+	p2.add(3);
+	p2.add(0);
+	ArrayList<Integer>p3 = new ArrayList<Integer>();
+	p3.add(5);
+	p3.add(0);
+	ArrayList<Integer>p4 = new ArrayList<Integer>();
+	p4.add(7);
+	p4.add(0);
+	ArrayList<Integer>p5 = new ArrayList<Integer>();
+	p5.add(1);
+	p5.add(7);
+	ArrayList<Integer>p6 = new ArrayList<Integer>();
+	p6.add(3);
+	p6.add(7);
+	ArrayList<Integer>p7 = new ArrayList<Integer>();
+	p7.add(5);
+	p7.add(7);
+	ArrayList<Integer>p8 = new ArrayList<Integer>();
+	p8.add(7);
+	p8.add(7);
+	ArrayList<Integer>p9 = new ArrayList<Integer>();
+	p9.add(7);
+	p9.add(3);	
+	ArrayList<Integer>p10 = new ArrayList<Integer>();
+	p10.add(7);
+	p10.add(4);
+	ArrayList<Integer>p11 = new ArrayList<Integer>();
+	p11.add(0);
+	p11.add(3);
+	ArrayList<Integer>p12 = new ArrayList<Integer>();
+	p12.add(0);
+	p12.add(4);
+	proibida.add(p1);
+	proibida.add(p2);
+	proibida.add(p3);
+	proibida.add(p4);
+	proibida.add(p5);
+	proibida.add(p6);
+	proibida.add(p7);
+	proibida.add(p8);
+	proibida.add(p9);
+	proibida.add(p10);
+	proibida.add(p11);
+	proibida.add(p12);
+	
+	
 	}
 }

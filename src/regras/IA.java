@@ -24,7 +24,7 @@ public class IA {
 	            int intervalo_randomico = random.nextInt(3);
 	            movimento = ms.get(intervalo_randomico);
 	            boolean a=   Jogo.validamovimento(xia, yia, movimento);
-	            if (a==true) {
+	            if (a) {
 	            	break;
 	            }
 		}
@@ -59,7 +59,7 @@ public class IA {
 		// Ambos invisíveis
 		if ((!visibilidade1) && (!visibilidade2)) {
 			System.out.println("Entrou na situacao 2 invi");
-			movimentoaleatoriovalido(xia,yia);
+		return	movimentoaleatoriovalido(xia,yia);
 		}
 
 		// Os dois visíveis
@@ -75,10 +75,10 @@ public class IA {
 
 		// Somente um visível
 		if (visibilidade1) {
-			System.out.println("Entrou na situacao de apenas 1 invi e foi o v1 invi");
+			
 			return	movimentofinal(xia,yia,definirDirecao(x1, y1));
 		} else {
-			System.out.println("Entrou na situacao de apenas 1 invi e foi o v2 invi");
+			
 			return	movimentofinal(xia,yia,definirDirecao(x2, y2));
 		}
 	}
