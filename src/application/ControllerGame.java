@@ -602,7 +602,10 @@ public class ControllerGame {
 			dado();
 			//Testes
 			if (Estados.jogadorDaVez.equals("jogador1")||Estados.jogadorDaVez.equals("jogador2")) {
-				resultaDado.setText("25");
+				int a = Integer.parseInt(resultaDado.getText());
+				a=a*2;
+				String duplo=""+a;
+				resultaDado.setText(duplo);
 			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);

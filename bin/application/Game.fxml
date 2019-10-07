@@ -268,7 +268,7 @@
             <Font size="46.0" />
          </font>
       </Label>
-      <Label fx:id="resultaDado" layoutX="1430.0" layoutY="429.0" prefHeight="50.0" prefWidth="33.0" text="0" textAlignment="CENTER" textFill="#f7941d">
+      <Label fx:id="resultaDado" layoutX="1430.0" layoutY="429.0" prefHeight="68.0" prefWidth="52.0" text="0" textAlignment="CENTER" textFill="#f7941d">
          <font>
             <Font size="46.0" />
          </font>
