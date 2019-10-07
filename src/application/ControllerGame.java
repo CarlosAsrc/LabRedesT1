@@ -362,6 +362,12 @@ public class ControllerGame {
 							e.printStackTrace();
 						}
 						anchorpane.getChildren().setAll(pane);
+						try {
+							TimeUnit.SECONDS.sleep(600);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 					
 					// Chat
