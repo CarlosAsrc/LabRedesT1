@@ -30,6 +30,7 @@ import regras.IA;
 import regras.Imagem;
 import regras.Jogo;
 import regras.Porta;
+import regras.Sons;
 
 public class ControllerGame {
 	@FXML
@@ -600,7 +601,7 @@ public class ControllerGame {
 			if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
 				resultaDado.setText("1");
 			}else {
-				resultaDado.setText("50");
+				resultaDado.setText("100");
 			}
 
 		} else {
@@ -610,6 +611,7 @@ public class ControllerGame {
 	}
 
 	Label portaatual = null;
+	
 
 	public boolean verificaporta(int x, int y) {
 		for (int i = 0; i < Jogo.portas.size(); i++) {
@@ -618,40 +620,40 @@ public class ControllerGame {
 					p1.setText(Jogo.portas.get(i).getChave());
 					portaatual = p1;
 				}
-				;
+				
 				if (x == 3 && y == 0) {
 					p2.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p2;
 				}
-				;
+				
 				if (x == 5 && y == 0) {
 					p3.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p3;
 				}
-				;
+				
 				if (x == 7 && y == 0) {
 					p4.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p4;
 				}
-				;
+				
 				if (x == 1 && y == 7) {
 					p5.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p5;
 				}
-				;
+				
 				if (x == 3 && y == 7) {
 					p6.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p6;
 				}
-				;
+				
 				if (x == 5 && y == 7) {
 					p7.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p7;
 				}
-				;
+				
 				if (x == 7 && y == 7) {
 					p8.setText(Jogo.portas.get(i).getChave());
-					portaatual = p1;
+					portaatual = p8;
 				}
 				
 				
@@ -660,7 +662,7 @@ public class ControllerGame {
 			}
 
 		}
-
+System.out.println("nao entrou");
 		return false;
 
 	}
@@ -687,6 +689,17 @@ public class ControllerGame {
 			y = Jogo.pj2.get(1);
 		}
 		if (verificaporta(x, y)) {
+			System.out.println("entrou");
+			
+			System.out.println("porta atual"+ portaatual.getText());
+			if (x==0&&y==3) {
+				System.out.println("porta atual"+"F1-Amarela 5");
+				portaatual.setText("F1-Amarela 5");
+			}
+			if (x==0&&y==4) {
+				System.out.println("porta atual"+"F2-Amarela 5");
+				portaatual.setText("F2-Amarela 5");
+			}
 			abrirpegarIV.setOpacity(1);
 			if (portaatual.getText().equals("F1-Branca 1") || portaatual.getText().equals("F2-Branca 1")) {
 				abrirpegarIV.setImage(Imagem.criaimagem("icones/pbranca.png"));
@@ -758,7 +771,11 @@ public class ControllerGame {
 				} else if (x == 0 && y == 3) {
 					if (procuraporta("F1-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
-
+						Sons.controlador.stop();
+						Jogo.videofinal="teste.mp4";
+						Jogo.backgroundfinal="background/vj1.png";
+						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
+						anchorpane.getChildren().setAll(pane);
 						chatarray.add(0, Jogo.criaString("O jogador 1 GANHOUU!!!!!!!!!"));
 						chat.setText(Jogo.criachat(chatarray));
 
@@ -821,7 +838,9 @@ public class ControllerGame {
 				} else if (x == 0 && y == 4) {
 					if (procuraporta("F2-Roxa 4").getSituacao().equals("aberta")) {
 						// FINAL DO JOGO AQUI!
-
+						Sons.controlador.stop();
+						AnchorPane pane = FXMLLoader.load(getClass().getResource("Final.fxml"));
+						anchorpane.getChildren().setAll(pane);
 						chatarray.add(0, Jogo.criaString("O jogador 2 GANHOUU!!!!!!!!!"));
 						chat.setText(Jogo.criachat(chatarray));
 
@@ -1107,6 +1126,11 @@ public class ControllerGame {
 			}
 
 		}
+		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
+		int x=procuraporta(portaatual.getText()).getLocal().get(0);
+		int y=procuraporta(portaatual.getText()).getLocal().get(1);
+			linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+		}
 	}
 
 	@FXML
@@ -1371,6 +1395,11 @@ public class ControllerGame {
 				}
 			}
 		}
+		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
+			int x=procuraporta(portaatual.getText()).getLocal().get(0);
+			int y=procuraporta(portaatual.getText()).getLocal().get(1);
+				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+			}
 	}
 
 	@FXML
@@ -1633,6 +1662,11 @@ public class ControllerGame {
 				}
 			}
 		}
+		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
+			int x=procuraporta(portaatual.getText()).getLocal().get(0);
+			int y=procuraporta(portaatual.getText()).getLocal().get(1);
+				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+			}
 	}
 
 	@FXML
@@ -1892,6 +1926,11 @@ public class ControllerGame {
 				}
 			}
 		}
+		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
+			int x=procuraporta(portaatual.getText()).getLocal().get(0);
+			int y=procuraporta(portaatual.getText()).getLocal().get(1);
+				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+			}
 	}
 
 	@FXML

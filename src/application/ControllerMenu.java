@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import regras.Jogo;
 
 public class ControllerMenu {
 	@FXML

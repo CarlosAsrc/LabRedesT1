@@ -7,6 +7,8 @@ import conexao.Estados;
 import javafx.scene.image.ImageView;
 
 public class Jogo {
+	public static String videofinal;
+	public static String backgroundfinal;
 	public static int inicio=0;
 	public static String movimentos;
 	public static boolean jogardado = false;

@@ -207,42 +207,42 @@
       <ImageView fx:id="q_7x7" fitHeight="72.0" fitWidth="82.0" layoutX="1060.0" layoutY="855.0" pickOnBounds="true" preserveRatio="true">
          
       </ImageView>
-      <Label fx:id="p1" layoutX="14.0" layoutY="328.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p1" layoutX="14.0" layoutY="328.0" prefHeight="39.0" prefWidth="207.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p2" layoutX="14.0" layoutY="508.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p2" layoutX="14.0" layoutY="508.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p3" layoutX="14.0" layoutY="690.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p3" layoutX="14.0" layoutY="690.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p4" layoutX="14.0" layoutY="866.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p4" layoutX="14.0" layoutY="866.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p5" layoutX="1209.0" layoutY="328.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p5" layoutX="1209.0" layoutY="328.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p6" layoutX="1209.0" layoutY="508.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p6" layoutX="1209.0" layoutY="508.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p7" layoutX="1209.0" layoutY="690.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p7" layoutX="1209.0" layoutY="690.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <Label fx:id="p8" layoutX="1209.0" layoutY="866.0" text="P1-F1" textFill="#ff0c0c">
+      <Label fx:id="p8" layoutX="1209.0" layoutY="866.0" text="???" textFill="#ff0c0c">
          <font>
             <Font size="34.0" />
          </font>
