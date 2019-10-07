@@ -180,9 +180,16 @@ public static String corporta(String a) {
 			if (a>0) {
 				for (int i=0;i<proibida.size();i++) {
 					if (proibida.get(i).get(0)==a-1&&proibida.get(i).get(1)==b) {
-						
-						return false;
+					return false;
 					}
+					
+				}
+				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+					for (int i=0;i<proibida2.size();i++) {
+						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
+						return false;
+						}
+						}
 				}
 				return true;
 			}else {
@@ -197,6 +204,13 @@ public static String corporta(String a) {
 						return false;
 					}
 				}
+				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+					for (int i=0;i<proibida2.size();i++) {
+						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
+						return false;
+						}
+						}
+				}
 				return true;
 			}else {
 				return false;
@@ -210,6 +224,13 @@ public static String corporta(String a) {
 						return false;
 					}
 				}
+				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+					for (int i=0;i<proibida2.size();i++) {
+						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
+						return false;
+						}
+						}
+				}
 				return true;
 			}else {
 				return false;
@@ -222,6 +243,13 @@ public static String corporta(String a) {
 						
 						return false;
 					}
+				}
+				if (Estados.jogadorDaVez.equals("dragao")||Estados.jogadorDaVez.equals("Night King")) {
+					for (int i=0;i<proibida2.size();i++) {
+						if (proibida2.get(i).get(0)==a-1&&proibida2.get(i).get(1)==b) {
+						return false;
+						}
+						}
 				}
 				return true;
 			}else {
@@ -252,6 +280,7 @@ public static ArrayList<Integer> pd1= new ArrayList<Integer>();
 public static ArrayList<Integer> pd2= new ArrayList<Integer>();
 public static ArrayList<ArrayList<Integer>> paredes = new ArrayList<ArrayList<Integer>>();
 public static ArrayList<ArrayList<Integer>> proibida = new ArrayList<ArrayList<Integer>>();
+public static ArrayList<ArrayList<Integer>> proibida2 = new ArrayList<ArrayList<Integer>>();
 
 
 
@@ -346,18 +375,18 @@ public static void iniciarposicoes() {
 	ArrayList<Integer>p12 = new ArrayList<Integer>();
 	p12.add(0);
 	p12.add(4);
-	proibida.add(p1);
-	proibida.add(p2);
-	proibida.add(p3);
-	proibida.add(p4);
-	proibida.add(p5);
-	proibida.add(p6);
-	proibida.add(p7);
-	proibida.add(p8);
-	proibida.add(p9);
-	proibida.add(p10);
-	proibida.add(p11);
-	proibida.add(p12);
+	proibida2.add(p1);
+	proibida2.add(p2);
+	proibida2.add(p3);
+	proibida2.add(p4);
+	proibida2.add(p5);
+	proibida2.add(p6);
+	proibida2.add(p7);
+	proibida2.add(p8);
+	proibida2.add(p9);
+	proibida2.add(p10);
+	proibida2.add(p11);
+	proibida2.add(p12);
 	
 	
 	}
