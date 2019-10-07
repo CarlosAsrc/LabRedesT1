@@ -578,7 +578,7 @@ public class ControllerGame {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
 			//Testes
-			if (Estados.jogadorDaVez.equals("player1")||Estados.jogadorDaVez.equals("player2")) {
+			if (Estados.jogadorDaVez.equals("jogador1")||Estados.jogadorDaVez.equals("jogador2")) {
 				resultaDado.setText("50");
 			}
 			String a = resultaDado.getText();
