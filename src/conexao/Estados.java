@@ -1,6 +1,8 @@
 package conexao;
 
 public class Estados {
+	public static String recebeunomejogador="nao";
+	public static String nomedojogador="";
 
 public static String finalizarjogo="nao";
 public static String vencedor="?";

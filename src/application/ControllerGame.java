@@ -247,6 +247,13 @@ public class ControllerGame {
 
 	@FXML
 	void initialize() throws IOException {
+	if (Estados.jogadorLogado.equals("player1")) {
+		jogador1.setText(Estados.nomedojogador);
+		Acoes.criarAcao("nomejogador",Estados.nomedojogador );
+	}else {
+		jogador2.setText(Estados.nomedojogador);
+		Acoes.criarAcao("nomejogador",Estados.nomedojogador );
+	}
 		portaatual=p1;
 		background.setImage(Imagem.criaimagem("background/game.png"));
 		comandosBackground.setImage(Imagem.criaimagem("background/comando.png"));
@@ -344,6 +351,19 @@ public class ControllerGame {
 			public void run() {
 
 				Platform.runLater(() -> {
+					//Coloca nome do outro jogador
+					if(Estados.recebeunomejogador.equals("sim")) {
+						if (Estados.jogadorLogado.equals("jogador1")) {
+							jogador2.setText(Estados.nomedojogador);
+						}
+						else {
+							jogador1.setText(Estados.nomedojogador);
+						}
+					
+						
+						Estados.recebeunomejogador="nao";
+					}
+					
 					//Finalizar jogo
 					if (Estados.finalizarjogo.equals("sim")) {
 						if (Estados.vencedor.equals("js")) {

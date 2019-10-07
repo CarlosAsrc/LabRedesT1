@@ -49,6 +49,7 @@ public class ControllerLogin {
 
 	@FXML
 	void onclickentrar(ActionEvent event) throws IOException {
+		Estados.nomedojogador=senha.getText();
 		if (login.getText().equals("1")) {
 		Estados.jogadorLogado="jogador1";
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Menu.fxml"));

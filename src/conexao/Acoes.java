@@ -14,6 +14,14 @@ public class Acoes {
 		//Remove a virgula
 		mensagem=mensagem.substring(0, mensagem.length()-1);
 		
+		//Nome do jogador 
+		if (acao.equals("nomejogador")) {
+			Estados.recebeunomejogador="sim";
+			
+			Estados.nomedojogador=mensagem;
+			
+		}
+		
 	    //Finaliza o jogo
 		
 		if (acao.equals("finalizar")) {
