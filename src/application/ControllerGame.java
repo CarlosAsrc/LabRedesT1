@@ -1123,10 +1123,12 @@ System.out.println("nao entrou");
 			}
 
 		}
+		if (!portaatual.getText().equals("???")) {
 		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
 		int x=procuraporta(portaatual.getText()).getLocal().get(0);
 		int y=procuraporta(portaatual.getText()).getLocal().get(1);
 			linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
+		}
 		}
 	}
 
@@ -1392,11 +1394,13 @@ System.out.println("nao entrou");
 				}
 			}
 		}
+		if (!portaatual.getText().equals("???")) {
 		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
 			int x=procuraporta(portaatual.getText()).getLocal().get(0);
 			int y=procuraporta(portaatual.getText()).getLocal().get(1);
 				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
 			}
+		}
 	}
 
 	@FXML
@@ -1659,11 +1663,13 @@ System.out.println("nao entrou");
 				}
 			}
 		}
+		if (!portaatual.getText().equals("???")) {
 		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
 			int x=procuraporta(portaatual.getText()).getLocal().get(0);
 			int y=procuraporta(portaatual.getText()).getLocal().get(1);
 				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
 			}
+		}
 	}
 
 	@FXML
@@ -1923,11 +1929,13 @@ System.out.println("nao entrou");
 				}
 			}
 		}
+		if (!portaatual.getText().equals("???")) {
 		if(procuraporta(portaatual.getText()).getSituacao().equals("aberta")) {
 			int x=procuraporta(portaatual.getText()).getLocal().get(0);
 			int y=procuraporta(portaatual.getText()).getLocal().get(1);
 				linhas.get(x).get(y).setImage(Imagem.criaimagem("icones/paberta.png"));
 			}
+		}
 	}
 
 	@FXML
