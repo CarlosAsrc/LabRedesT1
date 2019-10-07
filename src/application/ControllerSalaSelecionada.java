@@ -123,8 +123,6 @@ public class ControllerSalaSelecionada {
 	void onclickiniciar(ActionEvent event) throws IOException {
 		Acoes.criarAcao("iniciar", "iniciar");
 		String a = "1";
-		//Para testar
-		comecoPermitido=true;
 		iniciar(a);
 		
 	}
