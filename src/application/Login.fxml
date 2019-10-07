@@ -16,7 +16,6 @@
             <Image url="@../rsc/background/login.png" />
          </image>
       </ImageView>
-      <TextField fx:id="login" layoutX="1236.0" layoutY="699.0" prefHeight="55.0" prefWidth="271.0" />
       <Label fx:id="lLogin" layoutX="1321.0" layoutY="487.0" prefHeight="48.0" prefWidth="103.0" text="Nome" textFill="#eb8d1b">
          <font>
             <Font size="35.0" />
@@ -27,6 +26,7 @@
          </font>
       </Label>
       <Button fx:id="entrar" layoutX="1171.0" layoutY="800.0" mnemonicParsing="false" onAction="#onclickentrar" opacity="0.0" prefHeight="70.0" prefWidth="401.0" text="Entrar" />
-      <PasswordField fx:id="senha" layoutX="1237.0" layoutY="558.0" prefHeight="55.0" prefWidth="271.0" />
+      <TextField fx:id="senha" layoutX="1236.0" layoutY="564.0" prefHeight="55.0" prefWidth="271.0" />
+      <PasswordField fx:id="login" layoutX="1236.0" layoutY="687.0" prefHeight="55.0" prefWidth="271.0" />
    </children>
 </AnchorPane>

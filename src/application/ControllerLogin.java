@@ -30,9 +30,9 @@ public class ControllerLogin {
 	@FXML
 	private Label lSenha;
 	@FXML
-	private TextField login = new TextField();
-	@FXML
-	private PasswordField senha = new PasswordField();
+	private PasswordField login = new PasswordField();
+	@FXML 
+	private TextField senha = new TextField();
 	@FXML
 	private Button entrar;
 
