@@ -26,7 +26,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			//Pane root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+			
 			Pane root = FXMLLoader.load(getClass().getResource("teste.fxml"));
 
 			Scene scene = new Scene(root, 1900, 950);

@@ -705,8 +705,21 @@ System.out.println("movimento: "+movimento);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("dragao 1 foi para o norte"));
+					chatarray.add(0, Jogo.criaString("dragao foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
+					
+					//Matou jogador 
+					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
+					
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -744,6 +757,17 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o norte"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -904,8 +928,19 @@ System.out.println("movimento: "+movimento);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("dragao 1 foi para o sul"));
+					chatarray.add(0, Jogo.criaString("dragao foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -943,6 +978,17 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o sul"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -1104,8 +1150,20 @@ System.out.println("movimento: "+movimento);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("Dragao 1 foi para o leste"));
+					chatarray.add(0, Jogo.criaString("dragao foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
+					
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -1143,6 +1201,17 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o leste"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -1300,8 +1369,19 @@ System.out.println("movimento: "+movimento);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setOpacity(1);
 					linhas.get(Jogo.pd1.get(0)).get(Jogo.pd1.get(1)).setImage(Imagem.criaimagem("icones/dragao.png"));
 					slinhas.get(Jogo.pd1.get(0)).set(Jogo.pd1.get(1), "icones/dragao.png");
-					chatarray.add(0, Jogo.criaString("dragao 1 foi para o oeste"));
+					chatarray.add(0, Jogo.criaString("dragao foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd1.get(0)==Jogo.pj1.get(0)&&Jogo.pd1.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd1.get(0)==Jogo.pj2.get(0)&&Jogo.pd1.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
@@ -1339,6 +1419,17 @@ System.out.println("movimento: "+movimento);
 					slinhas.get(Jogo.pd2.get(0)).set(Jogo.pd2.get(1), "icones/nk.png");
 					chatarray.add(0, Jogo.criaString("Night King foi para o oeste"));
 					chat.setText(Jogo.criachat(chatarray));
+					//Matou jogador 
+					if (Jogo.pd2.get(0)==Jogo.pj1.get(0)&&Jogo.pd2.get(1)==Jogo.pj1.get(1)) {
+						Jogo.pj1.set(0, 7);
+						Jogo.pj1.set(1, 3);
+						q_7x3.setImage(Imagem.criaimagem("icones/js.png"));
+					}
+					if (Jogo.pd2.get(0)==Jogo.pj2.get(0)&&Jogo.pd2.get(1)==Jogo.pj2.get(1)) {
+						Jogo.pj2.set(0, 7);
+						Jogo.pj2.set(1, 4);
+						q_7x4.setImage(Imagem.criaimagem("icones/dany.png"));
+					}
 				} else {
 					chatarray.add(0, Jogo.criaString("Movimento invalido"));
 					chat.setText(Jogo.criachat(chatarray));
