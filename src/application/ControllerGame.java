@@ -615,17 +615,20 @@ public class ControllerGame {
 
 		Acoes.criarAcao(a, b);
 	}
-
+int mih =0;
 	@FXML
 	void onclickdado(ActionEvent event) throws IOException, InterruptedException {
 		if (Estados.jogadorDaVez.equals(Estados.jogadorLogado)) {
 			dado();
 			//Testes
 			if (Estados.jogadorDaVez.equals("jogador1")||Estados.jogadorDaVez.equals("jogador2")) {
+				if (mih==0) {
 				int a = Integer.parseInt(resultaDado.getText());
 				a=a*2;
 				String duplo=""+a;
 				resultaDado.setText(duplo);
+				mih=1;
+				}
 			}
 			String a = resultaDado.getText();
 			criaracao("Dado", a);
@@ -1156,7 +1159,7 @@ System.out.println("nao entrou");
 
 			}
 			if (resultaDado.getText().equals("0")) {
-
+mih =0;
 				jogardado = false;
 
 				if (Estados.jogadorDaVez.equals("jogador1")) {
