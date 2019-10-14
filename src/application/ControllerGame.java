@@ -342,6 +342,7 @@ public class ControllerGame {
 		refresh();
 
 	}
+	int turno =0;
 
 	public void refresh() {
 		Timer timer = new Timer();
@@ -484,7 +485,7 @@ public class ControllerGame {
 								if (jogardado == false) {
 
 									try {
-
+turno =turno+1;
 										dado();
 										String a = resultaDado.getText();
 										criaracao("Dado", a);
@@ -543,7 +544,9 @@ public class ControllerGame {
 								if (x2 == 7 && y2 == 4) {
 									v2 = false;
 								}
-
+System.out.println("Turno: "+turno);
+System.out.println("V1: "+v1);
+System.out.println("V1: "+v2);
 								String movimento = IA.direcionar(xia, yia, x1, y1, x2, y2, v1, v2);
 
 								if (movimento.equals("n")) {
